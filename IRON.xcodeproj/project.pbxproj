@@ -23,6 +23,7 @@
 		6C1437341B1B94D800EB9212 /* IRON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */; };
 		6C5093B81B1E482D00CAF207 /* IRSeriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */; };
 		6C5093BA1B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */; };
+		6C5093BD1B1F77F300CAF207 /* IRSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRON.xcdatamodel; sourceTree = "<group>"; };
 		6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSeriesCollectionView.swift; sourceTree = "<group>"; };
 		6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		6C1437211B1B93C600EB9212 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6C5093BB1B1F77CB00CAF207 /* AddSeries */,
 				6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */,
 				6C1437231B1B93C600EB9212 /* IRWeekOverviewTableView.swift */,
 				6C1437241B1B93C600EB9212 /* IRWeekOverviewTableViewCell.swift */,
@@ -194,6 +197,14 @@
 			children = (
 				6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */,
 				6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */,
+			);
+			name = AddSeries;
+			sourceTree = "<group>";
+		};
+		6C5093BB1B1F77CB00CAF207 /* AddSeries */ = {
+			isa = PBXGroup;
+			children = (
+				6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */,
 			);
 			name = AddSeries;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 			files = (
 				6C1437261B1B93C600EB9212 /* Exercise.swift in Sources */,
 				6C1437291B1B93C600EB9212 /* IRWeekOverviewTableView.swift in Sources */,
+				6C5093BD1B1F77F300CAF207 /* IRSliderView.swift in Sources */,
 				6C14372E1B1B940100EB9212 /* IRWeekOverviewViewController.swift in Sources */,
 				6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */,
 				6C1437181B1B92DA00EB9212 /* IRPersistanceManager.swift in Sources */,

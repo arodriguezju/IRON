@@ -13,6 +13,8 @@ struct Constants {
     struct CellIdentifiers {
         static let weekOverview = "weekOverviewCell"
         static let exerciseSelection = "exerciseCell"
+        static let seriesCollectionView = "serieCell"
+
 
     }
 
