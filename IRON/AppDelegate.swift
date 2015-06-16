@@ -15,6 +15,9 @@ import CoreData
 // If you want to use Crash Reporting - uncomment this line
 // import ParseCrashReporting
 
+let appDependencies = AppDependencies()
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -90,5 +93,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+   func applicationDidFinishLaunching(application: UIApplication){
+    
+    
+    appDependencies.installRootViewControllerIntoWindow(window!)
+    
+    UINavigationBar.appearance().shadowImage = UIImage()
+    UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+    
+    
+    
     }
 }

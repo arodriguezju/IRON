@@ -10,23 +10,48 @@
 		6C1436FE1B1B923900EB9212 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C1436FD1B1B923900EB9212 /* Images.xcassets */; };
 		6C1437011B1B923900EB9212 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C1436FF1B1B923900EB9212 /* LaunchScreen.xib */; };
 		6C14370D1B1B923A00EB9212 /* IRONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14370C1B1B923A00EB9212 /* IRONTests.swift */; };
-		6C1437181B1B92DA00EB9212 /* IRPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437171B1B92DA00EB9212 /* IRPersistanceManager.swift */; };
 		6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437191B1B932100EB9212 /* AppDelegate.swift */; };
-		6C1437251B1B93C600EB9212 /* IRExerciseSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14371C1B1B93C600EB9212 /* IRExerciseSelectionTableViewController.swift */; };
 		6C1437261B1B93C600EB9212 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14371E1B1B93C600EB9212 /* Exercise.swift */; };
 		6C1437281B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */; };
-		6C1437291B1B93C600EB9212 /* IRWeekOverviewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437231B1B93C600EB9212 /* IRWeekOverviewTableView.swift */; };
-		6C14372A1B1B93C600EB9212 /* IRWeekOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437241B1B93C600EB9212 /* IRWeekOverviewTableViewCell.swift */; };
 		6C14372C1B1B93F100EB9212 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14372B1B1B93F100EB9212 /* Constants.swift */; };
-		6C14372E1B1B940100EB9212 /* IRWeekOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14372D1B1B940100EB9212 /* IRWeekOverviewViewController.swift */; };
 		6C1437311B1B948900EB9212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C14372F1B1B948900EB9212 /* Main.storyboard */; };
 		6C1437341B1B94D800EB9212 /* IRON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */; };
+		6C2415961B2C62DE005AE31A /* addSerie.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2415951B2C62DE005AE31A /* addSerie.png */; };
+		6C2415A01B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24159F1B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift */; };
+		6C2415A21B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A11B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift */; };
+		6C2415A41B2DB439005AE31A /* IRExerciseSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A31B2DB439005AE31A /* IRExerciseSelectionPresenter.swift */; };
+		6C2415A61B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A51B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift */; };
+		6C2415A81B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A71B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift */; };
+		6C2415AA1B2DB644005AE31A /* IRExerciseSelectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A91B2DB644005AE31A /* IRExerciseSelectionDataManager.swift */; };
+		6C2415AC1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415AB1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift */; };
+		6C2415AF1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415AE1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift */; };
+		6C2415B21B2DBD15005AE31A /* IRExerciseSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B11B2DBD15005AE31A /* IRExerciseSelectionTableView.swift */; };
+		6C2415B41B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B31B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift */; };
+		6C2415B61B2DC73A005AE31A /* IRRawExerciseSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B51B2DC73A005AE31A /* IRRawExerciseSelectionData.swift */; };
+		6C2415B81B307CFA005AE31A /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2415B71B307CFA005AE31A /* backbtn.png */; };
+		6C2415BA1B309E2D005AE31A /* IRWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B91B309E2D005AE31A /* IRWorkout.swift */; };
+		6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */; };
+		6C3AEF051B22FE8C00E28316 /* IRAddSeriesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF041B22FE8C00E28316 /* IRAddSeriesWireframe.swift */; };
+		6C3AEF091B22FFA900E28316 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF081B22FFA900E28316 /* RootWireframe.swift */; };
+		6C3AEF0D1B23078300E28316 /* IRAddSeriesUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF0C1B23078200E28316 /* IRAddSeriesUIInterface.swift */; };
+		6C3AEF0F1B23089E00E28316 /* IRAddSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF0E1B23089E00E28316 /* IRAddSeriesPresenter.swift */; };
+		6C3AEF121B230E2400E28316 /* IRAddSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF111B230E2400E28316 /* IRAddSeriesInteractor.swift */; };
+		6C3AEF141B230E4300E28316 /* IRAddSeriesInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF131B230E4300E28316 /* IRAddSeriesInteractorIO.swift */; };
+		6C3AEF181B231DF200E28316 /* IRAddSeriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF171B231DF200E28316 /* IRAddSeriesDataManager.swift */; };
+		6C3AEF1B1B231E7300E28316 /* IRCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF1A1B231E7300E28316 /* IRCoreDataStore.swift */; };
+		6C3AEF1E1B2321F500E28316 /* IRRawWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF1D1B2321F500E28316 /* IRRawWorkoutData.swift */; };
+		6C3AEF221B232D6400E28316 /* IRUIWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF211B232D6400E28316 /* IRUIWorkoutData.swift */; };
+		6C3AEF241B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF231B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift */; };
+		6C4423221B28B62E00E65051 /* light-blue-background-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423211B28B62E00E65051 /* light-blue-background-1.png */; };
+		6C4423241B29F06B00E65051 /* light-blue-background-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423231B29F06B00E65051 /* light-blue-background-2.png */; };
 		6C5093B81B1E482D00CAF207 /* IRSeriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */; };
 		6C5093BA1B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */; };
 		6C5093BD1B1F77F300CAF207 /* IRSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */; };
 		6C5093C01B1FC41D00CAF207 /* bluredBG in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093BF1B1FC41D00CAF207 /* bluredBG */; };
 		6C5093C21B20584B00CAF207 /* mask2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093C11B20584B00CAF207 /* mask2.png */; };
 		6C5093C41B2062B100CAF207 /* IRSliderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */; };
+		6C5093C61B20CF3100CAF207 /* IRSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093C51B20CF3100CAF207 /* IRSerie.swift */; };
+		6C5093C81B20D38700CAF207 /* IRAddSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093C71B20D38700CAF207 /* IRAddSeriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,23 +72,48 @@
 		6C1437061B1B923A00EB9212 /* IRONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IRONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C14370B1B1B923A00EB9212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C14370C1B1B923A00EB9212 /* IRONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRONTests.swift; sourceTree = "<group>"; };
-		6C1437171B1B92DA00EB9212 /* IRPersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRPersistanceManager.swift; path = Persistance/IRPersistanceManager.swift; sourceTree = "<group>"; };
 		6C1437191B1B932100EB9212 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6C14371C1B1B93C600EB9212 /* IRExerciseSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionTableViewController.swift; sourceTree = "<group>"; };
-		6C14371E1B1B93C600EB9212 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionTableViewCell.swift; sourceTree = "<group>"; };
-		6C1437231B1B93C600EB9212 /* IRWeekOverviewTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRWeekOverviewTableView.swift; sourceTree = "<group>"; };
-		6C1437241B1B93C600EB9212 /* IRWeekOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRWeekOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		6C14371E1B1B93C600EB9212 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = DataModel/Exercise.swift; sourceTree = "<group>"; };
+		6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionTableViewCell.swift; path = Views/IRExerciseSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		6C14372B1B1B93F100EB9212 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6C14372D1B1B940100EB9212 /* IRWeekOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRWeekOverviewViewController.swift; sourceTree = "<group>"; };
 		6C1437301B1B948900EB9212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRON.xcdatamodel; sourceTree = "<group>"; };
-		6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSeriesCollectionView.swift; sourceTree = "<group>"; };
-		6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSeriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSliderView.swift; sourceTree = "<group>"; };
+		6C2415951B2C62DE005AE31A /* addSerie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addSerie.png; sourceTree = "<group>"; };
+		6C24159F1B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionInteractor.swift; path = "Classes/Modules/ExerciseSelection/Application Logic/IRExerciseSelectionInteractor.swift"; sourceTree = "<group>"; };
+		6C2415A11B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionInteractorIO.swift; path = "Classes/Modules/ExerciseSelection/Application Logic/IRExerciseSelectionInteractorIO.swift"; sourceTree = "<group>"; };
+		6C2415A31B2DB439005AE31A /* IRExerciseSelectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionPresenter.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionPresenter.swift"; sourceTree = "<group>"; };
+		6C2415A51B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionUIInterface.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionUIInterface.swift"; sourceTree = "<group>"; };
+		6C2415A71B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionEventHandler.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionEventHandler.swift"; sourceTree = "<group>"; };
+		6C2415A91B2DB644005AE31A /* IRExerciseSelectionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionDataManager.swift; path = "Classes/Modules/ExerciseSelection/Application Logic/IRExerciseSelectionDataManager.swift"; sourceTree = "<group>"; };
+		6C2415AB1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionViewController.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionViewController.swift"; sourceTree = "<group>"; };
+		6C2415AE1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionWireframe.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionWireframe.swift"; sourceTree = "<group>"; };
+		6C2415B11B2DBD15005AE31A /* IRExerciseSelectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionTableView.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionTableView.swift"; sourceTree = "<group>"; };
+		6C2415B31B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionUIData.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionUIData.swift"; sourceTree = "<group>"; };
+		6C2415B51B2DC73A005AE31A /* IRRawExerciseSelectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRRawExerciseSelectionData.swift; path = Classes/Common/Model/IRRawExerciseSelectionData.swift; sourceTree = "<group>"; };
+		6C2415B71B307CFA005AE31A /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
+		6C2415B91B309E2D005AE31A /* IRWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRWorkout.swift; path = Classes/Common/Store/IRWorkout.swift; sourceTree = "<group>"; };
+		6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		6C3AEF041B22FE8C00E28316 /* IRAddSeriesWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesWireframe.swift; sourceTree = "<group>"; };
+		6C3AEF081B22FFA900E28316 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
+		6C3AEF0C1B23078200E28316 /* IRAddSeriesUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesUIInterface.swift; sourceTree = "<group>"; };
+		6C3AEF0E1B23089E00E28316 /* IRAddSeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesPresenter.swift; sourceTree = "<group>"; };
+		6C3AEF111B230E2400E28316 /* IRAddSeriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesInteractor.swift; sourceTree = "<group>"; };
+		6C3AEF131B230E4300E28316 /* IRAddSeriesInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesInteractorIO.swift; sourceTree = "<group>"; };
+		6C3AEF171B231DF200E28316 /* IRAddSeriesDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesDataManager.swift; sourceTree = "<group>"; };
+		6C3AEF1A1B231E7300E28316 /* IRCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCoreDataStore.swift; sourceTree = "<group>"; };
+		6C3AEF1D1B2321F500E28316 /* IRRawWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawWorkoutData.swift; sourceTree = "<group>"; };
+		6C3AEF211B232D6400E28316 /* IRUIWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRUIWorkoutData.swift; sourceTree = "<group>"; };
+		6C3AEF231B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesEventHandlerInterface.swift; sourceTree = "<group>"; };
+		6C4423211B28B62E00E65051 /* light-blue-background-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-1.png"; sourceTree = "<group>"; };
+		6C4423231B29F06B00E65051 /* light-blue-background-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-2.png"; sourceTree = "<group>"; };
+		6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSeriesCollectionView.swift; path = Controller/IRSeriesCollectionView.swift; sourceTree = "<group>"; };
+		6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSeriesCollectionViewCell.swift; path = Controller/IRSeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSliderView.swift; path = Views/IRSliderView.swift; sourceTree = "<group>"; };
 		6C5093BF1B1FC41D00CAF207 /* bluredBG */ = {isa = PBXFileReference; lastKnownFileType = file; path = bluredBG; sourceTree = "<group>"; };
 		6C5093C11B20584B00CAF207 /* mask2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask2.png; sourceTree = "<group>"; };
-		6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSliderContainer.swift; sourceTree = "<group>"; };
+		6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSliderContainer.swift; path = Views/IRSliderContainer.swift; sourceTree = "<group>"; };
+		6C5093C51B20CF3100CAF207 /* IRSerie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSerie.swift; path = DataModel/IRSerie.swift; sourceTree = "<group>"; };
+		6C5093C71B20D38700CAF207 /* IRAddSeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRAddSeriesViewController.swift; path = Controller/IRAddSeriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,17 +155,15 @@
 		6C1436F01B1B923900EB9212 /* IRON */ = {
 			isa = PBXGroup;
 			children = (
+				6C3AEEFD1B22FD4400E28316 /* Classes */,
 				6C5093BE1B1FC41D00CAF207 /* Assets */,
 				6C14372B1B1B93F100EB9212 /* Constants.swift */,
-				6C14371B1B1B93C600EB9212 /* Controller */,
-				6C14371D1B1B93C600EB9212 /* DataModel */,
-				6C1437211B1B93C600EB9212 /* Views */,
-				6C1437161B1B929500EB9212 /* Persistance */,
 				6C1436FD1B1B923900EB9212 /* Images.xcassets */,
 				6C1436FF1B1B923900EB9212 /* LaunchScreen.xib */,
 				6C1436F11B1B923900EB9212 /* Supporting Files */,
 				6C1437191B1B932100EB9212 /* AppDelegate.swift */,
 				6C14372F1B1B948900EB9212 /* Main.storyboard */,
+				6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */,
 			);
 			path = IRON;
 			sourceTree = "<group>";
@@ -145,82 +193,261 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6C1437161B1B929500EB9212 /* Persistance */ = {
+		6C2415971B2DB0CB005AE31A /* ExerciseSelection */ = {
 			isa = PBXGroup;
 			children = (
-				6C1437171B1B92DA00EB9212 /* IRPersistanceManager.swift */,
-			);
-			name = Persistance;
-			sourceTree = "<group>";
-		};
-		6C14371B1B1B93C600EB9212 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6C1437371B1E24E400EB9212 /* AddSeries */,
-				6C1437361B1E24A700EB9212 /* WeekOverview */,
-				6C1437351B1E249C00EB9212 /* ExerciseSelection */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6C14371D1B1B93C600EB9212 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				6C14371E1B1B93C600EB9212 /* Exercise.swift */,
-				6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */,
-			);
-			path = DataModel;
-			sourceTree = "<group>";
-		};
-		6C1437211B1B93C600EB9212 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6C5093BB1B1F77CB00CAF207 /* AddSeries */,
-				6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */,
-				6C1437231B1B93C600EB9212 /* IRWeekOverviewTableView.swift */,
-				6C1437241B1B93C600EB9212 /* IRWeekOverviewTableViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		6C1437351B1E249C00EB9212 /* ExerciseSelection */ = {
-			isa = PBXGroup;
-			children = (
-				6C14371C1B1B93C600EB9212 /* IRExerciseSelectionTableViewController.swift */,
+				6C2415981B2DB0F9005AE31A /* Application Logic */,
+				6C24159B1B2DB115005AE31A /* User Interface */,
 			);
 			name = ExerciseSelection;
 			sourceTree = "<group>";
 		};
-		6C1437361B1E24A700EB9212 /* WeekOverview */ = {
+		6C2415981B2DB0F9005AE31A /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
-				6C14372D1B1B940100EB9212 /* IRWeekOverviewViewController.swift */,
+				6C2415991B2DB106005AE31A /* DataManager */,
+				6C24159A1B2DB110005AE31A /* Interactor */,
 			);
-			name = WeekOverview;
+			name = "Application Logic";
 			sourceTree = "<group>";
 		};
-		6C1437371B1E24E400EB9212 /* AddSeries */ = {
+		6C2415991B2DB106005AE31A /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */,
+				6C2415A91B2DB644005AE31A /* IRExerciseSelectionDataManager.swift */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		6C24159A1B2DB110005AE31A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6C24159F1B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift */,
+				6C2415A11B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		6C24159B1B2DB115005AE31A /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				6C24159C1B2DB14F005AE31A /* Model */,
+				6C24159D1B2DB15B005AE31A /* Presenter */,
+				6C24159E1B2DB162005AE31A /* View */,
+				6C2415AD1B2DB8B6005AE31A /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		6C24159C1B2DB14F005AE31A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C2415B31B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C24159D1B2DB15B005AE31A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6C2415A31B2DB439005AE31A /* IRExerciseSelectionPresenter.swift */,
+				6C2415A51B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		6C24159E1B2DB162005AE31A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C2415B01B2DBCEB005AE31A /* Subviews */,
+				6C2415A71B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift */,
+				6C2415AB1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6C2415AD1B2DB8B6005AE31A /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				6C2415AE1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		6C2415B01B2DBCEB005AE31A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */,
+				6C2415B11B2DBD15005AE31A /* IRExerciseSelectionTableView.swift */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		6C3AEEFD1B22FD4400E28316 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF061B22FF8E00E28316 /* Common */,
+				6C3AEF001B22FE1900E28316 /* Modules */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		6C3AEF001B22FE1900E28316 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6C2415971B2DB0CB005AE31A /* ExerciseSelection */,
+				6C3AEF011B22FE2000E28316 /* AddSeries */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		6C3AEF011B22FE2000E28316 /* AddSeries */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF151B2318CB00E28316 /* Application Logic */,
+				6C3AEF021B22FE5300E28316 /* User Interface */,
+			);
+			name = AddSeries;
+			sourceTree = "<group>";
+		};
+		6C3AEF021B22FE5300E28316 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF201B232D3F00E28316 /* Model */,
+				6C3AEF0B1B2304E200E28316 /* Presenter */,
+				6C3AEF0A1B2304D800E28316 /* View */,
+				6C3AEF031B22FE6100E28316 /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		6C3AEF031B22FE6100E28316 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF041B22FE8C00E28316 /* IRAddSeriesWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		6C3AEF061B22FF8E00E28316 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF1F1B23226200E28316 /* Model */,
+				6C3AEF191B231E2900E28316 /* Store */,
+				6C3AEF071B22FF9900E28316 /* View */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		6C3AEF071B22FF9900E28316 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF081B22FFA900E28316 /* RootWireframe.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6C3AEF0A1B2304D800E28316 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF251B24D24000E28316 /* Subviews */,
+				6C5093C71B20D38700CAF207 /* IRAddSeriesViewController.swift */,
+				6C3AEF0C1B23078200E28316 /* IRAddSeriesUIInterface.swift */,
+				6C3AEF231B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6C3AEF0B1B2304E200E28316 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF0E1B23089E00E28316 /* IRAddSeriesPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		6C3AEF101B230E1100E28316 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF111B230E2400E28316 /* IRAddSeriesInteractor.swift */,
+				6C3AEF131B230E4300E28316 /* IRAddSeriesInteractorIO.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		6C3AEF151B2318CB00E28316 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF1C1B2321D700E28316 /* Model */,
+				6C3AEF161B231DD500E28316 /* DataManager */,
+				6C3AEF101B230E1100E28316 /* Interactor */,
+			);
+			name = "Application Logic";
+			sourceTree = "<group>";
+		};
+		6C3AEF161B231DD500E28316 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF171B231DF200E28316 /* IRAddSeriesDataManager.swift */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		6C3AEF191B231E2900E28316 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				6C14371E1B1B93C600EB9212 /* Exercise.swift */,
+				6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */,
+				6C2415B91B309E2D005AE31A /* IRWorkout.swift */,
+				6C5093C51B20CF3100CAF207 /* IRSerie.swift */,
+				6C3AEF1A1B231E7300E28316 /* IRCoreDataStore.swift */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		6C3AEF1C1B2321D700E28316 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C3AEF1F1B23226200E28316 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF1D1B2321F500E28316 /* IRRawWorkoutData.swift */,
+				6C2415B51B2DC73A005AE31A /* IRRawExerciseSelectionData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C3AEF201B232D3F00E28316 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AEF211B232D6400E28316 /* IRUIWorkoutData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C3AEF251B24D24000E28316 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
 				6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */,
-			);
-			name = AddSeries;
-			sourceTree = "<group>";
-		};
-		6C5093BB1B1F77CB00CAF207 /* AddSeries */ = {
-			isa = PBXGroup;
-			children = (
-				6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */,
+				6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */,
 				6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */,
+				6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */,
 			);
-			name = AddSeries;
+			name = Subviews;
 			sourceTree = "<group>";
 		};
 		6C5093BE1B1FC41D00CAF207 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6C2415B71B307CFA005AE31A /* backbtn.png */,
 				6C5093C11B20584B00CAF207 /* mask2.png */,
+				6C4423211B28B62E00E65051 /* light-blue-background-1.png */,
+				6C2415951B2C62DE005AE31A /* addSerie.png */,
+				6C4423231B29F06B00E65051 /* light-blue-background-2.png */,
 				6C5093BF1B1FC41D00CAF207 /* bluredBG */,
 			);
 			path = Assets;
@@ -275,6 +502,7 @@
 				TargetAttributes = {
 					6C1436ED1B1B923900EB9212 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = P8ED3QV2RU;
 					};
 					6C1437051B1B923A00EB9212 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -306,10 +534,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2415961B2C62DE005AE31A /* addSerie.png in Resources */,
+				6C4423221B28B62E00E65051 /* light-blue-background-1.png in Resources */,
 				6C1437311B1B948900EB9212 /* Main.storyboard in Resources */,
+				6C4423241B29F06B00E65051 /* light-blue-background-2.png in Resources */,
 				6C5093C21B20584B00CAF207 /* mask2.png in Resources */,
 				6C1437011B1B923900EB9212 /* LaunchScreen.xib in Resources */,
 				6C1436FE1B1B923900EB9212 /* Images.xcassets in Resources */,
+				6C2415B81B307CFA005AE31A /* backbtn.png in Resources */,
 				6C5093C01B1FC41D00CAF207 /* bluredBG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,20 +560,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2415A81B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */,
 				6C1437261B1B93C600EB9212 /* Exercise.swift in Sources */,
 				6C5093C41B2062B100CAF207 /* IRSliderContainer.swift in Sources */,
-				6C1437291B1B93C600EB9212 /* IRWeekOverviewTableView.swift in Sources */,
+				6C2415A21B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */,
+				6C2415B41B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift in Sources */,
+				6C2415AF1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift in Sources */,
+				6C3AEF091B22FFA900E28316 /* RootWireframe.swift in Sources */,
+				6C3AEF1E1B2321F500E28316 /* IRRawWorkoutData.swift in Sources */,
+				6C2415A01B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift in Sources */,
 				6C5093BD1B1F77F300CAF207 /* IRSliderView.swift in Sources */,
-				6C14372E1B1B940100EB9212 /* IRWeekOverviewViewController.swift in Sources */,
+				6C2415A41B2DB439005AE31A /* IRExerciseSelectionPresenter.swift in Sources */,
+				6C3AEF141B230E4300E28316 /* IRAddSeriesInteractorIO.swift in Sources */,
+				6C3AEF121B230E2400E28316 /* IRAddSeriesInteractor.swift in Sources */,
+				6C3AEF051B22FE8C00E28316 /* IRAddSeriesWireframe.swift in Sources */,
+				6C2415BA1B309E2D005AE31A /* IRWorkout.swift in Sources */,
 				6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */,
-				6C1437181B1B92DA00EB9212 /* IRPersistanceManager.swift in Sources */,
+				6C3AEF0D1B23078300E28316 /* IRAddSeriesUIInterface.swift in Sources */,
 				6C1437341B1B94D800EB9212 /* IRON.xcdatamodeld in Sources */,
+				6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */,
+				6C5093C81B20D38700CAF207 /* IRAddSeriesViewController.swift in Sources */,
+				6C3AEF241B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift in Sources */,
+				6C5093C61B20CF3100CAF207 /* IRSerie.swift in Sources */,
 				6C1437281B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift in Sources */,
+				6C2415B21B2DBD15005AE31A /* IRExerciseSelectionTableView.swift in Sources */,
 				6C14372C1B1B93F100EB9212 /* Constants.swift in Sources */,
+				6C2415A61B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */,
 				6C5093BA1B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift in Sources */,
+				6C3AEF181B231DF200E28316 /* IRAddSeriesDataManager.swift in Sources */,
+				6C2415AA1B2DB644005AE31A /* IRExerciseSelectionDataManager.swift in Sources */,
+				6C2415AC1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift in Sources */,
+				6C2415B61B2DC73A005AE31A /* IRRawExerciseSelectionData.swift in Sources */,
 				6C5093B81B1E482D00CAF207 /* IRSeriesCollectionView.swift in Sources */,
-				6C14372A1B1B93C600EB9212 /* IRWeekOverviewTableViewCell.swift in Sources */,
-				6C1437251B1B93C600EB9212 /* IRExerciseSelectionTableViewController.swift in Sources */,
+				6C3AEF1B1B231E7300E28316 /* IRCoreDataStore.swift in Sources */,
+				6C3AEF0F1B23089E00E28316 /* IRAddSeriesPresenter.swift in Sources */,
+				6C3AEF221B232D6400E28316 /* IRUIWorkoutData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,9 +722,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = IRON/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -481,9 +737,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = IRON/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -560,7 +819,8 @@
 				6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */,
 			);
 			currentVersion = 6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */;
-			path = IRON.xcdatamodeld;
+			name = IRON.xcdatamodeld;
+			path = DataModel/IRON.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

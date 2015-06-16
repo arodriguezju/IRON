@@ -9,18 +9,32 @@
 import UIKit
 import Darwin
 
+protocol IRSliderDelegate{
+
+    func sliderDidRotate(sender: IRSliderView, angle : CGFloat, direction : Constants.SliderDirection )
+    
+    func sliderDidEndRotate()
+
+
+}
+
 class IRSliderView: UIView {
+    
+    
+   
+    
+    var sliderDelegate:IRSliderDelegate?
     
     var sliderView : UIView!
     
     var frameCenter : CGPoint!
     var radius : CGFloat = 50
     
-    var segments : Double = 150
-    var lineDegrees : Double = 0.3 //0.3
+    var segments : Double = 300
+    var lineDegrees : Double = 0.2 //0.3
 
     
-    var lineWide : CGFloat = 4
+    var lineWide : CGFloat = 5
     
     
     var sliderLayerItems :NSArray = NSArray()
@@ -47,7 +61,7 @@ class IRSliderView: UIView {
         
         
         
-        let outputPath2 = UIBezierPath(arcCenter: frameCenter, radius: radius+2, startAngle: degreesToRadians(0), endAngle:degreesToRadians(360) , clockwise: true)
+        let outputPath2 = UIBezierPath(arcCenter: frameCenter, radius: radius-2, startAngle: degreesToRadians(0), endAngle:degreesToRadians(360) , clockwise: true)
         var shape2 = CAShapeLayer()
         shape2.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
         
@@ -55,7 +69,7 @@ class IRSliderView: UIView {
         shape2.lineWidth = 0
         shape2.strokeColor=UIColor.clearColor().CGColor
         
-        shape2.fillColor=UIColor.blackColor().colorWithAlphaComponent(0.05).CGColor
+        shape2.fillColor=UIColor.blackColor().colorWithAlphaComponent(0.01).CGColor
         shape2.masksToBounds = true
         
         
@@ -89,7 +103,7 @@ class IRSliderView: UIView {
        segmentsShape.path = outputPath.CGPath
         segmentsShape.lineWidth = lineWide
         
-        segmentsShape.strokeColor=UIColor.whiteColor().colorWithAlphaComponent(1).CGColor
+        segmentsShape.strokeColor=UIColor.blackColor().colorWithAlphaComponent(0.5).CGColor
         segmentsShape.fillColor=UIColor.blueColor().CGColor
         segmentsShape.masksToBounds = true
         self.layer.addSublayer(segmentsShape)
@@ -209,10 +223,32 @@ class IRSliderView: UIView {
         
       //  self.recalculateSegmentsAlpha()
         segmentsShape.transform = CATransform3DMakeRotation(viewAngle *  CGFloat(M_PI) / 180, 0.0, 0.0, 1.0)
-    
+        
+        
+        if let delegate = self.sliderDelegate {
+            
+            if ( angle > 0) {
+                
+                delegate.sliderDidRotate(self, angle: abs(angle), direction: Constants.SliderDirection.Clockwise)
+            
+            }
+            else {
+                delegate.sliderDidRotate(self, angle: abs(angle), direction: Constants.SliderDirection.CounterClockwise)
+            
+            }
+        
+            
+        
+        }
         
     }
     
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+       if let delegate = self.sliderDelegate {
+            delegate.sliderDidEndRotate()
+        }
+        
+    }
     
     
     
@@ -224,4 +260,6 @@ class IRSliderView: UIView {
     
     return CGPointMake(x, y)
     }
+        
+    
 }

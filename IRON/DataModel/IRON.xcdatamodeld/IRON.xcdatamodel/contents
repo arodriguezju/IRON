@@ -4,24 +4,25 @@
         <attribute name="exerciseName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="groupName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idExercise" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="series" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Serie" inverseName="exercise" inverseEntity="Serie" syncable="YES"/>
+        <relationship name="series" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IRSerie" inverseName="exercise" inverseEntity="IRSerie" syncable="YES"/>
     </entity>
-    <entity name="Serie" syncable="YES">
+    <entity name="IRSerie" representedClassName="IRON.IRSerie" syncable="YES">
+        <attribute name="flag" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="weightUnits" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="series" inverseEntity="Exercise" syncable="YES"/>
-        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="series" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IRWorkout" inverseName="series" inverseEntity="IRWorkout" syncable="YES"/>
     </entity>
-    <entity name="Workout" syncable="YES">
+    <entity name="IRWorkout" representedClassName="IRON.IRWorkout" syncable="YES">
         <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="idUser" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idWorkout" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="series" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Serie" inverseName="workout" inverseEntity="Serie" syncable="YES"/>
+        <relationship name="series" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IRSerie" inverseName="workout" inverseEntity="IRSerie" syncable="YES"/>
     </entity>
     <elements>
         <element name="Exercise" positionX="-126" positionY="-108" width="128" height="105"/>
-        <element name="Serie" positionX="-414" positionY="-1" width="128" height="118"/>
-        <element name="Workout" positionX="-119" positionY="135" width="128" height="103"/>
+        <element name="IRSerie" positionX="-414" positionY="-1" width="128" height="135"/>
+        <element name="IRWorkout" positionX="-119" positionY="135" width="128" height="105"/>
     </elements>
 </model>

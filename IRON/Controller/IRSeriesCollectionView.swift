@@ -8,16 +8,51 @@
 
 import UIKit
 
+
+protocol IRSeriesCollectionViewDelegate {
+
+    func seriesCollectionViewCellDidClick(index:Int)
+    
+
+
+
+}
+
 class IRSeriesCollectionView: UICollectionView {
     
     
-    private var separatorWidth : CGFloat = 1.24999
+    
+    
+    var sliderCollectionViewDelegate : IRSeriesCollectionViewDelegate?
+    private var separatorWidth : CGFloat = 0
+    private var selectedIndex = NSIndexPath(forItem: 0, inSection: 0)
+    var currentSeries:[IRUISerie]? {
+        didSet{
+        
+            self.reloadData()
+        
+        }
+    
+    }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate=self
         self.dataSource=self
-        self.backgroundColor=UIColor.blackColor().colorWithAlphaComponent(0.1)
+       //self.backgroundColor=UIColor.redColor()
+    }
+    
+    
+    func selectIndex(index:Int){
         
+        
+        if( index != selectedIndex.item) {
+            
+            selectedIndex = NSIndexPath(forItem: index, inSection: 0)
+            reloadData()
+        }
+    
+    
     }
     
     
@@ -28,19 +63,32 @@ extension IRSeriesCollectionView:UICollectionViewDelegate,UICollectionViewDelega
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-                let width :CGFloat = self.frame.size.width / 4 - separatorWidth
+                let width :CGFloat = self.frame.size.width / 4 
         
-        NSLog("Separator\(width)  \(self.frame.size.width / 4)")
-
+       
         return CGSizeMake(width, width)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(1, 1, 1, 1)
+        return UIEdgeInsetsMake(0, 0, 0, 0)
     }
 
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        if let delegate = sliderCollectionViewDelegate {
+        
+            delegate.seriesCollectionViewCellDidClick(indexPath.item)
+        
+        }
+        
+        
+        
     
+        
+    }
+   
 
 
 
@@ -50,23 +98,45 @@ extension IRSeriesCollectionView:UICollectionViewDelegate,UICollectionViewDelega
 extension IRSeriesCollectionView:UICollectionViewDataSource{
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
-    
-    
-    
-    }
+        
+        if let series = currentSeries { return currentSeries!.count + 1 }
+        
+        return 1
+        
+        }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        if ( indexPath.item + 1 == collectionView.numberOfItemsInSection(0)) {
+            
+             var cell  = self.dequeueReusableCellWithReuseIdentifier(Constants.CellIdentifiers.addSerieCollectionView, forIndexPath: indexPath) as! UICollectionViewCell
+            
+            return cell
+        
+        }
     
         var cell: IRSeriesCollectionViewCell = self.dequeueReusableCellWithReuseIdentifier(Constants.CellIdentifiers.seriesCollectionView, forIndexPath: indexPath) as! IRSeriesCollectionViewCell
+     
+                
+        cell.prepareCellForItem(currentSeries![indexPath.item])
         
+        if (indexPath == selectedIndex) {
+         cell.active=true
+        }
+        else{
+            cell.active=false
+        }
         
+       // NSLog("CEll esta active  \(cell.active)")
+        
+                
         return cell
         
 
     }
 
+    
 
 
 }
