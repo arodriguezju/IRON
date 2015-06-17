@@ -52,6 +52,7 @@ class IRExerciseSelectionWireframe{
     func exerciseSelected(exerciseName:String) {
     
         addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController!)
+        
     
     
     }

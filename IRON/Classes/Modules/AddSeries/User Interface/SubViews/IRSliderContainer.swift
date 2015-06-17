@@ -65,7 +65,7 @@ class IRSliderContainer: UIView {
     
   
     
-    func sliderDidRotate(sender: IRSliderView , angle : CGFloat, direction : Constants.SliderDirection )
+  /*  func sliderDidRotate(sender: IRSliderView , angle : CGFloat, direction : Constants.SliderDirection )
     {
         
          NSLog("\(angle)")
@@ -125,7 +125,7 @@ class IRSliderContainer: UIView {
     
    // NSLog("Rotating with angle \(angle)")
     
-    }
+    }*/
 
     
     func updateWeightLabel () {

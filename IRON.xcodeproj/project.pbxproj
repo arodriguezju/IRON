@@ -11,47 +11,47 @@
 		6C1437011B1B923900EB9212 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C1436FF1B1B923900EB9212 /* LaunchScreen.xib */; };
 		6C14370D1B1B923A00EB9212 /* IRONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14370C1B1B923A00EB9212 /* IRONTests.swift */; };
 		6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437191B1B932100EB9212 /* AppDelegate.swift */; };
-		6C1437261B1B93C600EB9212 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14371E1B1B93C600EB9212 /* Exercise.swift */; };
-		6C1437281B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */; };
 		6C14372C1B1B93F100EB9212 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14372B1B1B93F100EB9212 /* Constants.swift */; };
 		6C1437311B1B948900EB9212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C14372F1B1B948900EB9212 /* Main.storyboard */; };
-		6C1437341B1B94D800EB9212 /* IRON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */; };
 		6C2415961B2C62DE005AE31A /* addSerie.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2415951B2C62DE005AE31A /* addSerie.png */; };
-		6C2415A01B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24159F1B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift */; };
-		6C2415A21B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A11B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift */; };
-		6C2415A41B2DB439005AE31A /* IRExerciseSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A31B2DB439005AE31A /* IRExerciseSelectionPresenter.swift */; };
-		6C2415A61B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A51B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift */; };
-		6C2415A81B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A71B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift */; };
-		6C2415AA1B2DB644005AE31A /* IRExerciseSelectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415A91B2DB644005AE31A /* IRExerciseSelectionDataManager.swift */; };
-		6C2415AC1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415AB1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift */; };
-		6C2415AF1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415AE1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift */; };
-		6C2415B21B2DBD15005AE31A /* IRExerciseSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B11B2DBD15005AE31A /* IRExerciseSelectionTableView.swift */; };
-		6C2415B41B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B31B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift */; };
-		6C2415B61B2DC73A005AE31A /* IRRawExerciseSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B51B2DC73A005AE31A /* IRRawExerciseSelectionData.swift */; };
 		6C2415B81B307CFA005AE31A /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2415B71B307CFA005AE31A /* backbtn.png */; };
-		6C2415BA1B309E2D005AE31A /* IRWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415B91B309E2D005AE31A /* IRWorkout.swift */; };
+		6C2415ED1B31D325005AE31A /* IRRawExerciseSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */; };
+		6C2415EE1B31D325005AE31A /* IRRawWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415BF1B31D325005AE31A /* IRRawWorkoutData.swift */; };
+		6C2415EF1B31D325005AE31A /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C01B31D325005AE31A /* RootWireframe.swift */; };
+		6C2415F01B31D325005AE31A /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C21B31D325005AE31A /* Exercise.swift */; };
+		6C2415F11B31D325005AE31A /* IRCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C31B31D325005AE31A /* IRCoreDataStore.swift */; };
+		6C2415F21B31D325005AE31A /* IRON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C41B31D325005AE31A /* IRON.xcdatamodeld */; };
+		6C2415F31B31D325005AE31A /* IRSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C61B31D325005AE31A /* IRSerie.swift */; };
+		6C2415F41B31D325005AE31A /* IRWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C71B31D325005AE31A /* IRWorkout.swift */; };
+		6C2415F51B31D325005AE31A /* IRAddSeriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415CB1B31D325005AE31A /* IRAddSeriesDataManager.swift */; };
+		6C2415F61B31D325005AE31A /* IRAddSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415CC1B31D325005AE31A /* IRAddSeriesInteractor.swift */; };
+		6C2415F71B31D325005AE31A /* IRAddSeriesInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415CD1B31D325005AE31A /* IRAddSeriesInteractorIO.swift */; };
+		6C2415F81B31D325005AE31A /* IRUIWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415CF1B31D325005AE31A /* IRUIWorkoutData.swift */; };
+		6C2415F91B31D325005AE31A /* IRAddSeriesEventHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D11B31D325005AE31A /* IRAddSeriesEventHandlerInterface.swift */; };
+		6C2415FA1B31D325005AE31A /* IRAddSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D21B31D325005AE31A /* IRAddSeriesPresenter.swift */; };
+		6C2415FB1B31D325005AE31A /* IRAddSeriesUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D31B31D325005AE31A /* IRAddSeriesUIInterface.swift */; };
+		6C2415FC1B31D325005AE31A /* IRAddSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D41B31D325005AE31A /* IRAddSeriesViewController.swift */; };
+		6C2415FD1B31D325005AE31A /* IRSeriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D61B31D325005AE31A /* IRSeriesCollectionView.swift */; };
+		6C2415FE1B31D325005AE31A /* IRSeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D71B31D325005AE31A /* IRSeriesCollectionViewCell.swift */; };
+		6C2415FF1B31D325005AE31A /* IRSliderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D81B31D325005AE31A /* IRSliderContainer.swift */; };
+		6C2416001B31D325005AE31A /* IRSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415D91B31D325005AE31A /* IRSliderView.swift */; };
+		6C2416011B31D325005AE31A /* IRAddSeriesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415DB1B31D325005AE31A /* IRAddSeriesWireframe.swift */; };
+		6C2416021B31D325005AE31A /* IRExerciseSelectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415DE1B31D325005AE31A /* IRExerciseSelectionDataManager.swift */; };
+		6C2416031B31D325005AE31A /* IRExerciseSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415DF1B31D325005AE31A /* IRExerciseSelectionInteractor.swift */; };
+		6C2416041B31D325005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E01B31D325005AE31A /* IRExerciseSelectionInteractorIO.swift */; };
+		6C2416051B31D325005AE31A /* IRExerciseSelectionUIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E21B31D325005AE31A /* IRExerciseSelectionUIData.swift */; };
+		6C2416061B31D325005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E41B31D325005AE31A /* IRExerciseSelectionEventHandler.swift */; };
+		6C2416071B31D325005AE31A /* IRExerciseSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E51B31D325005AE31A /* IRExerciseSelectionPresenter.swift */; };
+		6C2416081B31D325005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E61B31D325005AE31A /* IRExerciseSelectionUIInterface.swift */; };
+		6C2416091B31D325005AE31A /* IRExerciseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E71B31D325005AE31A /* IRExerciseSelectionViewController.swift */; };
+		6C24160A1B31D325005AE31A /* IRExerciseSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E91B31D325005AE31A /* IRExerciseSelectionTableView.swift */; };
+		6C24160B1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415EA1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift */; };
+		6C24160C1B31D325005AE31A /* IRExerciseSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415EC1B31D325005AE31A /* IRExerciseSelectionWireframe.swift */; };
 		6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */; };
-		6C3AEF051B22FE8C00E28316 /* IRAddSeriesWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF041B22FE8C00E28316 /* IRAddSeriesWireframe.swift */; };
-		6C3AEF091B22FFA900E28316 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF081B22FFA900E28316 /* RootWireframe.swift */; };
-		6C3AEF0D1B23078300E28316 /* IRAddSeriesUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF0C1B23078200E28316 /* IRAddSeriesUIInterface.swift */; };
-		6C3AEF0F1B23089E00E28316 /* IRAddSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF0E1B23089E00E28316 /* IRAddSeriesPresenter.swift */; };
-		6C3AEF121B230E2400E28316 /* IRAddSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF111B230E2400E28316 /* IRAddSeriesInteractor.swift */; };
-		6C3AEF141B230E4300E28316 /* IRAddSeriesInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF131B230E4300E28316 /* IRAddSeriesInteractorIO.swift */; };
-		6C3AEF181B231DF200E28316 /* IRAddSeriesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF171B231DF200E28316 /* IRAddSeriesDataManager.swift */; };
-		6C3AEF1B1B231E7300E28316 /* IRCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF1A1B231E7300E28316 /* IRCoreDataStore.swift */; };
-		6C3AEF1E1B2321F500E28316 /* IRRawWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF1D1B2321F500E28316 /* IRRawWorkoutData.swift */; };
-		6C3AEF221B232D6400E28316 /* IRUIWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF211B232D6400E28316 /* IRUIWorkoutData.swift */; };
-		6C3AEF241B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEF231B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift */; };
 		6C4423221B28B62E00E65051 /* light-blue-background-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423211B28B62E00E65051 /* light-blue-background-1.png */; };
 		6C4423241B29F06B00E65051 /* light-blue-background-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423231B29F06B00E65051 /* light-blue-background-2.png */; };
-		6C5093B81B1E482D00CAF207 /* IRSeriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */; };
-		6C5093BA1B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */; };
-		6C5093BD1B1F77F300CAF207 /* IRSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */; };
 		6C5093C01B1FC41D00CAF207 /* bluredBG in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093BF1B1FC41D00CAF207 /* bluredBG */; };
 		6C5093C21B20584B00CAF207 /* mask2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093C11B20584B00CAF207 /* mask2.png */; };
-		6C5093C41B2062B100CAF207 /* IRSliderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */; };
-		6C5093C61B20CF3100CAF207 /* IRSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093C51B20CF3100CAF207 /* IRSerie.swift */; };
-		6C5093C81B20D38700CAF207 /* IRAddSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5093C71B20D38700CAF207 /* IRAddSeriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,47 +73,47 @@
 		6C14370B1B1B923A00EB9212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C14370C1B1B923A00EB9212 /* IRONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRONTests.swift; sourceTree = "<group>"; };
 		6C1437191B1B932100EB9212 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6C14371E1B1B93C600EB9212 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = DataModel/Exercise.swift; sourceTree = "<group>"; };
-		6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionTableViewCell.swift; path = Views/IRExerciseSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		6C14372B1B1B93F100EB9212 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6C1437301B1B948900EB9212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRON.xcdatamodel; sourceTree = "<group>"; };
 		6C2415951B2C62DE005AE31A /* addSerie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addSerie.png; sourceTree = "<group>"; };
-		6C24159F1B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionInteractor.swift; path = "Classes/Modules/ExerciseSelection/Application Logic/IRExerciseSelectionInteractor.swift"; sourceTree = "<group>"; };
-		6C2415A11B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionInteractorIO.swift; path = "Classes/Modules/ExerciseSelection/Application Logic/IRExerciseSelectionInteractorIO.swift"; sourceTree = "<group>"; };
-		6C2415A31B2DB439005AE31A /* IRExerciseSelectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionPresenter.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionPresenter.swift"; sourceTree = "<group>"; };
-		6C2415A51B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionUIInterface.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionUIInterface.swift"; sourceTree = "<group>"; };
-		6C2415A71B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionEventHandler.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionEventHandler.swift"; sourceTree = "<group>"; };
-		6C2415A91B2DB644005AE31A /* IRExerciseSelectionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionDataManager.swift; path = "Classes/Modules/ExerciseSelection/Application Logic/IRExerciseSelectionDataManager.swift"; sourceTree = "<group>"; };
-		6C2415AB1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionViewController.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionViewController.swift"; sourceTree = "<group>"; };
-		6C2415AE1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionWireframe.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionWireframe.swift"; sourceTree = "<group>"; };
-		6C2415B11B2DBD15005AE31A /* IRExerciseSelectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionTableView.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionTableView.swift"; sourceTree = "<group>"; };
-		6C2415B31B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRExerciseSelectionUIData.swift; path = "Classes/Modules/ExerciseSelection/User Interface/IRExerciseSelectionUIData.swift"; sourceTree = "<group>"; };
-		6C2415B51B2DC73A005AE31A /* IRRawExerciseSelectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRRawExerciseSelectionData.swift; path = Classes/Common/Model/IRRawExerciseSelectionData.swift; sourceTree = "<group>"; };
 		6C2415B71B307CFA005AE31A /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
-		6C2415B91B309E2D005AE31A /* IRWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRWorkout.swift; path = Classes/Common/Store/IRWorkout.swift; sourceTree = "<group>"; };
+		6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawExerciseSelectionData.swift; sourceTree = "<group>"; };
+		6C2415BF1B31D325005AE31A /* IRRawWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawWorkoutData.swift; sourceTree = "<group>"; };
+		6C2415C01B31D325005AE31A /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
+		6C2415C21B31D325005AE31A /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		6C2415C31B31D325005AE31A /* IRCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCoreDataStore.swift; sourceTree = "<group>"; };
+		6C2415C51B31D325005AE31A /* IRON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRON.xcdatamodel; sourceTree = "<group>"; };
+		6C2415C61B31D325005AE31A /* IRSerie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSerie.swift; sourceTree = "<group>"; };
+		6C2415C71B31D325005AE31A /* IRWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRWorkout.swift; sourceTree = "<group>"; };
+		6C2415CB1B31D325005AE31A /* IRAddSeriesDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesDataManager.swift; sourceTree = "<group>"; };
+		6C2415CC1B31D325005AE31A /* IRAddSeriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesInteractor.swift; sourceTree = "<group>"; };
+		6C2415CD1B31D325005AE31A /* IRAddSeriesInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesInteractorIO.swift; sourceTree = "<group>"; };
+		6C2415CF1B31D325005AE31A /* IRUIWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRUIWorkoutData.swift; sourceTree = "<group>"; };
+		6C2415D11B31D325005AE31A /* IRAddSeriesEventHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesEventHandlerInterface.swift; sourceTree = "<group>"; };
+		6C2415D21B31D325005AE31A /* IRAddSeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesPresenter.swift; sourceTree = "<group>"; };
+		6C2415D31B31D325005AE31A /* IRAddSeriesUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesUIInterface.swift; sourceTree = "<group>"; };
+		6C2415D41B31D325005AE31A /* IRAddSeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesViewController.swift; sourceTree = "<group>"; };
+		6C2415D61B31D325005AE31A /* IRSeriesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSeriesCollectionView.swift; sourceTree = "<group>"; };
+		6C2415D71B31D325005AE31A /* IRSeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		6C2415D81B31D325005AE31A /* IRSliderContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSliderContainer.swift; sourceTree = "<group>"; };
+		6C2415D91B31D325005AE31A /* IRSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSliderView.swift; sourceTree = "<group>"; };
+		6C2415DB1B31D325005AE31A /* IRAddSeriesWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesWireframe.swift; sourceTree = "<group>"; };
+		6C2415DE1B31D325005AE31A /* IRExerciseSelectionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionDataManager.swift; sourceTree = "<group>"; };
+		6C2415DF1B31D325005AE31A /* IRExerciseSelectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionInteractor.swift; sourceTree = "<group>"; };
+		6C2415E01B31D325005AE31A /* IRExerciseSelectionInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionInteractorIO.swift; sourceTree = "<group>"; };
+		6C2415E21B31D325005AE31A /* IRExerciseSelectionUIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionUIData.swift; sourceTree = "<group>"; };
+		6C2415E41B31D325005AE31A /* IRExerciseSelectionEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionEventHandler.swift; sourceTree = "<group>"; };
+		6C2415E51B31D325005AE31A /* IRExerciseSelectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionPresenter.swift; sourceTree = "<group>"; };
+		6C2415E61B31D325005AE31A /* IRExerciseSelectionUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionUIInterface.swift; sourceTree = "<group>"; };
+		6C2415E71B31D325005AE31A /* IRExerciseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionViewController.swift; sourceTree = "<group>"; };
+		6C2415E91B31D325005AE31A /* IRExerciseSelectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionTableView.swift; sourceTree = "<group>"; };
+		6C2415EA1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionTableViewCell.swift; sourceTree = "<group>"; };
+		6C2415EC1B31D325005AE31A /* IRExerciseSelectionWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionWireframe.swift; sourceTree = "<group>"; };
 		6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
-		6C3AEF041B22FE8C00E28316 /* IRAddSeriesWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesWireframe.swift; sourceTree = "<group>"; };
-		6C3AEF081B22FFA900E28316 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
-		6C3AEF0C1B23078200E28316 /* IRAddSeriesUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesUIInterface.swift; sourceTree = "<group>"; };
-		6C3AEF0E1B23089E00E28316 /* IRAddSeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesPresenter.swift; sourceTree = "<group>"; };
-		6C3AEF111B230E2400E28316 /* IRAddSeriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesInteractor.swift; sourceTree = "<group>"; };
-		6C3AEF131B230E4300E28316 /* IRAddSeriesInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesInteractorIO.swift; sourceTree = "<group>"; };
-		6C3AEF171B231DF200E28316 /* IRAddSeriesDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesDataManager.swift; sourceTree = "<group>"; };
-		6C3AEF1A1B231E7300E28316 /* IRCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCoreDataStore.swift; sourceTree = "<group>"; };
-		6C3AEF1D1B2321F500E28316 /* IRRawWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawWorkoutData.swift; sourceTree = "<group>"; };
-		6C3AEF211B232D6400E28316 /* IRUIWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRUIWorkoutData.swift; sourceTree = "<group>"; };
-		6C3AEF231B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRAddSeriesEventHandlerInterface.swift; sourceTree = "<group>"; };
 		6C4423211B28B62E00E65051 /* light-blue-background-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-1.png"; sourceTree = "<group>"; };
 		6C4423231B29F06B00E65051 /* light-blue-background-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-2.png"; sourceTree = "<group>"; };
-		6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSeriesCollectionView.swift; path = Controller/IRSeriesCollectionView.swift; sourceTree = "<group>"; };
-		6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSeriesCollectionViewCell.swift; path = Controller/IRSeriesCollectionViewCell.swift; sourceTree = "<group>"; };
-		6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSliderView.swift; path = Views/IRSliderView.swift; sourceTree = "<group>"; };
 		6C5093BF1B1FC41D00CAF207 /* bluredBG */ = {isa = PBXFileReference; lastKnownFileType = file; path = bluredBG; sourceTree = "<group>"; };
 		6C5093C11B20584B00CAF207 /* mask2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask2.png; sourceTree = "<group>"; };
-		6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSliderContainer.swift; path = Views/IRSliderContainer.swift; sourceTree = "<group>"; };
-		6C5093C51B20CF3100CAF207 /* IRSerie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSerie.swift; path = DataModel/IRSerie.swift; sourceTree = "<group>"; };
-		6C5093C71B20D38700CAF207 /* IRAddSeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRAddSeriesViewController.swift; path = Controller/IRAddSeriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 		6C1436F01B1B923900EB9212 /* IRON */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEEFD1B22FD4400E28316 /* Classes */,
+				6C2415BB1B31D325005AE31A /* Classes */,
 				6C5093BE1B1FC41D00CAF207 /* Assets */,
 				6C14372B1B1B93F100EB9212 /* Constants.swift */,
 				6C1436FD1B1B923900EB9212 /* Images.xcassets */,
@@ -193,251 +193,171 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6C2415971B2DB0CB005AE31A /* ExerciseSelection */ = {
+		6C2415BB1B31D325005AE31A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415981B2DB0F9005AE31A /* Application Logic */,
-				6C24159B1B2DB115005AE31A /* User Interface */,
+				6C2415BC1B31D325005AE31A /* Common */,
+				6C2415C81B31D325005AE31A /* Modules */,
 			);
-			name = ExerciseSelection;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		6C2415981B2DB0F9005AE31A /* Application Logic */ = {
+		6C2415BC1B31D325005AE31A /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415991B2DB106005AE31A /* DataManager */,
-				6C24159A1B2DB110005AE31A /* Interactor */,
+				6C2415BD1B31D325005AE31A /* Model */,
+				6C2415C01B31D325005AE31A /* RootWireframe.swift */,
+				6C2415C11B31D325005AE31A /* Store */,
 			);
-			name = "Application Logic";
+			path = Common;
 			sourceTree = "<group>";
 		};
-		6C2415991B2DB106005AE31A /* DataManager */ = {
+		6C2415BD1B31D325005AE31A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415A91B2DB644005AE31A /* IRExerciseSelectionDataManager.swift */,
+				6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */,
+				6C2415BF1B31D325005AE31A /* IRRawWorkoutData.swift */,
 			);
-			name = DataManager;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		6C24159A1B2DB110005AE31A /* Interactor */ = {
+		6C2415C11B31D325005AE31A /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				6C24159F1B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift */,
-				6C2415A11B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift */,
+				6C2415C21B31D325005AE31A /* Exercise.swift */,
+				6C2415C31B31D325005AE31A /* IRCoreDataStore.swift */,
+				6C2415C41B31D325005AE31A /* IRON.xcdatamodeld */,
+				6C2415C61B31D325005AE31A /* IRSerie.swift */,
+				6C2415C71B31D325005AE31A /* IRWorkout.swift */,
 			);
-			name = Interactor;
+			path = Store;
 			sourceTree = "<group>";
 		};
-		6C24159B1B2DB115005AE31A /* User Interface */ = {
+		6C2415C81B31D325005AE31A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6C24159C1B2DB14F005AE31A /* Model */,
-				6C24159D1B2DB15B005AE31A /* Presenter */,
-				6C24159E1B2DB162005AE31A /* View */,
-				6C2415AD1B2DB8B6005AE31A /* Wireframe */,
+				6C2415C91B31D325005AE31A /* AddSeries */,
+				6C2415DC1B31D325005AE31A /* ExerciseSelection */,
 			);
-			name = "User Interface";
+			path = Modules;
 			sourceTree = "<group>";
 		};
-		6C24159C1B2DB14F005AE31A /* Model */ = {
+		6C2415C91B31D325005AE31A /* AddSeries */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415B31B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift */,
+				6C2415CA1B31D325005AE31A /* Application Logic */,
+				6C2415CE1B31D325005AE31A /* Model */,
+				6C2415D01B31D325005AE31A /* User Interface */,
+				6C2415DA1B31D325005AE31A /* Wireframe */,
 			);
-			name = Model;
+			path = AddSeries;
 			sourceTree = "<group>";
 		};
-		6C24159D1B2DB15B005AE31A /* Presenter */ = {
+		6C2415CA1B31D325005AE31A /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415A31B2DB439005AE31A /* IRExerciseSelectionPresenter.swift */,
-				6C2415A51B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift */,
+				6C2415CB1B31D325005AE31A /* IRAddSeriesDataManager.swift */,
+				6C2415CC1B31D325005AE31A /* IRAddSeriesInteractor.swift */,
+				6C2415CD1B31D325005AE31A /* IRAddSeriesInteractorIO.swift */,
 			);
-			name = Presenter;
+			path = "Application Logic";
 			sourceTree = "<group>";
 		};
-		6C24159E1B2DB162005AE31A /* View */ = {
+		6C2415CE1B31D325005AE31A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415B01B2DBCEB005AE31A /* Subviews */,
-				6C2415A71B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift */,
-				6C2415AB1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift */,
+				6C2415CF1B31D325005AE31A /* IRUIWorkoutData.swift */,
 			);
-			name = View;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		6C2415AD1B2DB8B6005AE31A /* Wireframe */ = {
+		6C2415D01B31D325005AE31A /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415AE1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift */,
+				6C2415D11B31D325005AE31A /* IRAddSeriesEventHandlerInterface.swift */,
+				6C2415D21B31D325005AE31A /* IRAddSeriesPresenter.swift */,
+				6C2415D31B31D325005AE31A /* IRAddSeriesUIInterface.swift */,
+				6C2415D41B31D325005AE31A /* IRAddSeriesViewController.swift */,
+				6C2415D51B31D325005AE31A /* SubViews */,
 			);
-			name = Wireframe;
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
-		6C2415B01B2DBCEB005AE31A /* Subviews */ = {
+		6C2415D51B31D325005AE31A /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				6C1437221B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift */,
-				6C2415B11B2DBD15005AE31A /* IRExerciseSelectionTableView.swift */,
+				6C2415D61B31D325005AE31A /* IRSeriesCollectionView.swift */,
+				6C2415D71B31D325005AE31A /* IRSeriesCollectionViewCell.swift */,
+				6C2415D81B31D325005AE31A /* IRSliderContainer.swift */,
+				6C2415D91B31D325005AE31A /* IRSliderView.swift */,
 			);
-			name = Subviews;
+			path = SubViews;
 			sourceTree = "<group>";
 		};
-		6C3AEEFD1B22FD4400E28316 /* Classes */ = {
+		6C2415DA1B31D325005AE31A /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEF061B22FF8E00E28316 /* Common */,
-				6C3AEF001B22FE1900E28316 /* Modules */,
+				6C2415DB1B31D325005AE31A /* IRAddSeriesWireframe.swift */,
 			);
-			name = Classes;
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
-		6C3AEF001B22FE1900E28316 /* Modules */ = {
+		6C2415DC1B31D325005AE31A /* ExerciseSelection */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415971B2DB0CB005AE31A /* ExerciseSelection */,
-				6C3AEF011B22FE2000E28316 /* AddSeries */,
+				6C2415DD1B31D325005AE31A /* Application Logic */,
+				6C2415E11B31D325005AE31A /* Model */,
+				6C2415E31B31D325005AE31A /* User Interface */,
+				6C2415EB1B31D325005AE31A /* Wireframe */,
 			);
-			name = Modules;
+			path = ExerciseSelection;
 			sourceTree = "<group>";
 		};
-		6C3AEF011B22FE2000E28316 /* AddSeries */ = {
+		6C2415DD1B31D325005AE31A /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEF151B2318CB00E28316 /* Application Logic */,
-				6C3AEF021B22FE5300E28316 /* User Interface */,
+				6C2415DE1B31D325005AE31A /* IRExerciseSelectionDataManager.swift */,
+				6C2415DF1B31D325005AE31A /* IRExerciseSelectionInteractor.swift */,
+				6C2415E01B31D325005AE31A /* IRExerciseSelectionInteractorIO.swift */,
 			);
-			name = AddSeries;
+			path = "Application Logic";
 			sourceTree = "<group>";
 		};
-		6C3AEF021B22FE5300E28316 /* User Interface */ = {
+		6C2415E11B31D325005AE31A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEF201B232D3F00E28316 /* Model */,
-				6C3AEF0B1B2304E200E28316 /* Presenter */,
-				6C3AEF0A1B2304D800E28316 /* View */,
-				6C3AEF031B22FE6100E28316 /* Wireframe */,
+				6C2415E21B31D325005AE31A /* IRExerciseSelectionUIData.swift */,
 			);
-			name = "User Interface";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		6C3AEF031B22FE6100E28316 /* Wireframe */ = {
+		6C2415E31B31D325005AE31A /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEF041B22FE8C00E28316 /* IRAddSeriesWireframe.swift */,
+				6C2415E41B31D325005AE31A /* IRExerciseSelectionEventHandler.swift */,
+				6C2415E51B31D325005AE31A /* IRExerciseSelectionPresenter.swift */,
+				6C2415E61B31D325005AE31A /* IRExerciseSelectionUIInterface.swift */,
+				6C2415E71B31D325005AE31A /* IRExerciseSelectionViewController.swift */,
+				6C2415E81B31D325005AE31A /* SubViews */,
 			);
-			name = Wireframe;
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
-		6C3AEF061B22FF8E00E28316 /* Common */ = {
+		6C2415E81B31D325005AE31A /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEF1F1B23226200E28316 /* Model */,
-				6C3AEF191B231E2900E28316 /* Store */,
-				6C3AEF071B22FF9900E28316 /* View */,
+				6C2415E91B31D325005AE31A /* IRExerciseSelectionTableView.swift */,
+				6C2415EA1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift */,
 			);
-			name = Common;
+			path = SubViews;
 			sourceTree = "<group>";
 		};
-		6C3AEF071B22FF9900E28316 /* View */ = {
+		6C2415EB1B31D325005AE31A /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
-				6C3AEF081B22FFA900E28316 /* RootWireframe.swift */,
+				6C2415EC1B31D325005AE31A /* IRExerciseSelectionWireframe.swift */,
 			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		6C3AEF0A1B2304D800E28316 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF251B24D24000E28316 /* Subviews */,
-				6C5093C71B20D38700CAF207 /* IRAddSeriesViewController.swift */,
-				6C3AEF0C1B23078200E28316 /* IRAddSeriesUIInterface.swift */,
-				6C3AEF231B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		6C3AEF0B1B2304E200E28316 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF0E1B23089E00E28316 /* IRAddSeriesPresenter.swift */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		6C3AEF101B230E1100E28316 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF111B230E2400E28316 /* IRAddSeriesInteractor.swift */,
-				6C3AEF131B230E4300E28316 /* IRAddSeriesInteractorIO.swift */,
-			);
-			name = Interactor;
-			sourceTree = "<group>";
-		};
-		6C3AEF151B2318CB00E28316 /* Application Logic */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF1C1B2321D700E28316 /* Model */,
-				6C3AEF161B231DD500E28316 /* DataManager */,
-				6C3AEF101B230E1100E28316 /* Interactor */,
-			);
-			name = "Application Logic";
-			sourceTree = "<group>";
-		};
-		6C3AEF161B231DD500E28316 /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF171B231DF200E28316 /* IRAddSeriesDataManager.swift */,
-			);
-			name = DataManager;
-			sourceTree = "<group>";
-		};
-		6C3AEF191B231E2900E28316 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				6C14371E1B1B93C600EB9212 /* Exercise.swift */,
-				6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */,
-				6C2415B91B309E2D005AE31A /* IRWorkout.swift */,
-				6C5093C51B20CF3100CAF207 /* IRSerie.swift */,
-				6C3AEF1A1B231E7300E28316 /* IRCoreDataStore.swift */,
-			);
-			name = Store;
-			sourceTree = "<group>";
-		};
-		6C3AEF1C1B2321D700E28316 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		6C3AEF1F1B23226200E28316 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF1D1B2321F500E28316 /* IRRawWorkoutData.swift */,
-				6C2415B51B2DC73A005AE31A /* IRRawExerciseSelectionData.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		6C3AEF201B232D3F00E28316 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6C3AEF211B232D6400E28316 /* IRUIWorkoutData.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		6C3AEF251B24D24000E28316 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				6C5093B91B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift */,
-				6C5093B71B1E482D00CAF207 /* IRSeriesCollectionView.swift */,
-				6C5093C31B2062B100CAF207 /* IRSliderContainer.swift */,
-				6C5093BC1B1F77F300CAF207 /* IRSliderView.swift */,
-			);
-			name = Subviews;
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		6C5093BE1B1FC41D00CAF207 /* Assets */ = {
@@ -560,41 +480,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C2415A81B2DB594005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */,
-				6C1437261B1B93C600EB9212 /* Exercise.swift in Sources */,
-				6C5093C41B2062B100CAF207 /* IRSliderContainer.swift in Sources */,
-				6C2415A21B2DB263005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */,
-				6C2415B41B2DC4A5005AE31A /* IRExerciseSelectionUIData.swift in Sources */,
-				6C2415AF1B2DB8D7005AE31A /* IRExerciseSelectionWireframe.swift in Sources */,
-				6C3AEF091B22FFA900E28316 /* RootWireframe.swift in Sources */,
-				6C3AEF1E1B2321F500E28316 /* IRRawWorkoutData.swift in Sources */,
-				6C2415A01B2DB24B005AE31A /* IRExerciseSelectionInteractor.swift in Sources */,
-				6C5093BD1B1F77F300CAF207 /* IRSliderView.swift in Sources */,
-				6C2415A41B2DB439005AE31A /* IRExerciseSelectionPresenter.swift in Sources */,
-				6C3AEF141B230E4300E28316 /* IRAddSeriesInteractorIO.swift in Sources */,
-				6C3AEF121B230E2400E28316 /* IRAddSeriesInteractor.swift in Sources */,
-				6C3AEF051B22FE8C00E28316 /* IRAddSeriesWireframe.swift in Sources */,
-				6C2415BA1B309E2D005AE31A /* IRWorkout.swift in Sources */,
+				6C2415ED1B31D325005AE31A /* IRRawExerciseSelectionData.swift in Sources */,
+				6C2415F91B31D325005AE31A /* IRAddSeriesEventHandlerInterface.swift in Sources */,
+				6C2416061B31D325005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */,
+				6C2415F41B31D325005AE31A /* IRWorkout.swift in Sources */,
+				6C2415EE1B31D325005AE31A /* IRRawWorkoutData.swift in Sources */,
+				6C2415FC1B31D325005AE31A /* IRAddSeriesViewController.swift in Sources */,
+				6C2416081B31D325005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */,
+				6C2415EF1B31D325005AE31A /* RootWireframe.swift in Sources */,
+				6C2416021B31D325005AE31A /* IRExerciseSelectionDataManager.swift in Sources */,
+				6C2416011B31D325005AE31A /* IRAddSeriesWireframe.swift in Sources */,
+				6C2415F31B31D325005AE31A /* IRSerie.swift in Sources */,
+				6C24160B1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift in Sources */,
+				6C2415F11B31D325005AE31A /* IRCoreDataStore.swift in Sources */,
+				6C2415FD1B31D325005AE31A /* IRSeriesCollectionView.swift in Sources */,
 				6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */,
-				6C3AEF0D1B23078300E28316 /* IRAddSeriesUIInterface.swift in Sources */,
-				6C1437341B1B94D800EB9212 /* IRON.xcdatamodeld in Sources */,
+				6C2415F81B31D325005AE31A /* IRUIWorkoutData.swift in Sources */,
+				6C2416071B31D325005AE31A /* IRExerciseSelectionPresenter.swift in Sources */,
+				6C2415F51B31D325005AE31A /* IRAddSeriesDataManager.swift in Sources */,
+				6C2415F71B31D325005AE31A /* IRAddSeriesInteractorIO.swift in Sources */,
+				6C2415FA1B31D325005AE31A /* IRAddSeriesPresenter.swift in Sources */,
 				6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */,
-				6C5093C81B20D38700CAF207 /* IRAddSeriesViewController.swift in Sources */,
-				6C3AEF241B23313300E28316 /* IRAddSeriesEventHandlerInterface.swift in Sources */,
-				6C5093C61B20CF3100CAF207 /* IRSerie.swift in Sources */,
-				6C1437281B1B93C600EB9212 /* IRExerciseSelectionTableViewCell.swift in Sources */,
-				6C2415B21B2DBD15005AE31A /* IRExerciseSelectionTableView.swift in Sources */,
+				6C2415FB1B31D325005AE31A /* IRAddSeriesUIInterface.swift in Sources */,
+				6C2415F21B31D325005AE31A /* IRON.xcdatamodeld in Sources */,
+				6C2415F01B31D325005AE31A /* Exercise.swift in Sources */,
 				6C14372C1B1B93F100EB9212 /* Constants.swift in Sources */,
-				6C2415A61B2DB4F4005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */,
-				6C5093BA1B1E484C00CAF207 /* IRSeriesCollectionViewCell.swift in Sources */,
-				6C3AEF181B231DF200E28316 /* IRAddSeriesDataManager.swift in Sources */,
-				6C2415AA1B2DB644005AE31A /* IRExerciseSelectionDataManager.swift in Sources */,
-				6C2415AC1B2DB86D005AE31A /* IRExerciseSelectionViewController.swift in Sources */,
-				6C2415B61B2DC73A005AE31A /* IRRawExerciseSelectionData.swift in Sources */,
-				6C5093B81B1E482D00CAF207 /* IRSeriesCollectionView.swift in Sources */,
-				6C3AEF1B1B231E7300E28316 /* IRCoreDataStore.swift in Sources */,
-				6C3AEF0F1B23089E00E28316 /* IRAddSeriesPresenter.swift in Sources */,
-				6C3AEF221B232D6400E28316 /* IRUIWorkoutData.swift in Sources */,
+				6C2416001B31D325005AE31A /* IRSliderView.swift in Sources */,
+				6C24160A1B31D325005AE31A /* IRExerciseSelectionTableView.swift in Sources */,
+				6C24160C1B31D325005AE31A /* IRExerciseSelectionWireframe.swift in Sources */,
+				6C2415FF1B31D325005AE31A /* IRSliderContainer.swift in Sources */,
+				6C2416091B31D325005AE31A /* IRExerciseSelectionViewController.swift in Sources */,
+				6C2416051B31D325005AE31A /* IRExerciseSelectionUIData.swift in Sources */,
+				6C2415F61B31D325005AE31A /* IRAddSeriesInteractor.swift in Sources */,
+				6C2416031B31D325005AE31A /* IRExerciseSelectionInteractor.swift in Sources */,
+				6C2415FE1B31D325005AE31A /* IRSeriesCollectionViewCell.swift in Sources */,
+				6C2416041B31D325005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,14 +733,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6C1437321B1B94D800EB9212 /* IRON.xcdatamodeld */ = {
+		6C2415C41B31D325005AE31A /* IRON.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */,
+				6C2415C51B31D325005AE31A /* IRON.xcdatamodel */,
 			);
-			currentVersion = 6C1437331B1B94D800EB9212 /* IRON.xcdatamodel */;
-			name = IRON.xcdatamodeld;
-			path = DataModel/IRON.xcdatamodeld;
+			currentVersion = 6C2415C51B31D325005AE31A /* IRON.xcdatamodel */;
+			path = IRON.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

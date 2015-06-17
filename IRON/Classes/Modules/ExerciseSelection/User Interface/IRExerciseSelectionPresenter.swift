@@ -68,6 +68,8 @@ class IRExerciseSelectionPresenter : IRExerciseSelectionInteractorOutput,IRExerc
         else{
             
             exerciseSelectionWireframe!.exerciseSelected(item)
+            userInterface!.displayCurrentGroupData()
+            displayingGroups=true
         }
     
     }

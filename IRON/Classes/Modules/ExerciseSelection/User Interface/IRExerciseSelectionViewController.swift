@@ -17,9 +17,15 @@ class IRExerciseSelectionViewController: UIViewController,IRExerciseSelectionUII
     @IBOutlet weak var exerciseSelectionTableView: IRExerciseSelectionTableView!
   
     
-    override func viewDidAppear(animated: Bool) {
-        self.configureViewController()
+     override func viewDidLoad() {
+        super.viewDidLoad()
         eventHandler!.UIDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.configureViewController()
     }
 
     func configureViewController(){
