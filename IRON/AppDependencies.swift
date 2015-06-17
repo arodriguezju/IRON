@@ -12,7 +12,7 @@ class AppDependencies {
     
     //First vc
     //var addSeriesWireframe = IRAddSeriesWireframe()
-    var exerciseSelectionWireframe = IRExerciseSelectionWireframe()
+    var showWorkoutsWireframe = IRShowWorkoutsWireframe()
     
     init() {
         configureDependencies()
@@ -21,7 +21,7 @@ class AppDependencies {
     func installRootViewControllerIntoWindow(window: UIWindow) {
         //addSeriesWireframe.presentListInterfaceFromWindow(window)
         
-        exerciseSelectionWireframe.presentListInterfaceFromWindow(window)
+        showWorkoutsWireframe.presentListInterfaceFromWindow(window)
     }
     
     func configureDependencies() {
@@ -39,6 +39,26 @@ class AppDependencies {
         addSeriesWireframe.addSeriesInteractor = addSeriesInteractor*/
         
         
+        let showWorkoutsPresenter = IRShowWorkoutsPresenter()
+        let showWorkoutsDataManager = IRShowWorkoutsDataManager()
+        let showWorkoutsInteractor = IRShowWorkoutsInteractor(dataManager:showWorkoutsDataManager)
+        
+        
+        
+        showWorkoutsWireframe.rootWireframe = rootWireframe
+        showWorkoutsWireframe.showWorkoutsPresenter = showWorkoutsPresenter
+        showWorkoutsWireframe.showWorkoutsInteractor = showWorkoutsInteractor
+        
+        showWorkoutsInteractor.output = showWorkoutsPresenter
+        showWorkoutsPresenter.showWorkoutsInteractor = showWorkoutsInteractor
+        showWorkoutsPresenter.showWorkoutsWireframe =  showWorkoutsWireframe
+        
+        
+        
+        
+        
+        
+        let exerciseSelectionWireframe = IRExerciseSelectionWireframe()
         let exerciseSelectionPresenter = IRExerciseSelectionPresenter()
         let exerciseSelectionDataManager = IRExerciseSelectionDataManager()
         let exerciseSelectionInteractor = IRExerciseSelectionInteractor(dataManager:exerciseSelectionDataManager)
@@ -52,6 +72,8 @@ class AppDependencies {
         exerciseSelectionInteractor.output = exerciseSelectionPresenter
         exerciseSelectionPresenter.exerciseSelectionInteractor = exerciseSelectionInteractor
         exerciseSelectionPresenter.exerciseSelectionWireframe =  exerciseSelectionWireframe
+        
+        showWorkoutsWireframe.exerciseSelectionWireframe = exerciseSelectionWireframe
 
         
         let addSeriesWireframe = IRAddSeriesWireframe()

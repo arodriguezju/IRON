@@ -10,7 +10,7 @@
         <!--Week Overview-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Week Overview" customClass="ViewController" customModule="IRON" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showWorkoutsIdentifier" id="BYZ-38-t0r" userLabel="Week Overview" customClass="IRShowWorkoutsViewController" customModule="IRON" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,16 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week Overview" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iug-oB-StH">
-                                <rect key="frame" x="0.0" y="20" width="320" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1o7-f5-udb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-sx-eaf" userLabel="WeekOverView" customClass="IRWeekOverviewTableView" customModule="IRON" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-sx-eaf" userLabel="WeekOverView" customClass="IRWeekOverviewTableView" customModule="IRON" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -62,15 +53,11 @@
                         <color key="backgroundColor" red="0.96335565476190477" green="0.96335565476190477" blue="0.96335565476190477" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="OYs-sx-eaf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Fu2-qV-Vzg"/>
-                            <constraint firstAttribute="centerX" secondItem="iug-oB-StH" secondAttribute="centerX" id="Mtg-h0-UDS"/>
-                            <constraint firstItem="iug-oB-StH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="PI0-S4-SPa"/>
                             <constraint firstAttribute="centerX" secondItem="OYs-sx-eaf" secondAttribute="centerX" id="XH6-Km-7qO"/>
-                            <constraint firstItem="iug-oB-StH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="h48-nA-FKd"/>
-                            <constraint firstItem="OYs-sx-eaf" firstAttribute="top" secondItem="iug-oB-StH" secondAttribute="bottom" id="tKl-32-Zyj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OYs-sx-eaf" secondAttribute="bottom" id="y41-3n-UrW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4mM-i6-lOk">
+                    <navigationItem key="navigationItem" title="Week Overview" id="4mM-i6-lOk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pV2-kK-MIC">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>

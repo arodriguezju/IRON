@@ -15,9 +15,9 @@ class RootWireframe : NSObject {
     
     func showRootViewController(viewController: UIViewController, inWindow: UIWindow) {
         let navigationController = navigationControllerFromWindow(inWindow)
-        var dummyVC = UIViewController.new()
+       // var dummyVC = UIViewController.new()
                
-        navigationController.viewControllers = [dummyVC]
+        navigationController.viewControllers = []
         navigationController.pushViewController(viewController, animated: false)
     
     }

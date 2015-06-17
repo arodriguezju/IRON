@@ -47,6 +47,14 @@
 		6C24160A1B31D325005AE31A /* IRExerciseSelectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415E91B31D325005AE31A /* IRExerciseSelectionTableView.swift */; };
 		6C24160B1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415EA1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift */; };
 		6C24160C1B31D325005AE31A /* IRExerciseSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415EC1B31D325005AE31A /* IRExerciseSelectionWireframe.swift */; };
+		6C2416131B31D6BF005AE31A /* IRShowWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416121B31D6BF005AE31A /* IRShowWorkoutsViewController.swift */; };
+		6C2416151B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416141B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift */; };
+		6C2416171B31D71F005AE31A /* IRShowWorkoutsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416161B31D71F005AE31A /* IRShowWorkoutsWireframe.swift */; };
+		6C2416191B31D73D005AE31A /* IRShowWorkoutsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416181B31D73D005AE31A /* IRShowWorkoutsInteractor.swift */; };
+		6C24161B1B31D76E005AE31A /* IRShowWorkoutsInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24161A1B31D76E005AE31A /* IRShowWorkoutsInteractorIO.swift */; };
+		6C24161D1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24161C1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift */; };
+		6C24161F1B31D867005AE31A /* IRShowWorkoutsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24161E1B31D867005AE31A /* IRShowWorkoutsPresenter.swift */; };
+		6C2416211B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416201B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift */; };
 		6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */; };
 		6C4423221B28B62E00E65051 /* light-blue-background-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423211B28B62E00E65051 /* light-blue-background-1.png */; };
 		6C4423241B29F06B00E65051 /* light-blue-background-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423231B29F06B00E65051 /* light-blue-background-2.png */; };
@@ -109,6 +117,14 @@
 		6C2415E91B31D325005AE31A /* IRExerciseSelectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionTableView.swift; sourceTree = "<group>"; };
 		6C2415EA1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		6C2415EC1B31D325005AE31A /* IRExerciseSelectionWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExerciseSelectionWireframe.swift; sourceTree = "<group>"; };
+		6C2416121B31D6BF005AE31A /* IRShowWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsViewController.swift; path = "Show Workouts/User Interface/IRShowWorkoutsViewController.swift"; sourceTree = "<group>"; };
+		6C2416141B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsUIInterface.swift; path = "Show Workouts/User Interface/IRShowWorkoutsUIInterface.swift"; sourceTree = "<group>"; };
+		6C2416161B31D71F005AE31A /* IRShowWorkoutsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsWireframe.swift; path = "Show Workouts/Wireframe/IRShowWorkoutsWireframe.swift"; sourceTree = "<group>"; };
+		6C2416181B31D73D005AE31A /* IRShowWorkoutsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsInteractor.swift; path = "Show Workouts/Application Logic/IRShowWorkoutsInteractor.swift"; sourceTree = "<group>"; };
+		6C24161A1B31D76E005AE31A /* IRShowWorkoutsInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsInteractorIO.swift; path = "Show Workouts/Application Logic/IRShowWorkoutsInteractorIO.swift"; sourceTree = "<group>"; };
+		6C24161C1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsEventHandlerInterface.swift; path = "Show Workouts/User Interface/IRShowWorkoutsEventHandlerInterface.swift"; sourceTree = "<group>"; };
+		6C24161E1B31D867005AE31A /* IRShowWorkoutsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsPresenter.swift; path = "Show Workouts/User Interface/IRShowWorkoutsPresenter.swift"; sourceTree = "<group>"; };
+		6C2416201B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsDataManager.swift; path = "Show Workouts/Application Logic/IRShowWorkoutsDataManager.swift"; sourceTree = "<group>"; };
 		6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		6C4423211B28B62E00E65051 /* light-blue-background-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-1.png"; sourceTree = "<group>"; };
 		6C4423231B29F06B00E65051 /* light-blue-background-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-2.png"; sourceTree = "<group>"; };
@@ -236,6 +252,7 @@
 		6C2415C81B31D325005AE31A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6C24160D1B31D4D3005AE31A /* ShowWorkouts */,
 				6C2415C91B31D325005AE31A /* AddSeries */,
 				6C2415DC1B31D325005AE31A /* ExerciseSelection */,
 			);
@@ -305,8 +322,8 @@
 		6C2415DC1B31D325005AE31A /* ExerciseSelection */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415DD1B31D325005AE31A /* Application Logic */,
 				6C2415E11B31D325005AE31A /* Model */,
+				6C2415DD1B31D325005AE31A /* Application Logic */,
 				6C2415E31B31D325005AE31A /* User Interface */,
 				6C2415EB1B31D325005AE31A /* Wireframe */,
 			);
@@ -358,6 +375,53 @@
 				6C2415EC1B31D325005AE31A /* IRExerciseSelectionWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		6C24160D1B31D4D3005AE31A /* ShowWorkouts */ = {
+			isa = PBXGroup;
+			children = (
+				6C24160F1B31D636005AE31A /* Model */,
+				6C24160E1B31D629005AE31A /* Application Logic */,
+				6C2416101B31D644005AE31A /* User Interface */,
+				6C2416111B31D64E005AE31A /* Wireframe */,
+			);
+			name = ShowWorkouts;
+			sourceTree = "<group>";
+		};
+		6C24160E1B31D629005AE31A /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6C2416181B31D73D005AE31A /* IRShowWorkoutsInteractor.swift */,
+				6C24161A1B31D76E005AE31A /* IRShowWorkoutsInteractorIO.swift */,
+				6C2416201B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift */,
+			);
+			name = "Application Logic";
+			sourceTree = "<group>";
+		};
+		6C24160F1B31D636005AE31A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6C2416101B31D644005AE31A /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				6C2416121B31D6BF005AE31A /* IRShowWorkoutsViewController.swift */,
+				6C2416141B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift */,
+				6C24161C1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift */,
+				6C24161E1B31D867005AE31A /* IRShowWorkoutsPresenter.swift */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		6C2416111B31D64E005AE31A /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				6C2416161B31D71F005AE31A /* IRShowWorkoutsWireframe.swift */,
+			);
+			name = Wireframe;
 			sourceTree = "<group>";
 		};
 		6C5093BE1B1FC41D00CAF207 /* Assets */ = {
@@ -484,14 +548,20 @@
 				6C2415F91B31D325005AE31A /* IRAddSeriesEventHandlerInterface.swift in Sources */,
 				6C2416061B31D325005AE31A /* IRExerciseSelectionEventHandler.swift in Sources */,
 				6C2415F41B31D325005AE31A /* IRWorkout.swift in Sources */,
+				6C24161D1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift in Sources */,
 				6C2415EE1B31D325005AE31A /* IRRawWorkoutData.swift in Sources */,
 				6C2415FC1B31D325005AE31A /* IRAddSeriesViewController.swift in Sources */,
 				6C2416081B31D325005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */,
 				6C2415EF1B31D325005AE31A /* RootWireframe.swift in Sources */,
 				6C2416021B31D325005AE31A /* IRExerciseSelectionDataManager.swift in Sources */,
 				6C2416011B31D325005AE31A /* IRAddSeriesWireframe.swift in Sources */,
+				6C2416171B31D71F005AE31A /* IRShowWorkoutsWireframe.swift in Sources */,
+				6C2416131B31D6BF005AE31A /* IRShowWorkoutsViewController.swift in Sources */,
+				6C2416191B31D73D005AE31A /* IRShowWorkoutsInteractor.swift in Sources */,
 				6C2415F31B31D325005AE31A /* IRSerie.swift in Sources */,
+				6C2416211B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift in Sources */,
 				6C24160B1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift in Sources */,
+				6C24161F1B31D867005AE31A /* IRShowWorkoutsPresenter.swift in Sources */,
 				6C2415F11B31D325005AE31A /* IRCoreDataStore.swift in Sources */,
 				6C2415FD1B31D325005AE31A /* IRSeriesCollectionView.swift in Sources */,
 				6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */,
@@ -509,11 +579,13 @@
 				6C24160A1B31D325005AE31A /* IRExerciseSelectionTableView.swift in Sources */,
 				6C24160C1B31D325005AE31A /* IRExerciseSelectionWireframe.swift in Sources */,
 				6C2415FF1B31D325005AE31A /* IRSliderContainer.swift in Sources */,
+				6C24161B1B31D76E005AE31A /* IRShowWorkoutsInteractorIO.swift in Sources */,
 				6C2416091B31D325005AE31A /* IRExerciseSelectionViewController.swift in Sources */,
 				6C2416051B31D325005AE31A /* IRExerciseSelectionUIData.swift in Sources */,
 				6C2415F61B31D325005AE31A /* IRAddSeriesInteractor.swift in Sources */,
 				6C2416031B31D325005AE31A /* IRExerciseSelectionInteractor.swift in Sources */,
 				6C2415FE1B31D325005AE31A /* IRSeriesCollectionViewCell.swift in Sources */,
+				6C2416151B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift in Sources */,
 				6C2416041B31D325005AE31A /* IRExerciseSelectionInteractorIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
