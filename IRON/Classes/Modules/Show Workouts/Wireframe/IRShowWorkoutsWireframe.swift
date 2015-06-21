@@ -61,6 +61,15 @@ class IRShowWorkoutsWireframe: NSObject {
         
         
     }*/
+    
+    func addButtonItemDidClik() {
+        
+        exerciseSelectionWireframe!.presentExerciseSelectionInterfaceFromViewController(showWorkoutsViewController!)
+        
+        
+        
+    }
+
 
 
 }

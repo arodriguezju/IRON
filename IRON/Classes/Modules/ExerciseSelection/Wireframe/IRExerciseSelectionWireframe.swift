@@ -50,11 +50,38 @@ class IRExerciseSelectionWireframe{
 
     
     func exerciseSelected(exerciseName:String) {
+        
+       
+        
     
         addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController!)
         
+        
+        //Dismiss exercise selection
+        if let navController = addSeriesWireframe!.addSeriesViewController!.navigationController {
+        
+            navController.viewControllers.removeAtIndex(navController.viewControllers.count-2)
+            
+        }
+        
+        
+        
+   
+    }
     
-    
+    func presentExerciseSelectionInterfaceFromViewController(viewController: UIViewController) {
+        
+        let newViewController = exerciseSelectionViewControllerFromStoryboard()
+        exerciseSelectionViewController = newViewController
+        var navigationController = viewController.navigationController
+        
+        newViewController.eventHandler = exerciseSelectionPresenter
+         exerciseSelectionPresenter!.userInterface=newViewController
+        //navigationController?.popViewControllerAnimated(false)
+        navigationController?.pushViewController(newViewController, animated: true)
+        //navigationController?.viewControllers.removeAtIndex(navigationController!.viewControllers.count-2)
+        
+        
     }
 
 }

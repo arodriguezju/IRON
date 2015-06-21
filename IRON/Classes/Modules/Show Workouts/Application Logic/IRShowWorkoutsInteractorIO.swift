@@ -11,13 +11,14 @@ import Foundation
 
 
 protocol IRShowWorkoutsInteractorInput {
-
+    
+    func findWorkouts()
 
 
 }
 
 protocol IRShowWorkoutsInteractorOutput {
     
-    
+    func foundWorkouts()
     
 }

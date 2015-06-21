@@ -10,13 +10,26 @@ import UIKit
 
 class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface {
     
+   
+   
+  
+    @IBOutlet weak var mainCollectionView: IRShowWorkoutsWeekCollectionView!
     
     var eventHandler:IRShowWorkoutsEventHandler?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        eventHandler?.UIDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,14 +38,22 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func displayWeekData(data:IRUIWeekOverviewData){
+    
+        
+        
+        
+        
+        mainCollectionView.loadData(data)
+        mainCollectionView.reloadData()
+    
+    
     }
-    */
+    
+    @IBAction func addButtonItemDidClick(sender: AnyObject) {
+        
+        eventHandler!.addButtonItemDidClick()
 
+    }
+    
 }

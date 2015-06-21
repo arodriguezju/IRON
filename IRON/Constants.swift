@@ -10,11 +10,18 @@ import UIKit
 
 struct Constants {
     
+    
+        
     struct CellIdentifiers {
         static let weekOverview = "weekOverviewCell"
         static let seriesCollectionView = "serieCell"
         static let addSerieCollectionView = "addSerieCellIdentifier"
         static let exerciseSelectionTableView = "exerciseSelectionCellIdentifier"
+        static let showWorkoutsCollectionView = "showWorkoutsCollectionCellIdentifier"
+         static let weekOverviewExerciseTableView = "weekOverviewExerciseTableViewCell"
+        static let weekOverviewSerieTableView = "weekOverviewSerieTableViewCell"
+
+
 
 
     }

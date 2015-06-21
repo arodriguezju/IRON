@@ -25,7 +25,11 @@ class AppDependencies {
     }
     
     func configureDependencies() {
-    
+        
+        var userDefaults=NSUserDefaults.standardUserDefaults()
+        
+        userDefaults.setObject(Constants.WeightUnits.Kilograms.rawValue as NSString, forKey: "weightUnit")
+        
         let rootWireframe = RootWireframe()
         
        /* let addSeriesPresenter = IRAddSeriesPresenter()
@@ -63,7 +67,7 @@ class AppDependencies {
         let exerciseSelectionDataManager = IRExerciseSelectionDataManager()
         let exerciseSelectionInteractor = IRExerciseSelectionInteractor(dataManager:exerciseSelectionDataManager)
         
-        
+
         
         exerciseSelectionWireframe.rootWireframe = rootWireframe
         exerciseSelectionWireframe.exerciseSelectionPresenter = exerciseSelectionPresenter

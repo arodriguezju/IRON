@@ -9,4 +9,10 @@
 import Foundation
 
 
-protocol IRShowWorkoutsUIInterface {}
+protocol IRShowWorkoutsUIInterface {
+
+
+    
+   func displayWeekData(data:IRUIWeekOverviewData)
+
+}

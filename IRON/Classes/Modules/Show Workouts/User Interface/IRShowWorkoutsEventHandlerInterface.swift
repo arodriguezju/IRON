@@ -11,6 +11,10 @@ import Foundation
 
 protocol IRShowWorkoutsEventHandler{
 
+        func UIDidLoad()
+
+    
+        func addButtonItemDidClick()
 
 
 }

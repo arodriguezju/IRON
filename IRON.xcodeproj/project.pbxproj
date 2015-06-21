@@ -55,6 +55,13 @@
 		6C24161D1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24161C1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift */; };
 		6C24161F1B31D867005AE31A /* IRShowWorkoutsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24161E1B31D867005AE31A /* IRShowWorkoutsPresenter.swift */; };
 		6C2416211B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416201B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift */; };
+		6C2416241B31E02F005AE31A /* IRShowWorkoutsWeekCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416231B31E02F005AE31A /* IRShowWorkoutsWeekCollectionView.swift */; };
+		6C2416261B31E050005AE31A /* IRShowWorkoutsWeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416251B31E050005AE31A /* IRShowWorkoutsWeekCollectionViewCell.swift */; };
+		6C2416281B3218BA005AE31A /* IRShowWoroutsUIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416271B3218BA005AE31A /* IRShowWoroutsUIData.swift */; };
+		6C24162A1B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416291B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift */; };
+		6C24162C1B333BC7005AE31A /* IRShowWorkoutsWeekExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24162B1B333BC7005AE31A /* IRShowWorkoutsWeekExerciseTableViewCell.swift */; };
+		6C2416301B35BCE9005AE31A /* IRShowWorkoutsWeekSerieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24162F1B35BCE8005AE31A /* IRShowWorkoutsWeekSerieTableViewCell.swift */; };
+		6C2416351B36F6C0005AE31A /* FlagUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2416341B36F6C0005AE31A /* FlagUIView.swift */; };
 		6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */; };
 		6C4423221B28B62E00E65051 /* light-blue-background-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423211B28B62E00E65051 /* light-blue-background-1.png */; };
 		6C4423241B29F06B00E65051 /* light-blue-background-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C4423231B29F06B00E65051 /* light-blue-background-2.png */; };
@@ -125,6 +132,13 @@
 		6C24161C1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsEventHandlerInterface.swift; path = "Show Workouts/User Interface/IRShowWorkoutsEventHandlerInterface.swift"; sourceTree = "<group>"; };
 		6C24161E1B31D867005AE31A /* IRShowWorkoutsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsPresenter.swift; path = "Show Workouts/User Interface/IRShowWorkoutsPresenter.swift"; sourceTree = "<group>"; };
 		6C2416201B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsDataManager.swift; path = "Show Workouts/Application Logic/IRShowWorkoutsDataManager.swift"; sourceTree = "<group>"; };
+		6C2416231B31E02F005AE31A /* IRShowWorkoutsWeekCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsWeekCollectionView.swift; path = "Show Workouts/User Interface/SubViews/IRShowWorkoutsWeekCollectionView.swift"; sourceTree = "<group>"; };
+		6C2416251B31E050005AE31A /* IRShowWorkoutsWeekCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsWeekCollectionViewCell.swift; path = "Show Workouts/User Interface/SubViews/IRShowWorkoutsWeekCollectionViewCell.swift"; sourceTree = "<group>"; };
+		6C2416271B3218BA005AE31A /* IRShowWoroutsUIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWoroutsUIData.swift; path = "Show Workouts/Model/IRShowWoroutsUIData.swift"; sourceTree = "<group>"; };
+		6C2416291B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsWeekTableView.swift; path = "Show Workouts/User Interface/SubViews/IRShowWorkoutsWeekTableView.swift"; sourceTree = "<group>"; };
+		6C24162B1B333BC7005AE31A /* IRShowWorkoutsWeekExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsWeekExerciseTableViewCell.swift; path = "Show Workouts/User Interface/SubViews/IRShowWorkoutsWeekExerciseTableViewCell.swift"; sourceTree = "<group>"; };
+		6C24162F1B35BCE8005AE31A /* IRShowWorkoutsWeekSerieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRShowWorkoutsWeekSerieTableViewCell.swift; path = "Show Workouts/User Interface/SubViews/IRShowWorkoutsWeekSerieTableViewCell.swift"; sourceTree = "<group>"; };
+		6C2416341B36F6C0005AE31A /* FlagUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlagUIView.swift; path = "User Interface/FlagUIView.swift"; sourceTree = "<group>"; };
 		6C3AEEFE1B22FDA900E28316 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		6C4423211B28B62E00E65051 /* light-blue-background-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-1.png"; sourceTree = "<group>"; };
 		6C4423231B29F06B00E65051 /* light-blue-background-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-blue-background-2.png"; sourceTree = "<group>"; };
@@ -221,6 +235,7 @@
 		6C2415BC1B31D325005AE31A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6C2416311B36DF1B005AE31A /* User Interface */,
 				6C2415BD1B31D325005AE31A /* Model */,
 				6C2415C01B31D325005AE31A /* RootWireframe.swift */,
 				6C2415C11B31D325005AE31A /* Store */,
@@ -401,6 +416,7 @@
 		6C24160F1B31D636005AE31A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C2416271B3218BA005AE31A /* IRShowWoroutsUIData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -408,6 +424,7 @@
 		6C2416101B31D644005AE31A /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				6C2416221B31DFD9005AE31A /* SubViews */,
 				6C2416121B31D6BF005AE31A /* IRShowWorkoutsViewController.swift */,
 				6C2416141B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift */,
 				6C24161C1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift */,
@@ -422,6 +439,26 @@
 				6C2416161B31D71F005AE31A /* IRShowWorkoutsWireframe.swift */,
 			);
 			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		6C2416221B31DFD9005AE31A /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				6C2416231B31E02F005AE31A /* IRShowWorkoutsWeekCollectionView.swift */,
+				6C2416251B31E050005AE31A /* IRShowWorkoutsWeekCollectionViewCell.swift */,
+				6C2416291B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift */,
+				6C24162B1B333BC7005AE31A /* IRShowWorkoutsWeekExerciseTableViewCell.swift */,
+				6C24162F1B35BCE8005AE31A /* IRShowWorkoutsWeekSerieTableViewCell.swift */,
+			);
+			name = SubViews;
+			sourceTree = "<group>";
+		};
+		6C2416311B36DF1B005AE31A /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				6C2416341B36F6C0005AE31A /* FlagUIView.swift */,
+			);
+			name = "User Interface";
 			sourceTree = "<group>";
 		};
 		6C5093BE1B1FC41D00CAF207 /* Assets */ = {
@@ -550,10 +587,12 @@
 				6C2415F41B31D325005AE31A /* IRWorkout.swift in Sources */,
 				6C24161D1B31D7A7005AE31A /* IRShowWorkoutsEventHandlerInterface.swift in Sources */,
 				6C2415EE1B31D325005AE31A /* IRRawWorkoutData.swift in Sources */,
+				6C2416261B31E050005AE31A /* IRShowWorkoutsWeekCollectionViewCell.swift in Sources */,
 				6C2415FC1B31D325005AE31A /* IRAddSeriesViewController.swift in Sources */,
 				6C2416081B31D325005AE31A /* IRExerciseSelectionUIInterface.swift in Sources */,
 				6C2415EF1B31D325005AE31A /* RootWireframe.swift in Sources */,
 				6C2416021B31D325005AE31A /* IRExerciseSelectionDataManager.swift in Sources */,
+				6C24162A1B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift in Sources */,
 				6C2416011B31D325005AE31A /* IRAddSeriesWireframe.swift in Sources */,
 				6C2416171B31D71F005AE31A /* IRShowWorkoutsWireframe.swift in Sources */,
 				6C2416131B31D6BF005AE31A /* IRShowWorkoutsViewController.swift in Sources */,
@@ -566,11 +605,15 @@
 				6C2415FD1B31D325005AE31A /* IRSeriesCollectionView.swift in Sources */,
 				6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */,
 				6C2415F81B31D325005AE31A /* IRUIWorkoutData.swift in Sources */,
+				6C2416241B31E02F005AE31A /* IRShowWorkoutsWeekCollectionView.swift in Sources */,
+				6C24162C1B333BC7005AE31A /* IRShowWorkoutsWeekExerciseTableViewCell.swift in Sources */,
+				6C2416351B36F6C0005AE31A /* FlagUIView.swift in Sources */,
 				6C2416071B31D325005AE31A /* IRExerciseSelectionPresenter.swift in Sources */,
 				6C2415F51B31D325005AE31A /* IRAddSeriesDataManager.swift in Sources */,
 				6C2415F71B31D325005AE31A /* IRAddSeriesInteractorIO.swift in Sources */,
 				6C2415FA1B31D325005AE31A /* IRAddSeriesPresenter.swift in Sources */,
 				6C3AEEFF1B22FDA900E28316 /* AppDependencies.swift in Sources */,
+				6C2416281B3218BA005AE31A /* IRShowWoroutsUIData.swift in Sources */,
 				6C2415FB1B31D325005AE31A /* IRAddSeriesUIInterface.swift in Sources */,
 				6C2415F21B31D325005AE31A /* IRON.xcdatamodeld in Sources */,
 				6C2415F01B31D325005AE31A /* Exercise.swift in Sources */,
@@ -583,6 +626,7 @@
 				6C2416091B31D325005AE31A /* IRExerciseSelectionViewController.swift in Sources */,
 				6C2416051B31D325005AE31A /* IRExerciseSelectionUIData.swift in Sources */,
 				6C2415F61B31D325005AE31A /* IRAddSeriesInteractor.swift in Sources */,
+				6C2416301B35BCE9005AE31A /* IRShowWorkoutsWeekSerieTableViewCell.swift in Sources */,
 				6C2416031B31D325005AE31A /* IRExerciseSelectionInteractor.swift in Sources */,
 				6C2415FE1B31D325005AE31A /* IRSeriesCollectionViewCell.swift in Sources */,
 				6C2416151B31D6EA005AE31A /* IRShowWorkoutsUIInterface.swift in Sources */,

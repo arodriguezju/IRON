@@ -20,5 +20,12 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
         
     }
     
+    
+    func findWorkouts(){
+    
+    
+    
+    }
+    
 
 }

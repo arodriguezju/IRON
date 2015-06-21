@@ -50,7 +50,7 @@ class IRAddSeriesWireframe{
         
         let newViewController = addSeriesViewControllerFromStoryboard()
         var navigationController = viewController.navigationController
-        
+        addSeriesViewController = newViewController
         newViewController.eventHandler = addSeriesPresenter
         addSeriesPresenter!.userInterface=newViewController
         //navigationController?.popViewControllerAnimated(false)
