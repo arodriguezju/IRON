@@ -54,7 +54,7 @@ class IRExerciseSelectionWireframe{
        
         
     
-        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController!)
+        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController! , withExerciseName:exerciseName)
         
         
         //Dismiss exercise selection

@@ -46,12 +46,13 @@ class IRAddSeriesWireframe{
         return storyboard
     }
     
-    func presentAddSeriesInterfaceFromViewController(viewController: UIViewController) {
+    func presentAddSeriesInterfaceFromViewController(viewController: UIViewController, withExerciseName exerciseName:String) {
         
         let newViewController = addSeriesViewControllerFromStoryboard()
         var navigationController = viewController.navigationController
         addSeriesViewController = newViewController
         newViewController.eventHandler = addSeriesPresenter
+        newViewController.currentExercise = exerciseName
         addSeriesPresenter!.userInterface=newViewController
         //navigationController?.popViewControllerAnimated(false)
         navigationController?.pushViewController(newViewController, animated: true)

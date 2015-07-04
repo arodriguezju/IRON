@@ -14,6 +14,7 @@ struct IRUIWorkout{
     
     var series : [IRUISerie] = []
     
+    var exerciseName : String=""
     
     
     

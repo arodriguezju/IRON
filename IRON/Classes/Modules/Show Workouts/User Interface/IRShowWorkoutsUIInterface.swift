@@ -13,6 +13,7 @@ protocol IRShowWorkoutsUIInterface {
 
 
     
-   func displayWeekData(data:IRUIWeekOverviewData)
+    func displayWeeklyData(data:[IRUIWeekOverviewData])
+    func scrollToFirstWeek()
 
 }

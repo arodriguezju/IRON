@@ -12,6 +12,7 @@ import CoreData
 class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSliderDelegate {
   
     var eventHandler : IRAddSeriesEventHandlerInterface?
+    var currentExercise:String!
     
     @IBOutlet weak var sliderContainer: IRSliderContainer!
     
@@ -140,6 +141,11 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
     
     func getCurrentWorkout() -> IRUIWorkout? {
         return currentWorkout
+    }
+    
+    func getCurrentExercise()->String!{
+    
+        return currentExercise
     }
     
     func updateSerie(serie:IRUISerie, atIndex index:Int) {

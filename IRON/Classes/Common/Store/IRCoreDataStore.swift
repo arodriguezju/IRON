@@ -18,23 +18,16 @@ class IRCoreDataStore: NSObject {
     private var managedContext:NSManagedObjectContext?
     
     
-    func getAllExercises()->NSArray?{
-        
-        
-        if let exercisesByName = exercisesByName {
-            
-            return exercisesByName
-            
-        }
-        
-        
+    func getAllWorkouts()->[IRWorkout]{
+    
+    
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         
         managedContext = appDelegate.managedObjectContext!
         
         var fetch = NSFetchRequest()
-        var exerciseEntity = NSEntityDescription.entityForName("Exercise",
+        var exerciseEntity = NSEntityDescription.entityForName("IRWorkout",
             inManagedObjectContext:
             managedContext!)
         fetch.entity=exerciseEntity
@@ -43,17 +36,85 @@ class IRCoreDataStore: NSObject {
         
         let fetchedResults =
         managedContext!.executeFetchRequest(fetch,
-            error: &error) as? [NSManagedObject]
+            error: &error) as! [IRWorkout]
         
-        if let results = fetchedResults {
+        
+        return fetchedResults
+    
+    
+    }
+    
+    func createExercises() {
+    
+    
+        
+            let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
             
-            exercisesByName = results
+            managedContext = appDelegate.managedObjectContext!
             
-            return results
+            var exerciseEntity = NSEntityDescription.entityForName("IRExercise",inManagedObjectContext:  managedContext!)
+            var exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+                exercise.exerciseName = "Bench Press"
+                exercise.groupName = "Chest"
+        
+        exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+        exercise.exerciseName = "Incline Bench Press"
+        exercise.groupName = "Chest"
+
+        
+        exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+        exercise.exerciseName = "Squats"
+        exercise.groupName = "Legs"
+        
+        exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+        exercise.exerciseName = "Front Squats"
+        exercise.groupName = "Legs"
+        
+        
             
-        } else {
+            managedContext?.save(nil)
             
-            return nil
+            
+        
+    
+    
+    
+    }
+    
+   
+    
+    func getAllExercises()->[IRExercise]{
+        
+        
+        
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        managedContext = appDelegate.managedObjectContext!
+        
+        var fetch = NSFetchRequest()
+        var exerciseEntity = NSEntityDescription.entityForName("IRExercise",
+            inManagedObjectContext:
+            managedContext!)
+        fetch.entity=exerciseEntity
+        
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext!.executeFetchRequest(fetch,
+            error: &error) as! [IRExercise]
+        
+        if fetchedResults.count != 0 {
+        
+            return fetchedResults
+        }
+        else{
+            
+            createExercises()
+            return getAllExercises()
+        
         }
         
     }
@@ -87,8 +148,10 @@ class IRCoreDataStore: NSObject {
             
                 NSLog("\(workout.idWorkout)")
                 
-                for serie in workout.series.allObjects as! [IRSerie] {
                 
+                for serie in workout.series {
+                    
+                    let serie = serie as! IRSerie
                     NSLog("\(serie.reps)")
 
                 
@@ -167,6 +230,36 @@ class IRCoreDataStore: NSObject {
 
     func save() {
         managedContext?.save(nil)
+    }
+    
+    
+    func getExerciseWithName(name:String)->IRExercise?{
+    
+       var fetch = NSFetchRequest()
+        var exerciseEntity = NSEntityDescription.entityForName("IRExercise",
+            inManagedObjectContext:
+            managedContext!)
+        
+        fetch.entity=exerciseEntity
+        
+        let predicate = NSPredicate(format: "exerciseName == %@", name)
+        fetch.predicate = predicate
+        
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext!.executeFetchRequest(fetch,
+            error: &error) as! [IRExercise]
+        
+        if fetchedResults.count > 0 {
+            return fetchedResults.first
+        }
+        else{
+        
+            return nil
+        }
+    
+    
     }
 
     

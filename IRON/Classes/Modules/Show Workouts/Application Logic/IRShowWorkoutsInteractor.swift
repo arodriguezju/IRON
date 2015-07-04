@@ -22,8 +22,34 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     
     
     func findWorkouts(){
+        
+        dataManager.getAllWorkouts({ rawItem in
+            self.printWorkouts(rawItem as [IRRawWorkout])
+            
+            self.output!.foundWorkouts(rawItem as [IRRawWorkout])
+        
+        })
+
+        
+    
+    }
+    
+    func printWorkouts(workouts:[IRRawWorkout]){
     
     
+        for workout in workouts {
+        
+            NSLog("Added \(workout.dateAdded) Exercise \(workout.exerciseName))")
+            
+            for serie in workout.series {
+            
+                NSLog("Flag \(serie.flag) Weight \(serie.weight) Reps \(serie.reps)")
+            
+            
+            }
+        
+        
+        }
     
     }
     

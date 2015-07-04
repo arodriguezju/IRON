@@ -12,27 +12,37 @@ import Foundation
 
 class IRExerciseSelectionDataManager {
 
-
+    var coreDataStore : IRCoreDataStore = IRCoreDataStore.sharedInstance
 
     
     func getAvailableExercises(completion:([IRRawExercise])-> Void){
         
-        var outputArray : [IRRawExercise] = []
-        
-        outputArray.append(IRRawExercise(exerciseName:"Bench Press", groupName: "Chest"))
-        outputArray.append(IRRawExercise(exerciseName:"Incline Bench Press", groupName: "Chest"))
-
-        outputArray.append(IRRawExercise(exerciseName:"Decline Bench Press", groupName: "Chest"))
-
-        outputArray.append(IRRawExercise(exerciseName:"Squats", groupName: "Legs"))
-        outputArray.append(IRRawExercise(exerciseName:"Front Squat", groupName: "Legs"))
-
-
         
         
-                completion(outputArray)
+        let exercises = coreDataStore.getAllExercises()
+        
+        
+        
+        
+        completion(coreDataToRawData(exercises))
     }
     
+    
+    func coreDataToRawData(data:[IRExercise])->[IRRawExercise] {
+    
+        var output:[IRRawExercise]=[]
+    
+        for coreDataExercise in data {
+        
+            output.append(IRRawExercise(exerciseName:coreDataExercise.exerciseName, groupName:coreDataExercise.groupName))
+            
+        
+        }
+        
+        return output
+    
+    
+    }
 
 
 }

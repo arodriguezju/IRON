@@ -18,7 +18,7 @@
 		6C2415ED1B31D325005AE31A /* IRRawExerciseSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */; };
 		6C2415EE1B31D325005AE31A /* IRRawWorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415BF1B31D325005AE31A /* IRRawWorkoutData.swift */; };
 		6C2415EF1B31D325005AE31A /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C01B31D325005AE31A /* RootWireframe.swift */; };
-		6C2415F01B31D325005AE31A /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C21B31D325005AE31A /* Exercise.swift */; };
+		6C2415F01B31D325005AE31A /* IRExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C21B31D325005AE31A /* IRExercise.swift */; };
 		6C2415F11B31D325005AE31A /* IRCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C31B31D325005AE31A /* IRCoreDataStore.swift */; };
 		6C2415F21B31D325005AE31A /* IRON.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C41B31D325005AE31A /* IRON.xcdatamodeld */; };
 		6C2415F31B31D325005AE31A /* IRSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415C61B31D325005AE31A /* IRSerie.swift */; };
@@ -95,7 +95,7 @@
 		6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawExerciseSelectionData.swift; sourceTree = "<group>"; };
 		6C2415BF1B31D325005AE31A /* IRRawWorkoutData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawWorkoutData.swift; sourceTree = "<group>"; };
 		6C2415C01B31D325005AE31A /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
-		6C2415C21B31D325005AE31A /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		6C2415C21B31D325005AE31A /* IRExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRExercise.swift; sourceTree = "<group>"; };
 		6C2415C31B31D325005AE31A /* IRCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCoreDataStore.swift; sourceTree = "<group>"; };
 		6C2415C51B31D325005AE31A /* IRON.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IRON.xcdatamodel; sourceTree = "<group>"; };
 		6C2415C61B31D325005AE31A /* IRSerie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSerie.swift; sourceTree = "<group>"; };
@@ -237,8 +237,8 @@
 			children = (
 				6C2416311B36DF1B005AE31A /* User Interface */,
 				6C2415BD1B31D325005AE31A /* Model */,
-				6C2415C01B31D325005AE31A /* RootWireframe.swift */,
 				6C2415C11B31D325005AE31A /* Store */,
+				6C2415C01B31D325005AE31A /* RootWireframe.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 		6C2415C11B31D325005AE31A /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				6C2415C21B31D325005AE31A /* Exercise.swift */,
+				6C2415C21B31D325005AE31A /* IRExercise.swift */,
 				6C2415C31B31D325005AE31A /* IRCoreDataStore.swift */,
 				6C2415C41B31D325005AE31A /* IRON.xcdatamodeld */,
 				6C2415C61B31D325005AE31A /* IRSerie.swift */,
@@ -616,7 +616,7 @@
 				6C2416281B3218BA005AE31A /* IRShowWoroutsUIData.swift in Sources */,
 				6C2415FB1B31D325005AE31A /* IRAddSeriesUIInterface.swift in Sources */,
 				6C2415F21B31D325005AE31A /* IRON.xcdatamodeld in Sources */,
-				6C2415F01B31D325005AE31A /* Exercise.swift in Sources */,
+				6C2415F01B31D325005AE31A /* IRExercise.swift in Sources */,
 				6C14372C1B1B93F100EB9212 /* Constants.swift in Sources */,
 				6C2416001B31D325005AE31A /* IRSliderView.swift in Sources */,
 				6C24160A1B31D325005AE31A /* IRExerciseSelectionTableView.swift in Sources */,

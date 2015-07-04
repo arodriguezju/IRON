@@ -9,7 +9,9 @@
 import UIKit
 class IRShowWorkoutsWeekCollectionView: UICollectionView{
     
-    var data :IRUIWeekOverviewData?
+    var data :[IRUIWeekOverviewData]?
+    
+    
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -19,11 +21,14 @@ class IRShowWorkoutsWeekCollectionView: UICollectionView{
         self.backgroundColor = UIColor.clearColor()
         
         
+        
+        
     }
     
-    func loadData(data:IRUIWeekOverviewData) {
+    func loadData(data:[IRUIWeekOverviewData]) {
     
-        self.data=data
+        //Flow from right to left
+        self.data=data.reverse()
     }
 
 }
@@ -33,8 +38,12 @@ extension IRShowWorkoutsWeekCollectionView: UICollectionViewDataSource,UICollect
 
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if let data = data {
+            return data.count
+        }
     
-        return 3
+        return 0
     
     
     }
@@ -42,12 +51,13 @@ extension IRShowWorkoutsWeekCollectionView: UICollectionViewDataSource,UICollect
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
-        var cell = self.dequeueReusableCellWithReuseIdentifier(Constants.CellIdentifiers.showWorkoutsCollectionView , forIndexPath:indexPath ) as! IRShowWorkoutsWeekCollectionViewCell
-        cell.prepareCell()
-        if let data = data {
-        cell.weekCollectionView.data = self.data!
+        var cell = self.dequeueReusableCellWithReuseIdentifier(Constants.CellIdentifiers.showWorkoutsCollectionView , forIndexPath:indexPath ) as! IRShowWorkoutsWeekCollectionViewCell      
         
-        }
+        
+        cell.prepareCellWithItem(self.data![indexPath.item])
+        
+        
+                       
         
         return cell
     

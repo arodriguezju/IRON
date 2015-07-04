@@ -12,9 +12,9 @@ import UIKit
 
 struct IRUIWeekOverviewData{
     
-    var weekTitle : String
-    var sectionNames : [String]
-    var sectionData : [Int:[Any]]
+    var weekTitle : String 
+    var sectionNames : NSMutableOrderedSet
+    var sectionData : [String:[Any]]
     
     
     

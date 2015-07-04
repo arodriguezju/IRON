@@ -19,10 +19,10 @@ class IRAddSeriesInteractor:  IRAddSeriesInteractorInput {
     
     }
     
-    func findNewWorkout(){
+    func findNewWorkoutWithExerciseName(name:String){
         
-        //ToDo other workout
-        dataManager.getNewWorkout( { rawItem in
+      
+        dataManager.getNewWorkoutForExercise(name, completion: { rawItem in
             self.output!.foundNewWorkout(rawItem as IRRawWorkout)
         })
         

@@ -14,7 +14,6 @@ class IRSerie: NSManagedObject {
     @NSManaged var reps: NSNumber
     @NSManaged var weight: NSNumber
     @NSManaged var weightUnits: String
-    @NSManaged var exercise: Exercise
     @NSManaged var workout: NSManagedObject
     @NSManaged var flag: NSNumber
     

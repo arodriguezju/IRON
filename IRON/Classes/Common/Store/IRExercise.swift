@@ -9,11 +9,12 @@
 import Foundation
 import CoreData
 
-class Exercise: NSManagedObject {
+class IRExercise: NSManagedObject {
 
     @NSManaged var idExercise: NSNumber
     @NSManaged var exerciseName: String
     @NSManaged var groupName: String
-    @NSManaged var series: NSManagedObject
+    @NSManaged var workouts: NSSet
+
 
 }

@@ -22,6 +22,7 @@ protocol IRAddSeriesUIInterface {
     func getCurrentSerie()->IRUISerie?
     func getCurrentWorkout()->IRUIWorkout?
     func getCurrentIndex()->Int?
+    func getCurrentExercise()->String!
 
     
     func updateSerie(serie:IRUISerie, atIndex index:Int)

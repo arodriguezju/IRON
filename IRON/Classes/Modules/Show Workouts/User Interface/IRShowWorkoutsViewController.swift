@@ -28,7 +28,7 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-
+        eventHandler?.UIDidAppear()
         
     }
 
@@ -38,17 +38,33 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     }
     
 
-    func displayWeekData(data:IRUIWeekOverviewData){
+    func displayWeeklyData(data:[IRUIWeekOverviewData]){
     
-        
-        
-        
         
         mainCollectionView.loadData(data)
         mainCollectionView.reloadData()
+        
     
     
     }
+    
+    func scrollToFirstWeek(){
+        
+        let maxScroll = mainCollectionView.numberOfItemsInSection(0)-1
+        
+        if maxScroll >= 0 {
+        
+          self.scrollToWeek(atIndex: mainCollectionView.numberOfItemsInSection(0)-1)
+        }
+        
+        
+    }
+    
+    func scrollToWeek(atIndex index:Int){
+        
+        mainCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: index, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.None, animated: false)
+    }
+    
     
     @IBAction func addButtonItemDidClick(sender: AnyObject) {
         

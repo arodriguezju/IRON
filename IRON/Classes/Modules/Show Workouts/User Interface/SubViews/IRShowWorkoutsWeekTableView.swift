@@ -9,20 +9,20 @@
 import UIKit
 class IRShowWorkoutsWeekTableView: UITableView{
     
-    //var sectionData = ["Monday","Wednesday","Friday"]
-    var cellTitle = ["Squats","3 x 45Kg","5 x 50Kg","Bench Press","3 x 45Kg","5 x 50Kg" ]
-    var cellTypes = ["Title","Exercise"]
-    
     
     var data : IRUIWeekOverviewData? {
-        didSet{
         
-        sectionNames = data!.sectionNames
-        sectionData = data!.sectionData
+        didSet{
+            
+            sectionNames = data!.sectionNames
+            sectionData = data!.sectionData
+            
         }
     }
-    private var sectionNames: [String]?
-    private var sectionData:[Int:[Any]]?
+    
+    
+    private var sectionNames: NSOrderedSet?
+    private var sectionData:[String:[Any]]?
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,7 +31,6 @@ class IRShowWorkoutsWeekTableView: UITableView{
         self.dataSource = self
         self.backgroundColor = UIColor.clearColor()
         self.separatorStyle = UITableViewCellSeparatorStyle.None
-       
         
         
     }
@@ -44,10 +43,16 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //TODO Better
+        
        if let sectionDataNew = sectionData {
         
-         return sectionDataNew[section]!.count
+        if  let sectionName = sectionNames![section] as? String {
+      
         
+         return sectionDataNew[sectionName]!.count
+        
+        }
         
         }
     
@@ -57,23 +62,29 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let sectionItems  = sectionData![indexPath.section]
+        let sectionName = sectionNames![indexPath.section] as! String
+        let sectionItems  = sectionData![sectionName]!
         
-        switch sectionItems![indexPath.item] {
+        switch sectionItems[indexPath.item] {
+            
+            
             
         case is IRUIWeekOverviewExercise :
             
             var cell = self.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.weekOverviewExerciseTableView, forIndexPath: indexPath) as! IRShowWorkoutsWeekExerciseTableViewCell
 
-            cell.prepareCellForItem(sectionItems![indexPath.item] as! IRUIWeekOverviewExercise)
+            cell.prepareCellForItem(sectionItems[indexPath.item] as! IRUIWeekOverviewExercise)
             return cell
+            
+            
             
         case is IRUIWeekOverviewSerie:
             
             var cell = self.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.weekOverviewSerieTableView, forIndexPath: indexPath) as! IRShowWorkoutsWeekSerieTableViewCell
             
-            cell.prepareCellForItem(sectionItems![indexPath.item] as! IRUIWeekOverviewSerie)
+            cell.prepareCellForItem(sectionItems[indexPath.item] as! IRUIWeekOverviewSerie)
             return cell
+            
         
         default :
             
@@ -98,12 +109,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     
     }
-    
-  /*  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    
-        return  sectionData[1]
-    
-    }*/
+  
     
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -117,6 +123,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         label.text = sectionNames![section].uppercaseString
         outputView.addSubview(label)
         
+        
         return outputView
     
     
@@ -126,13 +133,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         return 40
     }
     
-   /* func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-    
-    
-        return ["Test1","Test2"]
-    
-    }*/
-
+   
     
 
 }

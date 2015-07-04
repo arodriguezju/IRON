@@ -10,9 +10,10 @@ import UIKit
 
 struct IRRawWorkout{
    
-    var date :NSDate = NSDate()
+    var dateAdded :NSDate = NSDate()
     
     var series : [IRRawSerie] = []
+    var exerciseName: String
     
     
     

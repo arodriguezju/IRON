@@ -87,7 +87,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     func UIDidLoad(){
         
         
-            addSeriesInteractor.findNewWorkout()
+            addSeriesInteractor.findNewWorkoutWithExerciseName(userInterface.getCurrentExercise())
     
     }
     
@@ -95,7 +95,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     func prepareRawDataForUI(workout:IRRawWorkout)->IRUIWorkout{
     
         var workoutOutput : IRUIWorkout = IRUIWorkout()
-        workoutOutput.date = workout.date
+        workoutOutput.date = workout.dateAdded
         
         for serie in workout.series {
             
@@ -127,11 +127,10 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     }
 
     
-    func prepareUIDataForInterator(workout:IRUIWorkout)->IRRawWorkout{
+    /*func prepareUIDataForInteractor(workout:IRUIWorkout)->IRRawWorkout{
         
-        var workoutOutput : IRRawWorkout = IRRawWorkout()
+        var workoutOutput : IRRawWorkout = IRRawWorkout(dateAdded:workout.date, series:[],exerciseName:workout.exerciseName)
         
-        workoutOutput.date = workout.date
         
         for serie in workout.series {
             
@@ -152,7 +151,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
         return serieOutput
         
         
-    }
+    }*/
     
     func sliderDidRotate(sender: IRSliderView , angle : CGFloat, direction : Constants.SliderDirection )
     {

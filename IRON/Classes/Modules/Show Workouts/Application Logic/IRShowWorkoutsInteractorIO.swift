@@ -19,6 +19,6 @@ protocol IRShowWorkoutsInteractorInput {
 
 protocol IRShowWorkoutsInteractorOutput {
     
-    func foundWorkouts()
+    func foundWorkouts(workouts:[IRRawWorkout])
     
 }

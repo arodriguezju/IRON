@@ -18,12 +18,21 @@ class IRAddSeriesDataManager: NSObject {
     private var currentCDSerie:IRSerie?
     
     
-    func getNewWorkout(completion:(IRRawWorkout)-> Void){
+    func getNewWorkoutForExercise(exercise:String,completion:(IRRawWorkout)-> Void){
         
-            var newWorkout = IRRawWorkout()
+            
+        var newWorkout = IRRawWorkout(dateAdded:NSDate(), series:[],exerciseName:exercise)
         
             var cdWorkout = coreDataStore.getNewWorkout()
                 cdWorkout.idWorkout = "id Test"
+        
+        
+            var cdExercise = coreDataStore.getExerciseWithName(exercise)
+        
+                //TODO Better
+                cdWorkout.exercise = cdExercise!
+        
+        
             var cdSerie = coreDataStore.getNewSerie()
                 cdSerie.workout = cdWorkout
                 cdSerie.weight = 30
@@ -99,7 +108,7 @@ class IRAddSeriesDataManager: NSObject {
         
         if (currentCDWorkout!.series.count > index){
         
-            var serieCD = currentCDWorkout?.series.allObjects[index] as! IRSerie
+            var serieCD = currentCDWorkout?.series[index] as! IRSerie
             
             serieCD.reps = serie.reps
             

@@ -17,7 +17,7 @@ protocol IRAddSeriesInteractorInput{
     
     
     //Data requests from UI
-    func findNewWorkout() //Reply foundCurrentWorkout
+    func findNewWorkoutWithExerciseName(name:String) //Reply foundCurrentWorkout
     func getWeightSteps(forWeightUnits:Constants.WeightUnits)->CGFloat
     func getRepSteps()->Int
 

@@ -21,9 +21,11 @@ class IRShowWorkoutsWeekCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func prepareCell(){
+    func prepareCellWithItem(item:IRUIWeekOverviewData){
     
         weekUILabel.textColor = Constants.Colors.mainActiveColor
+        weekCollectionView.data = item
+        weekUILabel.text = item.weekTitle
         weekCollectionView.reloadData()
     
     }

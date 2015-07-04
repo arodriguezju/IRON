@@ -17,69 +17,84 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     
     
     func UIDidLoad(){
-    
-        showWorkoutsInteractor?.findWorkouts()
+        
+      //  showWorkoutsInteractor!.findWorkouts()
         
         
-        let sectionNames = ["Dienstag","Mittwoch","Freitag"]
-        
-        var sectionData:[Int:[Any]]=[:]
-        var exercisesNames:[Any]=[]
-        exercisesNames.append(IRUIWeekOverviewExercise(exerciseName:"BenchPress"))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-
-        exercisesNames.append(IRUIWeekOverviewExercise(exerciseName:"Front Squats"))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-        
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 40, reps: 5, flag: Constants.FlagType.Easy))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-        
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Normal))
-        
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Hard))
-        sectionData[0]=exercisesNames
-        exercisesNames.append(IRUIWeekOverviewExercise(exerciseName:"Back Squats"))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-
-        sectionData[1]=exercisesNames
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 40, reps: 5, flag: Constants.FlagType.Easy))
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-
-        exercisesNames.append(IRUIWeekOverviewSerie(weight: 10, reps: 10, flag: Constants.FlagType.Easy))
-
-
- 
-        sectionData[2]=exercisesNames
-
-
-        
-        
-        var data = IRUIWeekOverviewData(weekTitle:"",sectionNames:sectionNames,sectionData:sectionData)
-        
-        
-
-        
-       userInterface!.displayWeekData(data)
-        
-    
     }
     
-    func foundWorkouts(){
+    func UIDidAppear(){
+        
+        showWorkoutsInteractor!.findWorkouts()
+        
+        
+    }
     
     
+    func foundWorkouts(workouts:[IRRawWorkout]){
+        
+        
+        userInterface!.displayWeeklyData(prepareRawDataForUI(workouts))
+        userInterface!.scrollToFirstWeek()
+        
+        
+    }
     
+    
+    func prepareRawDataForUI(workouts:[IRRawWorkout])->[IRUIWeekOverviewData] {
+        
+        
+        
+        var dataByWeek :[String:IRUIWeekOverviewData] = [:]
+        
+        
+        
+        var weeks : [String:IRUIWeekOverviewData] = [:]
+        for workout in workouts {
+            
+            var formatter = NSDateFormatter()
+            formatter.dateFormat = "w"
+
+            let weekName = formatter.stringFromDate(workout.dateAdded)
+            formatter.dateFormat = "EEEE"
+            let dayName = formatter.stringFromDate(workout.dateAdded)
+            
+            if ( weeks[weekName] == nil ) {
+                
+                weeks[weekName] = IRUIWeekOverviewData(weekTitle:weekName,sectionNames:[],sectionData:[:])
+                
+            }
+            
+            if ( weeks[weekName]!.sectionData[dayName] == nil ) {
+                
+                weeks[weekName]!.sectionData[dayName] = []
+                
+            }
+            
+            weeks[weekName]!.sectionNames.addObject(dayName)
+            
+            weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewExercise(exerciseName:workout.exerciseName))
+            
+            
+            for serie in workout.series {
+                
+                weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewSerie(weight:serie.weight, reps: serie.reps, flag: serie.flag))
+                
+            }
+            
+            
+            
+            
+        }
+        
+        return weeks.values.array
+        
     }
     
     func addButtonItemDidClick() {
-    
+        
         showWorkoutsWireframe!.addButtonItemDidClik()
-    
+        
     }
-
+    
 }

@@ -14,6 +14,12 @@ class IRWorkout: NSManagedObject {
     @NSManaged var dateAdded: NSDate
     @NSManaged var idUser: String
     @NSManaged var idWorkout: String
-    @NSManaged var series: NSSet
+    @NSManaged var series: NSOrderedSet
+    @NSManaged var exercise: IRExercise
 
+
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        dateAdded = NSDate()
+    }
 }
