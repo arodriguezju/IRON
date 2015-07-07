@@ -111,6 +111,8 @@ class IRAddSeriesDataManager: NSObject {
             var serieCD = currentCDWorkout?.series[index] as! IRSerie
             
             serieCD.reps = serie.reps
+            serieCD.weight = serie.weight
+            serieCD.flag = serie.flag.rawValue
             
             coreDataStore.save()
         }

@@ -28,7 +28,10 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        
+        self.navigationItem.leftBarButtonItem?.title
         eventHandler?.UIDidAppear()
+        
         
     }
 
@@ -70,6 +73,17 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
         
         eventHandler!.addButtonItemDidClick()
 
+    }
+    
+    @IBAction func editWeekButtonDidClick(sender: AnyObject) {
+        
+        if mainCollectionView.visibleCells().count > 0 {
+            
+            let cell = mainCollectionView.visibleCells()[0] as! IRShowWorkoutsWeekCollectionViewCell
+            cell.weekTableView.switchEditing()
+            
+        }
+        
     }
     
 }

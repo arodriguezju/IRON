@@ -36,3 +36,11 @@ struct IRRawSerie{
     }
 
 }
+
+extension IRRawWorkout: Equatable {}
+
+// MARK: Equatable
+
+func ==(lhs: IRRawWorkout, rhs: IRRawWorkout) -> Bool {
+    return lhs.dateAdded.compare(rhs.dateAdded) == NSComparisonResult.OrderedAscending
+}

@@ -27,7 +27,6 @@ class IRShowWorkoutsWeekCollectionView: UICollectionView{
     
     func loadData(data:[IRUIWeekOverviewData]) {
     
-        //Flow from right to left
         self.data=data.reverse()
     }
 

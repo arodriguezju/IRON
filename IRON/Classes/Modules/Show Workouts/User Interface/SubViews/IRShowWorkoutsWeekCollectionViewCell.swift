@@ -10,7 +10,7 @@ import UIKit
 
 class IRShowWorkoutsWeekCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var weekCollectionView: IRShowWorkoutsWeekTableView!
+    @IBOutlet weak var weekTableView: IRShowWorkoutsWeekTableView!
     @IBOutlet weak var weekUILabel: UILabel!
     
     required init(coder aDecoder: NSCoder) {
@@ -24,9 +24,10 @@ class IRShowWorkoutsWeekCollectionViewCell: UICollectionViewCell {
     func prepareCellWithItem(item:IRUIWeekOverviewData){
     
         weekUILabel.textColor = Constants.Colors.mainActiveColor
-        weekCollectionView.data = item
-        weekUILabel.text = item.weekTitle
-        weekCollectionView.reloadData()
+        weekTableView.data = item
+        
+        weekUILabel.text = "Week \(item.weekTitle)"
+        weekTableView.reloadData()
     
     }
     

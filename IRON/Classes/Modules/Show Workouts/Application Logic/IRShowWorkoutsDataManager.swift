@@ -20,7 +20,12 @@ class IRShowWorkoutsDataManager: NSObject {
 
     func getAllWorkouts(completion:([IRRawWorkout])-> Void){
         
-        let coreDataWorkouts = coreDataStore.getAllWorkouts()
+        var coreDataWorkouts = coreDataStore.getAllWorkouts()
+        coreDataWorkouts.sort({
+        
+            (s1 : IRWorkout, s2 : IRWorkout) -> Bool in
+            return s1.dateAdded.compare(s2.dateAdded) == NSComparisonResult.OrderedAscending
+        })
         
         completion(coreDataToRawData(coreDataWorkouts))
         

@@ -52,12 +52,8 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         var weeks : [String:IRUIWeekOverviewData] = [:]
         for workout in workouts {
             
-            var formatter = NSDateFormatter()
-            formatter.dateFormat = "w"
-
-            let weekName = formatter.stringFromDate(workout.dateAdded)
-            formatter.dateFormat = "EEEE"
-            let dayName = formatter.stringFromDate(workout.dateAdded)
+            let weekName = "\(workout.dateAdded.getWeekName()) - \(workout.dateAdded.getModayDateString())"
+            let dayName = workout.dateAdded.getDayName()
             
             if ( weeks[weekName] == nil ) {
                 
