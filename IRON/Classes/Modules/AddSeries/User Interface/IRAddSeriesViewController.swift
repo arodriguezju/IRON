@@ -9,10 +9,19 @@
 import UIKit
 import CoreData
 
+enum IRAddSeriesInitializationType:Int {
+    
+        case newWorkout = 1
+        case editWorkout = 2
+
+}
+
 class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSliderDelegate {
   
     var eventHandler : IRAddSeriesEventHandlerInterface?
-    var currentExercise:String!
+   // var currentExercise:String!
+    var initializationType: IRAddSeriesInitializationType?
+    var initializationData: [String:AnyObject]=[:]
     
     @IBOutlet weak var sliderContainer: IRSliderContainer!
     
@@ -46,37 +55,26 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         eventHandler?.UIDidLoad()
+        if let initType = initializationType {
+            
+            eventHandler!.UIDidLoad(initType)
+            
+        }
         
        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-    preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
     
     override func viewDidAppear(animated: Bool) {
         
         sliderContainer.sliderLeftView.sliderDelegate = self
         sliderContainer.sliderRightView.sliderDelegate = self
-        seriesCollectionView.sliderCollectionViewDelegate = eventHandler
+        seriesCollectionView.seriesCollectionViewDelegate = eventHandler
 
         
 
        
     }
-    
     
     
     func updateContainerDisplayedData(){
@@ -101,7 +99,7 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
     func setCurrentWorkout(workout:IRUIWorkout) {
         
         currentWorkout = workout
-    
+        
         
     }
     
@@ -126,6 +124,11 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
         setCurrentSerie(atIndex: currentWorkout!.series.count-1)
     }
     
+    func getInitializationData() -> [String:AnyObject]{
+    
+        return initializationData
+    
+    }
     
     func getCurrentSerie() -> IRUISerie?{
         
@@ -143,10 +146,10 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
         return currentWorkout
     }
     
-    func getCurrentExercise()->String!{
+    /*func getCurrentExercise()->String!{
     
         return currentExercise
-    }
+    }*/
     
     func updateSerie(serie:IRUISerie, atIndex index:Int) {
         

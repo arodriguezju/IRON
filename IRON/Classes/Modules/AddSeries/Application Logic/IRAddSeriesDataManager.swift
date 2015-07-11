@@ -12,41 +12,26 @@ class IRAddSeriesDataManager: NSObject {
     
     var coreDataStore : IRCoreDataStore = IRCoreDataStore.sharedInstance
     
-    
+    //TODO Better -> Delete and use workoutdateadded to get currentworkout. 
     private var currentWorkout:IRRawWorkout?
     private var currentCDWorkout:IRWorkout?
-    private var currentCDSerie:IRSerie?
+   // private var currentCDSerie:IRSerie?
     
     
     func getNewWorkoutForExercise(exercise:String,completion:(IRRawWorkout)-> Void){
         
             
-        var newWorkout = IRRawWorkout(dateAdded:NSDate(), series:[],exerciseName:exercise)
-        
-            var cdWorkout = coreDataStore.getNewWorkout()
-                cdWorkout.idWorkout = "id Test"
         
         
-            var cdExercise = coreDataStore.getExerciseWithName(exercise)
         
-                //TODO Better
-                cdWorkout.exercise = cdExercise!
+            var cdWorkout = coreDataStore.getNewWorkoutForExercise(exercise)
         
-        
-            var cdSerie = coreDataStore.getNewSerie()
-                cdSerie.workout = cdWorkout
-                cdSerie.weight = 30
-                cdSerie.reps = 5
-                cdSerie.flag = Constants.FlagType.Easy.rawValue
-        
-        
-            
-            newWorkout.series.append(coreDataToRawData(cdSerie))
+            var newWorkout = coreDataToRawData(cdWorkout)
         
             
             currentWorkout = newWorkout
             currentCDWorkout = cdWorkout
-            currentCDSerie = cdSerie
+           // currentCDSerie = cdWorkout.series.objectAtIndex(0) as? IRSerie
         
             coreDataStore.save()
             completion(newWorkout)
@@ -60,11 +45,47 @@ class IRAddSeriesDataManager: NSObject {
      }
     
     
+    func getWorkoutAtDate(date:NSDate,completion:(IRRawWorkout)-> Void){
+        
+        var cdWorkout = coreDataStore.getWorkoutAtDate(date)
+        
+        
+        
+        if let cdWorkout = cdWorkout {
+            
+                var newWorkout = coreDataToRawData(cdWorkout)
+            
+                currentWorkout = newWorkout
+                currentCDWorkout = cdWorkout
+            
+                completion(coreDataToRawData(cdWorkout))
+        
+        }
+        
+        
+        
+    }
+
+    
     
     func coreDataToRawData(cdSerie:IRSerie)->IRRawSerie{
         var outputSerie = IRRawSerie(weight: CGFloat(cdSerie.weight.floatValue), reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!)
         
         return outputSerie
+    }
+    
+    func coreDataToRawData(cdWorkout:IRWorkout)->IRRawWorkout{
+        
+        var outputWorkout = IRRawWorkout(dateAdded: cdWorkout.dateAdded,series:[],exerciseName:cdWorkout.exercise.exerciseName)
+        
+        for cdSerie in cdWorkout.series {
+        
+            var outputSerie = IRRawSerie(weight: CGFloat(cdSerie.weight.floatValue), reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!)
+            outputWorkout.series.append(outputSerie)
+            
+         }
+        
+        return outputWorkout
     }
     
     
@@ -100,7 +121,7 @@ class IRAddSeriesDataManager: NSObject {
     
     func updateSerie(serie:IRRawSerie, atIndex index:Int, completion:()-> Void){
     
-        if( currentWorkout!.series.count > index) {
+        if(currentWorkout!.series.count > index) {
             
             currentWorkout!.series[index]=serie
             

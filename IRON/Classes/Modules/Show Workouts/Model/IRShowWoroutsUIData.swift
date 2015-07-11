@@ -28,13 +28,17 @@ struct IRUIWeekOverviewSerie{
     var reps:Int = 0
     var flag:Constants.FlagType  = Constants.FlagType.Easy
     
-    init(weight:CGFloat, reps:Int ,flag:Constants.FlagType){
+    var index:Int
+    var exercise:IRUIWeekOverviewExercise
+    
+   /* init(weight:CGFloat, reps:Int ,flag:Constants.FlagType){
         self.weight = weight
         self.reps = reps
         self.flag = flag
         
         
-    }
+        
+    }*/
     
 
 }
@@ -42,6 +46,7 @@ struct IRUIWeekOverviewSerie{
 struct IRUIWeekOverviewExercise{
     
     var exerciseName:String
+    var exerciseAddedDate:NSDate
 
 
 }

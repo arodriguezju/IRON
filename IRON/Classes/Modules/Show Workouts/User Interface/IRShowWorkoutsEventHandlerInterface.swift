@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol IRShowWorkoutsEventHandler{
+protocol IRShowWorkoutsEventHandler: IRShowWorkoutsWeekTableViewDelegate{
 
         func UIDidLoad()
         func UIDidAppear()

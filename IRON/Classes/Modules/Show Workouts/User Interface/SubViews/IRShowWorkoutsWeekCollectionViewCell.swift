@@ -26,6 +26,7 @@ class IRShowWorkoutsWeekCollectionViewCell: UICollectionViewCell {
         weekUILabel.textColor = Constants.Colors.mainActiveColor
         weekTableView.data = item
         
+        
         weekUILabel.text = "Week \(item.weekTitle)"
         weekTableView.reloadData()
     

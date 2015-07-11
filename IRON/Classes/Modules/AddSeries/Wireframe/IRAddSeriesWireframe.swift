@@ -52,12 +52,31 @@ class IRAddSeriesWireframe{
         var navigationController = viewController.navigationController
         addSeriesViewController = newViewController
         newViewController.eventHandler = addSeriesPresenter
-        newViewController.currentExercise = exerciseName
+        newViewController.initializationType = IRAddSeriesInitializationType.newWorkout
+        newViewController.initializationData["exerciseName"] = exerciseName
         addSeriesPresenter!.userInterface=newViewController
         //navigationController?.popViewControllerAnimated(false)
         navigationController?.pushViewController(newViewController, animated: true)
         //navigationController?.viewControllers.removeAtIndex(navigationController!.viewControllers.count-2)
        
+        
+    }
+    
+    
+    func presentAddSeriesInterfaceFromViewController(viewController: UIViewController, withExerciseDate exerciseDate:NSDate) {
+        
+        let newViewController = addSeriesViewControllerFromStoryboard()
+        var navigationController = viewController.navigationController
+        addSeriesViewController = newViewController
+        newViewController.eventHandler = addSeriesPresenter
+        addSeriesPresenter!.userInterface=newViewController
+        newViewController.initializationType = IRAddSeriesInitializationType.editWorkout
+        newViewController.initializationData["exerciseDateAdded"] = exerciseDate
+
+        //navigationController?.popViewControllerAnimated(false)
+        navigationController?.pushViewController(newViewController, animated: true)
+        //navigationController?.viewControllers.removeAtIndex(navigationController!.viewControllers.count-2)
+        
         
     }
 

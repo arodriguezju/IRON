@@ -7,9 +7,18 @@
 //
 
 import UIKit
+
+protocol IRShowWorkoutsWeekTableViewDelegate{
+    
+    
+    func exerciseDidClick(exercise:IRUIWeekOverviewExercise)
+    func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int)
+    
+
+}
 class IRShowWorkoutsWeekTableView: UITableView{
     
-    
+    var showWorkoutsWeekTableViewDelegate:IRShowWorkoutsWeekTableViewDelegate?
     var data : IRUIWeekOverviewData? {
         
         didSet{
@@ -25,8 +34,8 @@ class IRShowWorkoutsWeekTableView: UITableView{
     private var sectionData:[String:[Any]]?
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
         
+        super.init(coder: aDecoder)
         self.delegate = self
         self.dataSource = self
         self.backgroundColor = UIColor.clearColor()
@@ -185,10 +194,6 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         label.text = sectionNames![section].uppercaseString
         outputView.addSubview(label)
         
-        /*var addButton = UIButton(frame: CGRectMake(label.frame.width,0,40,40))
-        addButton.setTitle("Add", forState: UIControlState.Normal)
-        addButton.setTitleColor(Constants.Colors.mainActiveColor, forState: UIControlState.Normal)
-        outputView.addSubview(addButton)*/
         
         return outputView
     
@@ -210,7 +215,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         switch sectionItems[indexPath.item] {
             
             
-        case is IRUIWeekOverviewExercise :
+        case is IRUIWeekOverviewExercise:
             
             return false
             
@@ -230,27 +235,65 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         let sectionName = sectionNames![indexPath.section] as! String
+        let sectionItems  = sectionData![sectionName]!
         
         switch editingStyle {
-        
-        
             
-        case .Delete :
+            case .Delete :
+                
+                
+                if let delegate = showWorkoutsWeekTableViewDelegate {
+                    
+                    let serie = sectionItems[indexPath.item] as! IRUIWeekOverviewSerie
+                    
+                    delegate.deleteSerieDidClick(serie.exercise, atIndex: serie.index)                    
+                    
+                }
             
-            tableView.beginUpdates()
+               tableView.beginUpdates()
+               sectionData![sectionName]!.removeAtIndex(indexPath.row)
+               tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Left)
+               tableView.endUpdates()
             
-            sectionData![sectionName]!.removeAtIndex(indexPath.row)
             
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Left)
-            tableView.endUpdates()
             
-        default :()
             
+            
+            
+            
+            default :()
             
         
         }
         
         
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let sectionName = sectionNames![indexPath.section] as! String
+        let sectionItems  = sectionData![sectionName]!
+        
+        
+        switch sectionItems[indexPath.item] {
+            
+            
+        case is IRUIWeekOverviewExercise:
+            
+            if let delegate = showWorkoutsWeekTableViewDelegate {
+            
+                delegate.exerciseDidClick(sectionItems[indexPath.item] as! IRUIWeekOverviewExercise)
+            
+            }
+            
+        case is IRUIWeekOverviewSerie:
+            
+           ()
+        default :()
+            
+            
+        }
+    
     }
     
 

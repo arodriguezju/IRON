@@ -30,14 +30,13 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
                     
                     var serie = currentWorkout.series[index]
                     serie.flag = getNewFlagForSerie(serie)
-                   
+                    addSeriesInteractor.updateSerie(self.prepareUIDataToRaw(serie), atIndex: index)
                     userInterface.updateCurrentSerie(serie)
                     
                 
                 }
                 else{
                     userInterface.setCurrentSerie(atIndex: index)
-
                 
                 }
             }
@@ -66,7 +65,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     }
 
     
-    func foundNewWorkout(workout:IRRawWorkout){
+    func foundWorkout(workout:IRRawWorkout){
         
         let workoutUIReady = prepareRawDataForUI(workout)
         userInterface.setCurrentWorkout(workoutUIReady)
@@ -84,10 +83,24 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     }
     
     
-    func UIDidLoad(){
+    func UIDidLoad(withInitType:IRAddSeriesInitializationType){
         
+        let data = userInterface.getInitializationData()
         
-            addSeriesInteractor.findNewWorkoutWithExerciseName(userInterface.getCurrentExercise())
+        switch withInitType {
+            
+        case IRAddSeriesInitializationType.newWorkout :
+            
+            addSeriesInteractor.findNewWorkoutWithExerciseName(data["exerciseName"] as! String)
+            
+         case IRAddSeriesInitializationType.editWorkout:
+            
+            addSeriesInteractor.findWorkoutWithDateAdded(data["exerciseDateAdded"] as! NSDate)
+        
+        default:()
+        
+        }
+        
     
     }
     
@@ -127,31 +140,6 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     }
 
     
-    /*func prepareUIDataForInteractor(workout:IRUIWorkout)->IRRawWorkout{
-        
-        var workoutOutput : IRRawWorkout = IRRawWorkout(dateAdded:workout.date, series:[],exerciseName:workout.exerciseName)
-        
-        
-        for serie in workout.series {
-            
-            
-            workoutOutput.series.append(self.prepareUIDataForInteractor(serie))
-            
-        }
-        
-        return workoutOutput
-        
-    }
-    
-    
-    func prepareUIDataForInteractor(serie:IRUISerie) -> IRRawSerie{
-        
-        var serieOutput : IRRawSerie = IRRawSerie(weight: serie.weight, reps: serie.reps, flag: serie.flag)
-        
-        return serieOutput
-        
-        
-    }*/
     
     func sliderDidRotate(sender: IRSliderView , angle : CGFloat, direction : Constants.SliderDirection )
     {

@@ -146,7 +146,7 @@ class IRCoreDataStore: NSObject {
             for workout in results as! [IRWorkout] {
                 
             
-                NSLog("\(workout.idWorkout)")
+            //    NSLog("\(workout.idWorkout)")
                 
                 
                 for serie in workout.series {
@@ -203,13 +203,14 @@ class IRCoreDataStore: NSObject {
         serie.reps = 0
         serie.weight = 0
         
-        
-        
             
-            return serie
+        return serie
         
         
     }
+    
+    
+    
     
     func getNewWorkout() ->IRWorkout{
         let appDelegate =
@@ -218,20 +219,71 @@ class IRCoreDataStore: NSObject {
         managedContext = appDelegate.managedObjectContext!
         
         var workoutEntity = NSEntityDescription.entityForName("IRWorkout",inManagedObjectContext:  managedContext!)
-        let workout = NSManagedObject(entity: workoutEntity!,insertIntoManagedObjectContext:managedContext!) as! IRWorkout
+        var workout = NSManagedObject(entity: workoutEntity!,insertIntoManagedObjectContext:managedContext!) as! IRWorkout
+        
+       workout.dateAdded = NSDate()
+        
+       return workout
         
         
+    }
+    
+    
+    func getNewWorkoutForExercise(exerciseName:String)->IRWorkout{
+    
+        var cdWorkout = getNewWorkout()
+        var cdExercise = getExerciseWithName(exerciseName)
         
-       
-            return workout
+        cdWorkout.exercise = cdExercise!
         
+        var cdSerie = getNewSerie()
         
+        //TODO Better
+        cdSerie.workout = cdWorkout
+        cdSerie.weight = 30
+        cdSerie.reps = 5
+        cdSerie.flag = Constants.FlagType.Easy.rawValue
+        
+        save()
+            
+        return cdWorkout
+    
     }
 
     func save() {
         managedContext?.save(nil)
     }
     
+    func getWorkoutAtDate(date:NSDate)->IRWorkout?{
+    
+        
+        var fetch = NSFetchRequest()
+        var workoutEntity = NSEntityDescription.entityForName("IRWorkout",
+            inManagedObjectContext:
+            managedContext!)
+        
+        fetch.entity=workoutEntity
+        
+        let predicate = NSPredicate(format: "dateAdded == %@", date)
+        fetch.predicate = predicate
+        
+        var error: NSError?
+        
+        let fetchedResults =
+        managedContext!.executeFetchRequest(fetch,
+            error: &error) as! [IRWorkout]
+        
+        if fetchedResults.count > 0 {
+            return fetchedResults.first
+        }
+        else{
+            
+            return nil
+        }
+        
+
+    
+    }
     
     func getExerciseWithName(name:String)->IRExercise?{
     
@@ -262,6 +314,11 @@ class IRCoreDataStore: NSObject {
     
     }
 
+    func deleteSerie(serie:IRSerie){
     
+            managedContext!.deleteObject(serie)
+            save()
+    
+    }
     
 }

@@ -40,7 +40,6 @@ class IRShowWorkoutsDataManager: NSObject {
             let rawSeries = coreDataToRawData(cdSeries)
             
             
-            
             let rawWorkout = IRRawWorkout(dateAdded:cdWorkout.dateAdded,series:rawSeries,exerciseName:cdWorkout.exercise.exerciseName)
             
             output.append(rawWorkout)
@@ -62,10 +61,28 @@ class IRShowWorkoutsDataManager: NSObject {
             output.append(IRRawSerie(weight: CGFloat(cdSerie.weight.floatValue), reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!))
             
         
-        
         }
     
         return output
+    
+    }
+    
+    
+    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate) {
+    
+        var cdWorkout = coreDataStore.getWorkoutAtDate(date)
+        
+        
+        if let cdWorkout = cdWorkout {
+        
+            if cdWorkout.series.count > index {
+                
+                let serie = cdWorkout.series.objectAtIndex(index) as! IRSerie
+                coreDataStore.deleteSerie(serie)            
+            }
+            
+        
+        }
     
     }
 

@@ -21,18 +21,18 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     }
     
     
-    func findWorkouts(){
+   /* func findWorkouts(){
         
         dataManager.getAllWorkouts({ rawItem in
             self.printWorkouts(rawItem as [IRRawWorkout])
             
-            self.output!.foundWorkouts(rawItem as [IRRawWorkout])
+           // self.output!.foundWorkouts(rawItem as [IRRawWorkout])
         
         })
 
         
     
-    }
+    }*/
     
     func printWorkouts(workouts:[IRRawWorkout]){
     
@@ -53,5 +53,25 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     
     }
     
+    
+    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate){
+    
+        dataManager.deleteSerie(atIndex: index, forExerciseAtDate: date)
+    
+    }
+    
+    
+    func findWorkouts(completion:(workouts:[IRRawWorkout])-> Void) {
+    
+        dataManager.getAllWorkouts({ rawItem in
+            
+            self.printWorkouts(rawItem as [IRRawWorkout])
+            
+            completion(workouts: rawItem as [IRRawWorkout])
+            
+        })
+    
+    }
+
 
 }

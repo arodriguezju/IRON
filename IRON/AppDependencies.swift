@@ -93,6 +93,8 @@ class AppDependencies {
         
         exerciseSelectionWireframe.addSeriesWireframe  = addSeriesWireframe
         
+        showWorkoutsWireframe.addSeriesWireframe = addSeriesWireframe
+        
     
     }
    

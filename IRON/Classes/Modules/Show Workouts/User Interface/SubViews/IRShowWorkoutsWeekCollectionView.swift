@@ -10,7 +10,7 @@ import UIKit
 class IRShowWorkoutsWeekCollectionView: UICollectionView{
     
     var data :[IRUIWeekOverviewData]?
-    
+    var weekTableViewDelegate:IRShowWorkoutsWeekTableViewDelegate?
     
     
     required init(coder aDecoder: NSCoder) {
@@ -54,10 +54,8 @@ extension IRShowWorkoutsWeekCollectionView: UICollectionViewDataSource,UICollect
         
         
         cell.prepareCellWithItem(self.data![indexPath.item])
-        
-        
-                       
-        
+        cell.weekTableView.showWorkoutsWeekTableViewDelegate = weekTableViewDelegate
+        //cell.weekTableView.showWorkoutsWeekTableViewDelegate = self
         return cell
     
     

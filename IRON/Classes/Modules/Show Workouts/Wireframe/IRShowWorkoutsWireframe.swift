@@ -24,7 +24,7 @@ class IRShowWorkoutsWireframe: NSObject {
     var showWorkoutsPresenter : IRShowWorkoutsPresenter?
     var showWorkoutsInteractor: IRShowWorkoutsInteractor?
     
-    
+    var addSeriesWireframe: IRAddSeriesWireframe?
     
     
     func presentListInterfaceFromWindow(window: UIWindow) {
@@ -68,6 +68,13 @@ class IRShowWorkoutsWireframe: NSObject {
         
         
         
+    }
+    
+    func exerciseDidClicked(exerciseDate:NSDate) {
+    
+        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(showWorkoutsViewController!, withExerciseDate: exerciseDate)
+        
+    
     }
 
 

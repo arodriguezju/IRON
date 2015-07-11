@@ -23,7 +23,7 @@ class IRSeriesCollectionView: UICollectionView {
     
     
     
-    var sliderCollectionViewDelegate : IRSeriesCollectionViewDelegate?
+    var seriesCollectionViewDelegate : IRSeriesCollectionViewDelegate?
     private var separatorWidth : CGFloat = 0
     private var selectedIndex = NSIndexPath(forItem: 0, inSection: 0)
     var currentSeries:[IRUISerie]? {
@@ -63,10 +63,10 @@ extension IRSeriesCollectionView:UICollectionViewDelegate,UICollectionViewDelega
     
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-                let width :CGFloat = self.frame.size.width / 4 
         
-       
+        let width :CGFloat = self.frame.size.width / 4
         return CGSizeMake(width, width)
+        
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
@@ -77,12 +77,11 @@ extension IRSeriesCollectionView:UICollectionViewDelegate,UICollectionViewDelega
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         
-        if let delegate = sliderCollectionViewDelegate {
+        if let delegate = seriesCollectionViewDelegate {
         
             delegate.seriesCollectionViewCellDidClick(indexPath.item)
         
         }
-        
         
         
     
@@ -105,7 +104,6 @@ extension IRSeriesCollectionView:UICollectionViewDataSource{
         
         }
     
-    // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         if ( indexPath.item + 1 == collectionView.numberOfItemsInSection(0)) {
@@ -128,7 +126,7 @@ extension IRSeriesCollectionView:UICollectionViewDataSource{
             cell.active=false
         }
         
-       // NSLog("CEll esta active  \(cell.active)")
+      
         
                 
         return cell

@@ -28,11 +28,11 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         self.navigationItem.leftBarButtonItem?.title
+        
+        mainCollectionView.weekTableViewDelegate = eventHandler
         eventHandler?.UIDidAppear()
-        
-        
+                
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,13 +41,19 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     }
     
 
-    func displayWeeklyData(data:[IRUIWeekOverviewData]){
+    func displayNewWeeklyData(data:[IRUIWeekOverviewData]){
     
         
         mainCollectionView.loadData(data)
         mainCollectionView.reloadData()
-        
+        scrollToFirstWeek()        
     
+    
+    }
+    
+    func updateData(data:[IRUIWeekOverviewData]){
+    
+        mainCollectionView.loadData(data)
     
     }
     

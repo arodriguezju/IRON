@@ -12,8 +12,11 @@ import Foundation
 protocol IRShowWorkoutsUIInterface {
 
 
+    //Updates data, reload the CV and scrolls to last item
+    func displayNewWeeklyData(data:[IRUIWeekOverviewData])
     
-    func displayWeeklyData(data:[IRUIWeekOverviewData])
-    func scrollToFirstWeek()
+    //Update data
+    func updateData(data:[IRUIWeekOverviewData])
+    
 
 }

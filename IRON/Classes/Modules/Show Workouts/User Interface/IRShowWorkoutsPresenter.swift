@@ -25,20 +25,22 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     
     func UIDidAppear(){
         
-        showWorkoutsInteractor!.findWorkouts()
-        
+        showWorkoutsInteractor!.findWorkouts({ rawItem in
+            
+            self.userInterface!.displayNewWeeklyData(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
+            
+                      
+        })
         
     }
     
     
-    func foundWorkouts(workouts:[IRRawWorkout]){
+   /* func foundWorkouts(workouts:[IRRawWorkout]){
+        
+        userInterface!.displayNewWeeklyData(prepareRawDataForUI(workouts))
         
         
-        userInterface!.displayWeeklyData(prepareRawDataForUI(workouts))
-        userInterface!.scrollToFirstWeek()
-        
-        
-    }
+    }*/
     
     
     func prepareRawDataForUI(workouts:[IRRawWorkout])->[IRUIWeekOverviewData] {
@@ -69,13 +71,15 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
             
             weeks[weekName]!.sectionNames.addObject(dayName)
             
-            weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewExercise(exerciseName:workout.exerciseName))
+            let exercise = IRUIWeekOverviewExercise(exerciseName:workout.exerciseName,exerciseAddedDate:workout.dateAdded)
+            weeks[weekName]!.sectionData[dayName]!.append(exercise)
             
             
+            var i = 0
             for serie in workout.series {
                 
-                weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewSerie(weight:serie.weight, reps: serie.reps, flag: serie.flag))
-                
+                weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewSerie(weight:serie.weight, reps: serie.reps, flag: serie.flag, index:i,exercise:exercise))
+                i++
             }
             
             
@@ -91,6 +95,27 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         
         showWorkoutsWireframe!.addButtonItemDidClik()
         
+    }
+    
+    func exerciseDidClick(exercise:IRUIWeekOverviewExercise) {
+    
+        showWorkoutsWireframe!.exerciseDidClicked(exercise.exerciseAddedDate)
+    
+    }
+    
+    func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int)
+    {
+        
+        
+        showWorkoutsInteractor!.deleteSerie(atIndex: index, forExerciseAtDate: exercise.exerciseAddedDate)
+        
+        showWorkoutsInteractor!.findWorkouts({ rawItem in
+            
+            self.userInterface!.updateData(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
+            
+        })
+
+    
     }
     
 }

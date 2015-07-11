@@ -17,7 +17,10 @@ protocol IRAddSeriesInteractorInput{
     
     
     //Data requests from UI
-    func findNewWorkoutWithExerciseName(name:String) //Reply foundCurrentWorkout
+    func findNewWorkoutWithExerciseName(name:String) //Reply foundWorkout
+    
+    func findWorkoutWithDateAdded(date:NSDate) //Reply foundWorkout
+
     func getWeightSteps(forWeightUnits:Constants.WeightUnits)->CGFloat
     func getRepSteps()->Int
 
@@ -30,7 +33,7 @@ protocol IRAddSeriesInteractorInput{
 protocol IRAddSeriesInteractorOutput{
 
     
-    func foundNewWorkout(workout:IRRawWorkout)
+    func foundWorkout(workout:IRRawWorkout)
     func foundNewSerie(serie:IRRawSerie)
     
     

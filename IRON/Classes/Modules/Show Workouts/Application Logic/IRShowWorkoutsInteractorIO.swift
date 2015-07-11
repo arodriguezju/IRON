@@ -12,13 +12,17 @@ import Foundation
 
 protocol IRShowWorkoutsInteractorInput {
     
-    func findWorkouts()
+    //func findWorkouts()
 
+    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate)
+    
+    
+    func findWorkouts(completion:(workouts:[IRRawWorkout])-> Void)
 
 }
 
 protocol IRShowWorkoutsInteractorOutput {
     
-    func foundWorkouts(workouts:[IRRawWorkout])
+    //func foundWorkouts(workouts:[IRRawWorkout])
     
 }

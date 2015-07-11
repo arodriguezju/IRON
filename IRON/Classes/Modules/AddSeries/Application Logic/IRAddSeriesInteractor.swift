@@ -23,14 +23,21 @@ class IRAddSeriesInteractor:  IRAddSeriesInteractorInput {
         
       
         dataManager.getNewWorkoutForExercise(name, completion: { rawItem in
-            self.output!.foundNewWorkout(rawItem as IRRawWorkout)
+            self.output!.foundWorkout(rawItem as IRRawWorkout)
         })
         
         
     }
     
     
+    func findWorkoutWithDateAdded(date:NSDate) {
     
+        dataManager.getWorkoutAtDate(date, completion: { rawItem in
+            self.output!.foundWorkout(rawItem as IRRawWorkout)
+        })
+        
+    
+    }
     
     func getWeightSteps(forWeightUnits:Constants.WeightUnits)->CGFloat{
     
