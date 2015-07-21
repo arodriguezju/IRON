@@ -321,4 +321,11 @@ class IRCoreDataStore: NSObject {
     
     }
     
+    func deleteWorkout(workout:IRWorkout){
+        
+        managedContext!.deleteObject(workout)
+        save()
+        
+    }
+    
 }

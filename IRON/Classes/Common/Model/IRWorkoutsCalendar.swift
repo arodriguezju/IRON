@@ -22,16 +22,24 @@ extension NSDate {
     
     }
     
-    func getModayDateString()->String{
+    func getFirstDayOfWeekDateString()->String{
         
         
         var formatter = NSDateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.stringFromDate(getFirstDayOfWeekDate())
+    
+    }
+    
+    
+    func getFirstDayOfWeekDate()->NSDate {
+    
+        var formatter = NSDateFormatter()
         formatter.dateFormat = "ee"
-        let dayOfDifferenceFromMonday = formatter.stringFromDate(self).toInt()!-1
-        let mondayOfWeek = self.dateByAddingTimeInterval(NSTimeInterval(-dayOfDifferenceFromMonday*24*60*60))
-        
-         formatter.dateFormat = "dd.MM.yyyy"
-        return formatter.stringFromDate(mondayOfWeek)
+        let dayOfDifferenceFromFirstDayOfWeek = formatter.stringFromDate(self).toInt()!-1
+        let firstDayOfWeek = self.dateByAddingTimeInterval(NSTimeInterval(-dayOfDifferenceFromFirstDayOfWeek*24*60*60))
+
+        return firstDayOfWeek
     
     }
     

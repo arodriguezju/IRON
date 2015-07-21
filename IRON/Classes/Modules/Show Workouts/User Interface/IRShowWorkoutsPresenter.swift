@@ -27,7 +27,7 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         
         showWorkoutsInteractor!.findWorkouts({ rawItem in
             
-            self.userInterface!.displayNewWeeklyData(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
+            self.userInterface!.displayNewWeeklyDataInCollectionView(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
             
                       
         })
@@ -54,12 +54,13 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         var weeks : [String:IRUIWeekOverviewData] = [:]
         for workout in workouts {
             
-            let weekName = "\(workout.dateAdded.getWeekName()) - \(workout.dateAdded.getModayDateString())"
+            let weekName = "\(workout.dateAdded.getWeekName()) - \(workout.dateAdded.getFirstDayOfWeekDateString())"
             let dayName = workout.dateAdded.getDayName()
+            let firstDayOfWeek = workout.dateAdded.getFirstDayOfWeekDate()
             
             if ( weeks[weekName] == nil ) {
                 
-                weeks[weekName] = IRUIWeekOverviewData(weekTitle:weekName,sectionNames:[],sectionData:[:])
+                weeks[weekName] = IRUIWeekOverviewData(weekTitle:weekName,weekDate:firstDayOfWeek,sectionNames:[],sectionData:[:])
                 
             }
             
@@ -91,6 +92,9 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         
     }
     
+    
+    
+    
     func addButtonItemDidClick() {
         
         showWorkoutsWireframe!.addButtonItemDidClik()
@@ -99,23 +103,61 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     
     func exerciseDidClick(exercise:IRUIWeekOverviewExercise) {
     
-        showWorkoutsWireframe!.exerciseDidClicked(exercise.exerciseAddedDate)
+        showWorkoutsWireframe!.exerciseDidClick(exercise.exerciseAddedDate)
     
     }
     
-    func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int)
+    func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int,completion:(error:NSError?)-> Void)
     {
         
+        showWorkoutsInteractor!.deleteSerie(atIndex: index, forExerciseAtDate: exercise.exerciseAddedDate
+            ,completion:{
         
-        showWorkoutsInteractor!.deleteSerie(atIndex: index, forExerciseAtDate: exercise.exerciseAddedDate)
+                error in
+                
+                if let error = error {
+                
+                
+                }
+                else{
+                    
+                    completion(error: error)
+                    self.updateDataOfVisibleWeek()
+                    
+                }
+        
+        })        
+
+    
+    }
+    
+    func addWorkoutToWeekButtonDidClick() {
+    
+        userInterface!.showDayPicker()
+    
+    }
+    
+    func serieDeleted(inWorkout workout:IRRawWorkout, atIndex index:Int) {
+    
+        
+       /* userInterface!.deleteSerieInWorkout(atDate:workout.dateAdded, atIndex:index)
         
         showWorkoutsInteractor!.findWorkouts({ rawItem in
             
-            self.userInterface!.updateData(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
+            self.userInterface!.updateDataSource(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
             
-        })
-
+        })*/
     
+    }
+
+    func updateDataOfVisibleWeek(){
+    
+        showWorkoutsInteractor!.findWorkouts({ rawItem in
+            
+            
+            self.userInterface!.loadNewDataInCollectionView(self.prepareRawDataForUI(rawItem as [IRRawWorkout]))
+    
+    })
     }
     
 }

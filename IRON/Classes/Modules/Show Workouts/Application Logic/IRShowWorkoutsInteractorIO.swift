@@ -14,7 +14,7 @@ protocol IRShowWorkoutsInteractorInput {
     
     //func findWorkouts()
 
-    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate)
+    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate,completion:(error:NSError?)-> Void)
     
     
     func findWorkouts(completion:(workouts:[IRRawWorkout])-> Void)
@@ -23,6 +23,7 @@ protocol IRShowWorkoutsInteractorInput {
 
 protocol IRShowWorkoutsInteractorOutput {
     
-    //func foundWorkouts(workouts:[IRRawWorkout])
+    
+    func serieDeleted(inWorkout workout:IRRawWorkout, atIndex index:Int)
     
 }

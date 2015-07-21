@@ -8,30 +8,36 @@
 
 import UIKit
 
-protocol IRShowWorkoutsWeekTableViewDelegate{
+protocol IRShowWorkoutsWeekTableViewEventsDelegate{
     
     
     func exerciseDidClick(exercise:IRUIWeekOverviewExercise)
-    func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int)
+    func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int, completion:(error:NSError?)-> Void)
+    func addWorkoutToWeekButtonDidClick()
     
 
 }
+
+protocol IRShowWorkoutsWeekTableViewDatasourceDelegate{
+    
+      
+    func dataDidChange(data:[IRUIWeekOverviewData])
+    func getData()->[IRUIWeekOverviewData]?
+    
+    
+    
+}
 class IRShowWorkoutsWeekTableView: UITableView{
     
-    var showWorkoutsWeekTableViewDelegate:IRShowWorkoutsWeekTableViewDelegate?
-    var data : IRUIWeekOverviewData? {
+    var eventsDelegate:IRShowWorkoutsWeekTableViewEventsDelegate?
+    var dataSourceDelegate: IRShowWorkoutsWeekTableViewDatasourceDelegate?
+   // var data :[IRUIWeekOverviewData]?
+  
+    
+    var indexAtCollectionView:Int?
         
-        didSet{
-            
-            sectionNames = data!.sectionNames
-            sectionData = data!.sectionData
-            
-        }
-    }
     
     @IBOutlet weak var addDayUIButton: UIButton!
-    private var sectionNames: NSOrderedSet?
-    private var sectionData:[String:[Any]]?
     
     required init(coder aDecoder: NSCoder) {
         
@@ -41,11 +47,19 @@ class IRShowWorkoutsWeekTableView: UITableView{
         self.backgroundColor = UIColor.clearColor()
         self.separatorStyle = UITableViewCellSeparatorStyle.None
         
-       /* tableHeaderView = UIView(frame: CGRectMake(0,0,100,200))
-        tableHeaderView?.backgroundColor=UIColor.blackColor()*/
-        
-       
+             
     }
+    
+    @IBAction func addWorkoutToWeekDidClick(sender: AnyObject) {
+        
+        if let delegate = eventsDelegate {
+        
+            delegate.addWorkoutToWeekButtonDidClick()
+        
+        }
+        
+    }
+
     
     
     func switchEditing(){
@@ -99,6 +113,7 @@ class IRShowWorkoutsWeekTableView: UITableView{
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
        addDayUIButton.layer.borderColor = Constants.Colors.mainActiveColor.CGColor
       addDayUIButton.layer.cornerRadius = 5
         addDayUIButton.layer.borderWidth = 1
@@ -113,37 +128,38 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //TODO Better
         
-       if let sectionDataNew = sectionData {
+        if let sectionNames = getSectionNames() {
         
-        if  let sectionName = sectionNames![section] as? String {
-      
         
-         return sectionDataNew[sectionName]!.count
+            if let sectionsData = getSectionsData() {
+                
+                let sectionName = sectionNames[section]
+                let sectionData = sectionsData[sectionName]!
+                
+                return sectionData.count
+            }
+        
         
         }
         
-        }
-    
         return 0
     
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let sectionName = sectionNames![indexPath.section] as! String
-        let sectionItems  = sectionData![sectionName]!
+        let sectionData = getSectionDataAtSection(indexPath.section)
+
         
-        switch sectionItems[indexPath.item] {
-            
+        switch sectionData[indexPath.item] {
             
             
         case is IRUIWeekOverviewExercise :
             
             var cell = self.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.weekOverviewExerciseTableView, forIndexPath: indexPath) as! IRShowWorkoutsWeekExerciseTableViewCell
 
-            cell.prepareCellForItem(sectionItems[indexPath.item] as! IRUIWeekOverviewExercise)
+            cell.prepareCellForItem(sectionData[indexPath.item] as! IRUIWeekOverviewExercise)
             return cell
             
             
@@ -152,7 +168,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
             
             var cell = self.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.weekOverviewSerieTableView, forIndexPath: indexPath) as! IRShowWorkoutsWeekSerieTableViewCell
             
-            cell.prepareCellForItem(sectionItems[indexPath.item] as! IRUIWeekOverviewSerie)
+            cell.prepareCellForItem(sectionData[indexPath.item] as! IRUIWeekOverviewSerie)
             return cell
             
         
@@ -170,14 +186,12 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        if let names = sectionNames {
-        
-            return names.count
-        
+        if let sectionNames = getSectionNames() {
+            return sectionNames.count
         }
         return 0
-    
-    
+        
+        
     }
   
     
@@ -191,7 +205,8 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         
         var label = UILabel(frame: CGRectMake(15, 0, self.frame.width-50, 40))
         label.font = UIFont(name:"HelveticaNeue-Light", size: 15.0)
-        label.text = sectionNames![section].uppercaseString
+        label.text = getSectionNames()![section].uppercaseString
+        
         outputView.addSubview(label)
         
         
@@ -208,11 +223,10 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 
+        let sectionData = getSectionDataAtSection(indexPath.section)
+
         
-        let sectionName = sectionNames![indexPath.section] as! String
-        let sectionItems  = sectionData![sectionName]!
-        
-        switch sectionItems[indexPath.item] {
+        switch sectionData[indexPath.item] {
             
             
         case is IRUIWeekOverviewExercise:
@@ -234,27 +248,42 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        let sectionName = sectionNames![indexPath.section] as! String
-        let sectionItems  = sectionData![sectionName]!
+       
+        let sectionData = getSectionDataAtSection(indexPath.section)
+
         
         switch editingStyle {
             
             case .Delete :
                 
+                               
+                CATransaction.begin()
                 
-                if let delegate = showWorkoutsWeekTableViewDelegate {
+                CATransaction.setCompletionBlock({
+                
+                if let delegate = self.eventsDelegate{
                     
-                    let serie = sectionItems[indexPath.item] as! IRUIWeekOverviewSerie
+                        
+                    let serie = sectionData[indexPath.item] as! IRUIWeekOverviewSerie
                     
-                    delegate.deleteSerieDidClick(serie.exercise, atIndex: serie.index)                    
+                    delegate.deleteSerieDidClick(serie.exercise, atIndex: serie.index, completion: {
                     
-                }
-            
-               tableView.beginUpdates()
-               sectionData![sectionName]!.removeAtIndex(indexPath.row)
-               tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Left)
-               tableView.endUpdates()
-            
+                        error in
+                        
+                        CATransaction.begin()
+                        tableView.beginUpdates()
+                        self.deleteDataSourceItemAtIndexPath(indexPath)
+                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Left)
+                        tableView.endUpdates()
+                        CATransaction.commit()
+                        
+                        
+                        
+                    })
+                    
+                 }
+                
+               })
             
             
             
@@ -271,28 +300,95 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        let sectionName = sectionNames![indexPath.section] as! String
-        let sectionItems  = sectionData![sectionName]!
+        let sectionData = getSectionDataAtSection(indexPath.section)
         
-        
-        switch sectionItems[indexPath.item] {
+        switch sectionData[indexPath.item] {
             
             
         case is IRUIWeekOverviewExercise:
             
-            if let delegate = showWorkoutsWeekTableViewDelegate {
+            if let delegate = self.eventsDelegate {
             
-                delegate.exerciseDidClick(sectionItems[indexPath.item] as! IRUIWeekOverviewExercise)
+                delegate.exerciseDidClick(sectionData[indexPath.item] as! IRUIWeekOverviewExercise)
             
             }
             
-        case is IRUIWeekOverviewSerie:
-            
-           ()
+           
         default :()
             
             
         }
+    
+    }
+    
+    
+    func getSectionsData()->[String:[Any]]?
+    {
+        
+        
+        if let delegate = self.dataSourceDelegate {
+            
+            if let data = delegate.getData() {
+            
+            if let index = indexAtCollectionView {
+                
+                return data[index].sectionData
+                
+            }
+            
+        }
+        }
+        return nil
+    
+    }
+    
+    func getSectionNames()->[String]?
+    {
+        
+        if let delegate = self.dataSourceDelegate {
+        
+        if let data = delegate.getData() {
+            
+            if let index = indexAtCollectionView {
+                
+                return data[index].sectionNames.array as? [String]
+                
+            }
+            
+        }
+        }
+        return nil
+        
+    }
+    
+    func getSectionDataAtSection(section:Int)->[Any] {
+    
+        let sectionName = getSectionNames()![section]
+        let sectionData = getSectionsData()![sectionName]
+        return sectionData!
+    
+    }
+    
+    
+    func deleteDataSourceItemAtIndexPath(indexPath:NSIndexPath) {
+    
+        if let delegate = self.dataSourceDelegate {
+            
+       var data = delegate.getData()!
+       var tableViewData = data[indexAtCollectionView!]
+       let sectionName = getSectionNames()![indexPath.section]
+       var sectionData = getSectionsData()![sectionName]
+        
+        sectionData!.removeAtIndex(indexPath.row)
+        tableViewData.sectionData[sectionName] = sectionData
+        data[indexAtCollectionView!] = tableViewData
+        delegate.dataDidChange(data)
+        
+        
+        
+        }
+        
+       
     
     }
     

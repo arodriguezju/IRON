@@ -68,7 +68,12 @@ struct Constants {
     
 }
     
+    enum WorkoutToDoOperations: Int {
     
+        case deleteExercise = 1
+        case deleteDay = 2
+
+    }
     
 
 }

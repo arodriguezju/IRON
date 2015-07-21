@@ -68,6 +68,7 @@
 		6C5093C01B1FC41D00CAF207 /* bluredBG in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093BF1B1FC41D00CAF207 /* bluredBG */; };
 		6C5093C21B20584B00CAF207 /* mask2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093C11B20584B00CAF207 /* mask2.png */; };
 		6C90F2A91B4C350A00A08AE3 /* IRWorkoutsCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90F2A81B4C350A00A08AE3 /* IRWorkoutsCalendar.swift */; };
+		6CE0287E1B52E91600DDCCD3 /* IRDayUIPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0287D1B52E91600DDCCD3 /* IRDayUIPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		6C5093BF1B1FC41D00CAF207 /* bluredBG */ = {isa = PBXFileReference; lastKnownFileType = file; path = bluredBG; sourceTree = "<group>"; };
 		6C5093C11B20584B00CAF207 /* mask2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask2.png; sourceTree = "<group>"; };
 		6C90F2A81B4C350A00A08AE3 /* IRWorkoutsCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRWorkoutsCalendar.swift; sourceTree = "<group>"; };
+		6CE0287D1B52E91600DDCCD3 /* IRDayUIPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRDayUIPicker.swift; path = "Show Workouts/User Interface/SubViews/IRDayUIPicker.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +454,7 @@
 				6C2416291B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift */,
 				6C24162B1B333BC7005AE31A /* IRShowWorkoutsWeekExerciseTableViewCell.swift */,
 				6C24162F1B35BCE8005AE31A /* IRShowWorkoutsWeekSerieTableViewCell.swift */,
+				6CE0287D1B52E91600DDCCD3 /* IRDayUIPicker.swift */,
 			);
 			name = SubViews;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				6C2415F31B31D325005AE31A /* IRSerie.swift in Sources */,
 				6C2416211B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift in Sources */,
 				6C24160B1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift in Sources */,
+				6CE0287E1B52E91600DDCCD3 /* IRDayUIPicker.swift in Sources */,
 				6C24161F1B31D867005AE31A /* IRShowWorkoutsPresenter.swift in Sources */,
 				6C2415F11B31D325005AE31A /* IRCoreDataStore.swift in Sources */,
 				6C2415FD1B31D325005AE31A /* IRSeriesCollectionView.swift in Sources */,

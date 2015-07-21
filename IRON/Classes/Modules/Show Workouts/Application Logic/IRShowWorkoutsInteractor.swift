@@ -54,9 +54,22 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     }
     
     
-    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate){
+    func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate,completion:(error:NSError?)-> Void){
     
         dataManager.deleteSerie(atIndex: index, forExerciseAtDate: date)
+        
+        if let workout = dataManager.getWorkoutAtDate(date) {
+            
+            if workout.series.count == 0 {
+            
+                dataManager.deleteWorkoutAtDate(date)
+            
+            }
+        
+        }
+        
+        //TODO
+        completion(error:nil)
     
     }
     

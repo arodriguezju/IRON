@@ -9,13 +9,13 @@
 import Foundation
 
 
-protocol IRShowWorkoutsEventHandler: IRShowWorkoutsWeekTableViewDelegate{
+protocol IRShowWorkoutsEventHandler: IRShowWorkoutsWeekTableViewEventsDelegate{
 
         func UIDidLoad()
         func UIDidAppear()
+        func addButtonItemDidClick()
+    
+        
 
     
-        func addButtonItemDidClick()
-
-
 }

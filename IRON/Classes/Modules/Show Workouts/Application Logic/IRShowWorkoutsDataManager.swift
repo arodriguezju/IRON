@@ -36,11 +36,8 @@ class IRShowWorkoutsDataManager: NSObject {
         var output : [IRRawWorkout] = []
         for cdWorkout in workouts {
             
-            let cdSeries = cdWorkout.series
-            let rawSeries = coreDataToRawData(cdSeries)
-            
-            
-            let rawWorkout = IRRawWorkout(dateAdded:cdWorkout.dateAdded,series:rawSeries,exerciseName:cdWorkout.exercise.exerciseName)
+    
+            let rawWorkout = coreDataToRawData(cdWorkout)
             
             output.append(rawWorkout)
         
@@ -49,6 +46,18 @@ class IRShowWorkoutsDataManager: NSObject {
         
         return output
     
+    }
+    
+    
+    func coreDataToRawData(cdWorkout:IRWorkout)-> IRRawWorkout {
+    
+        let cdSeries = cdWorkout.series
+        let rawSeries = coreDataToRawData(cdSeries)
+        
+        
+        let rawWorkout = IRRawWorkout(dateAdded:cdWorkout.dateAdded,series:rawSeries,exerciseName:cdWorkout.exercise.exerciseName)
+    
+        return rawWorkout
     }
     
     func coreDataToRawData(series:NSOrderedSet)->[IRRawSerie] {
@@ -78,12 +87,35 @@ class IRShowWorkoutsDataManager: NSObject {
             if cdWorkout.series.count > index {
                 
                 let serie = cdWorkout.series.objectAtIndex(index) as! IRSerie
-                coreDataStore.deleteSerie(serie)            
+                coreDataStore.deleteSerie(serie)
+                               
             }
             
         
         }
     
+    }
+    
+    func deleteWorkoutAtDate(date:NSDate){
+        
+        
+        if let cdWorkout = coreDataStore.getWorkoutAtDate(date) {
+            
+            coreDataStore.deleteWorkout(cdWorkout)
+        
+        }
+    
+    }
+    
+    func getWorkoutAtDate(date:NSDate)->IRRawWorkout?{
+    
+        if let cdWorkout = coreDataStore.getWorkoutAtDate(date) {
+            
+            return coreDataToRawData(cdWorkout)
+        }
+        
+        return nil
+        
     }
 
 }

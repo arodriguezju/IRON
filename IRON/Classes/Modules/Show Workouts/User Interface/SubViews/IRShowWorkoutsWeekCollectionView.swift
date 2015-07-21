@@ -10,7 +10,7 @@ import UIKit
 class IRShowWorkoutsWeekCollectionView: UICollectionView{
     
     var data :[IRUIWeekOverviewData]?
-    var weekTableViewDelegate:IRShowWorkoutsWeekTableViewDelegate?
+    var weekTableViewEventsDelegate:IRShowWorkoutsWeekTableViewEventsDelegate?
     
     
     required init(coder aDecoder: NSCoder) {
@@ -28,7 +28,35 @@ class IRShowWorkoutsWeekCollectionView: UICollectionView{
     func loadData(data:[IRUIWeekOverviewData]) {
     
         self.data=data.reverse()
+        
+        
     }
+    
+    
+    
+}
+
+extension IRShowWorkoutsWeekCollectionView: IRShowWorkoutsWeekTableViewDatasourceDelegate {
+
+
+   
+    func dataDidChange(data:[IRUIWeekOverviewData]){
+    
+        self.loadData(data)
+    }
+    
+    func getData()->[IRUIWeekOverviewData]? {
+        
+        if let data = data {
+        
+        return self.data
+        
+        }
+        
+        return nil
+    
+    }
+
 
 }
 
@@ -53,9 +81,10 @@ extension IRShowWorkoutsWeekCollectionView: UICollectionViewDataSource,UICollect
         var cell = self.dequeueReusableCellWithReuseIdentifier(Constants.CellIdentifiers.showWorkoutsCollectionView , forIndexPath:indexPath ) as! IRShowWorkoutsWeekCollectionViewCell      
         
         
-        cell.prepareCellWithItem(self.data![indexPath.item])
-        cell.weekTableView.showWorkoutsWeekTableViewDelegate = weekTableViewDelegate
-        //cell.weekTableView.showWorkoutsWeekTableViewDelegate = self
+        cell.prepareCellWithItem(self.data!, atIndex:indexPath.item)
+        cell.weekTableView.eventsDelegate = weekTableViewEventsDelegate
+        cell.weekTableView.dataSourceDelegate = self
+        
         return cell
     
     

@@ -13,10 +13,15 @@ protocol IRShowWorkoutsUIInterface {
 
 
     //Updates data, reload the CV and scrolls to last item
-    func displayNewWeeklyData(data:[IRUIWeekOverviewData])
+    func displayNewWeeklyDataInCollectionView(data:[IRUIWeekOverviewData])
     
     //Update data
-    func updateData(data:[IRUIWeekOverviewData])
+    func updateDataSourceInCollectionView(data:[IRUIWeekOverviewData])
     
+    func loadNewDataInCollectionView(data:[IRUIWeekOverviewData])
+    
+    
+    func showDayPicker()
+    func hideDayPicker()
 
 }

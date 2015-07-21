@@ -21,15 +21,13 @@ class IRShowWorkoutsWeekCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func prepareCellWithItem(item:IRUIWeekOverviewData){
+    func prepareCellWithItem(data:[IRUIWeekOverviewData], atIndex index:Int){
     
         weekUILabel.textColor = Constants.Colors.mainActiveColor
-        weekTableView.data = item
-        
-        
-        weekUILabel.text = "Week \(item.weekTitle)"
+        weekUILabel.text = "Week \(data[index].weekTitle)"
+        weekTableView.indexAtCollectionView = index
         weekTableView.reloadData()
-    
+        
     }
     
     

@@ -12,7 +12,8 @@ import UIKit
 
 struct IRUIWeekOverviewData{
     
-    var weekTitle : String 
+    var weekTitle : String
+    var weekDate :NSDate
     var sectionNames : NSMutableOrderedSet
     var sectionData : [String:[Any]]
     
@@ -50,3 +51,6 @@ struct IRUIWeekOverviewExercise{
 
 
 }
+
+
+

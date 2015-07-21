@@ -12,7 +12,7 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     
    
    
-  
+    @IBOutlet weak var dayUIPicker: IRDayUIPicker!
     @IBOutlet weak var mainCollectionView: IRShowWorkoutsWeekCollectionView!
     
     var eventHandler:IRShowWorkoutsEventHandler?
@@ -26,34 +26,55 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
+        super.viewDidAppear(animated)
         self.navigationItem.leftBarButtonItem?.title
         
-        mainCollectionView.weekTableViewDelegate = eventHandler
+        mainCollectionView.weekTableViewEventsDelegate = eventHandler
         eventHandler?.UIDidAppear()
                 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    func displayNewWeeklyData(data:[IRUIWeekOverviewData]){
+    func displayNewWeeklyDataInCollectionView(data:[IRUIWeekOverviewData]){
     
         
-        mainCollectionView.loadData(data)
-        mainCollectionView.reloadData()
+        loadNewDataInCollectionView(data)
         scrollToFirstWeek()        
     
     
     }
     
-    func updateData(data:[IRUIWeekOverviewData]){
+    func updateDataSourceInCollectionView(data:[IRUIWeekOverviewData]){
     
         mainCollectionView.loadData(data)
+    
+    }
+    
+    
+    func loadNewDataInCollectionView(data:[IRUIWeekOverviewData]){
+    
+        updateDataSourceInCollectionView(data)
+        mainCollectionView.reloadData()
+    
+    }
+    
+    
+    
+    func showDayPicker(){
+    
+        dayUIPicker.showPicker()
+    
+    }
+    
+    
+    func hideDayPicker(){
+    
+        dayUIPicker.hidePicker()
     
     }
     
@@ -63,7 +84,7 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
         
         if maxScroll >= 0 {
         
-          self.scrollToWeek(atIndex: mainCollectionView.numberOfItemsInSection(0)-1)
+          self.scrollToWeek(atIndex: maxScroll)
         }
         
         

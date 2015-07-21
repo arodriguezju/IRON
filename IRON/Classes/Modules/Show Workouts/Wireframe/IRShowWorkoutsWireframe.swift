@@ -70,7 +70,7 @@ class IRShowWorkoutsWireframe: NSObject {
         
     }
     
-    func exerciseDidClicked(exerciseDate:NSDate) {
+    func exerciseDidClick(exerciseDate:NSDate) {
     
         addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(showWorkoutsViewController!, withExerciseDate: exerciseDate)
         
