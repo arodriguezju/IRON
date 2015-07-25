@@ -99,8 +99,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     appDependencies.installRootViewControllerIntoWindow(window!)
     
-    UINavigationBar.appearance().shadowImage = UIImage()
-    UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+   // UINavigationBar.appearance().shadowImage = UIImage()
+    //UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
     
     
     

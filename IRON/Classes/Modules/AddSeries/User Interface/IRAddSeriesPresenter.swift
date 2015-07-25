@@ -29,7 +29,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
                 if( userInterface.getCurrentIndex() == index ){
                     
                     var serie = currentWorkout.series[index]
-                    serie.flag = getNewFlagForSerie(serie)
+                    serie.flag = getNextFlagForSerie(serie)
                     addSeriesInteractor.updateSerie(self.prepareUIDataToRaw(serie), atIndex: index)
                     userInterface.updateCurrentSerie(serie)
                     
@@ -50,7 +50,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
         
     }
     
-    func getNewFlagForSerie(serie:IRUISerie)->Constants.FlagType{
+    func getNextFlagForSerie(serie:IRUISerie)->Constants.FlagType{
     
         if ( serie.flag == Constants.FlagType.Hard) {
             return Constants.FlagType.Easy

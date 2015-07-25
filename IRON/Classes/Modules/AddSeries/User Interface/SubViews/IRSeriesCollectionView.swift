@@ -21,7 +21,7 @@ protocol IRSeriesCollectionViewDelegate {
 class IRSeriesCollectionView: UICollectionView {
     
     
-    
+    private var spinLayer :CALayer?
     
     var seriesCollectionViewDelegate : IRSeriesCollectionViewDelegate?
     private var separatorWidth : CGFloat = 0
@@ -39,22 +39,68 @@ class IRSeriesCollectionView: UICollectionView {
         super.init(coder: aDecoder)
         self.delegate=self
         self.dataSource=self
-       //self.backgroundColor=UIColor.redColor()
+      
     }
+    
+    
+   
     
     
     func selectIndex(index:Int){
         
         
-        if( index != selectedIndex.item) {
+       
+            
             
             selectedIndex = NSIndexPath(forItem: index, inSection: 0)
-            reloadData()
-        }
+            
+            if let layer = spinLayer {
+                
+                moveSpinAnimationToIndex(selectedIndex)
+            
+            }
+            else {
+                addSpinAnimation()
+                moveSpinAnimationToIndex(selectedIndex)
+
+            }
+            
+            //reloadData()
+        
     
     
     }
     
+    func moveSpinAnimationToIndex(index:NSIndexPath){
+    
+       let attributes =  self.layoutAttributesForItemAtIndexPath(index)
+       let cellOrigin = attributes!.frame.origin
+        
+        if let layer = spinLayer {
+        
+            var newFrame = spinLayer!.frame
+            newFrame.origin = cellOrigin
+            spinLayer!.frame = newFrame            
+        
+         }
+       
+    
+    }
+    
+    func addSpinAnimation(){
+        
+        var animationSize = CGSizeMake(self.getCellSize().width*1, self.getCellSize().height*1)
+        spinLayer = IRSpinAnimationLayer(size:animationSize)
+        self.layer.addSublayer(spinLayer)
+    }
+    
+    
+    func getCellSize()->CGSize{
+    
+        let width :CGFloat = self.frame.size.width / 4
+        return CGSizeMake(width, width)
+    
+    }
     
    
 }
@@ -64,9 +110,7 @@ extension IRSeriesCollectionView:UICollectionViewDelegate,UICollectionViewDelega
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let width :CGFloat = self.frame.size.width / 4
-        return CGSizeMake(width, width)
-        
+       return getCellSize()
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
@@ -120,6 +164,8 @@ extension IRSeriesCollectionView:UICollectionViewDataSource{
         cell.prepareCellForItem(currentSeries![indexPath.item])
         
         if (indexPath == selectedIndex) {
+        
+            
          cell.active=true
         }
         else{

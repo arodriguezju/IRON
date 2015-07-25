@@ -33,6 +33,19 @@ class IRShowWorkoutsWeekCollectionView: UICollectionView{
     }
     
     
+    func getActiveWeek()->NSDate {
+    
+        if let data = data {
+            
+            var visibleIndexPath = self.indexPathsForVisibleItems().first! as! NSIndexPath
+            var weekData = data[visibleIndexPath.item]
+            return weekData.weekDate
+        }
+        
+        return NSDate().getFirstDayOfWeekDate()
+    }
+    
+    
     
 }
 

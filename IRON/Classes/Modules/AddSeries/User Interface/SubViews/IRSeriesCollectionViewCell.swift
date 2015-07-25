@@ -17,10 +17,11 @@ class IRSeriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var weightUILabel: UILabel!
     
     @IBOutlet weak var flagUIView: UIView!
-    private var flashActiveLayer :CALayer?
     
     var cornerRadius :CGFloat  = 3
     var flagRadius:CGFloat = 4
+    
+    var animationActivated:Bool = false
     
     var active :Bool = false {
         didSet{
@@ -34,8 +35,7 @@ class IRSeriesCollectionViewCell: UICollectionViewCell {
                     
                 })
                 
-                self.activeAnimatedLayer()
-                
+               
                 
                 
             }
@@ -46,7 +46,6 @@ class IRSeriesCollectionViewCell: UICollectionViewCell {
                 self.repsUILabel.font = Constants.Fonts.serieCellInactiveLabel
                 self.weightUILabel.font = Constants.Fonts.serieCellInactiveLabel
                 
-                self.deactivateAnimatedLayer()
                 
                 
                 
@@ -66,36 +65,7 @@ class IRSeriesCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func activeAnimatedLayer(){
-        
-        if let layer = self.flashActiveLayer {
-            
-            CATransaction.begin()
-            CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-            flashActiveLayer!.opacity = 1
-            CATransaction.commit()
-            
-        }
-        else{
-            
-            self.addActiveLayer()
-            
-        }
-        
-    }
     
-    func deactivateAnimatedLayer(){
-        
-        
-        if let layer = self.flashActiveLayer {
-            CATransaction.begin()
-            CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-            flashActiveLayer!.opacity = 0
-            CATransaction.commit()
-            
-            
-        }
-    }
     
     
     
@@ -153,78 +123,7 @@ class IRSeriesCollectionViewCell: UICollectionViewCell {
     }
     
     
-    
-    func addActiveLayer(){
         
-        let precisionDegrees = 1
-        let replicatorLayer = CAReplicatorLayer()
-        let instanceCount = Int(360/precisionDegrees)
-        let instanceOffset = 1.0/Float(instanceCount)
-        
-        
-        replicatorLayer.frame = self.bounds
-        
-        
-        replicatorLayer.instanceCount = instanceCount
-        replicatorLayer.instanceDelay = CFTimeInterval(0.004)
-        replicatorLayer.preservesDepth = true
-        replicatorLayer.instanceColor = Constants.Colors.mainActiveColor.CGColor
-        
-        
-        
-        let angle = Float(M_PI * Double(precisionDegrees)) / 180
-        
-        var transform  = CATransform3DIdentity;
-        
-        transform = CATransform3DMakeRotation(CGFloat(angle), 0.0, 0.0, 1.0)
-        
-        replicatorLayer.instanceTransform = transform
-        self.layer.addSublayer(replicatorLayer)
-        
-        let instanceLayer = CAShapeLayer()
-        let layerWidth: CGFloat = 2.0
-        let midX = CGRectGetMidX(self.bounds)
-        
-        
-        instanceLayer.frame = CGRect(x: midX, y: 1, width: layerWidth, height: layerWidth)
-        
-        
-        instanceLayer.cornerRadius = 2
-        
-        instanceLayer.backgroundColor = UIColor.whiteColor().CGColor
-        
-        
-        replicatorLayer.addSublayer(instanceLayer)
-        
-        
-        let fadeAnimation = CABasicAnimation(keyPath: "opacity")
-        fadeAnimation.fromValue = 1.0
-        fadeAnimation.toValue = -0.5
-        fadeAnimation.duration = CFTimeInterval(Float(replicatorLayer.instanceCount)*Float(replicatorLayer.instanceDelay))
-        
-        fadeAnimation.repeatCount = MAXFLOAT
-        
-        
-        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-        
-        scaleAnimation.toValue = 0
-        scaleAnimation.duration = CFTimeInterval(Float(replicatorLayer.instanceCount)*Float(replicatorLayer.instanceDelay))
-        scaleAnimation.repeatCount = MAXFLOAT
-        
-        
-        
-        instanceLayer.opacity = 0.0
-        instanceLayer.addAnimation(fadeAnimation, forKey: "FadeAnimation")
-        instanceLayer.addAnimation(scaleAnimation, forKey: "scale")
-        
-        
-        flashActiveLayer = replicatorLayer
-        
-        
-        
-    }
-    
-    
     func addFlagLayer(){
         
         let maskPath = UIBezierPath(arcCenter: CGPointMake(flagUIView.frame.width/2, flagUIView.frame.width/2), radius: flagRadius, startAngle: CGFloat(0.0), endAngle: 360 * CGFloat(M_PI) / 180 , clockwise: true)
@@ -245,7 +144,6 @@ class IRSeriesCollectionViewCell: UICollectionViewCell {
         self.weightUILabel.text = "\(serie.weight)"
         self.repsUILabel.text = "\(serie.reps)"
         self.setFlag(serie.flag)
-        
         
         
         

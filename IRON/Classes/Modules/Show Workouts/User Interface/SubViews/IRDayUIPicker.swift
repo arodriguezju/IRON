@@ -19,7 +19,7 @@ class IRDayUIPicker: UIPickerView, UIPickerViewDataSource,UIPickerViewDelegate {
         // Drawing code
     }
     */
-    var data:[String]!
+    var data:[NSDate]=[]
     
     func hidePicker(){
     
@@ -41,7 +41,7 @@ class IRDayUIPicker: UIPickerView, UIPickerViewDataSource,UIPickerViewDelegate {
         
         super.init(coder: aDecoder)
         var formatter = NSDateFormatter().weekdaySymbols
-        data = NSDateFormatter().weekdaySymbols as! [String]
+       // data = NSDateFormatter().weekdaySymbols as! [String]
         self.dataSource=self
         self.delegate=self
     
@@ -60,16 +60,34 @@ class IRDayUIPicker: UIPickerView, UIPickerViewDataSource,UIPickerViewDelegate {
     
     }
     
+    func configureAndReloadData(firstDayOfSelectedWeek:NSDate){
+        
+        data = []
+        
+        for i in 0...6 {
+            
+         var newDate = firstDayOfSelectedWeek.dateByAddingTimeInterval(NSTimeInterval(i*24*60*60))
+         var newDateName = newDate.getDayName()
+         data.append(newDate)
+            
+        }
+        
+        
+    }
+    
     // returns the # of rows in each component..
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     
-        return data.count
-    
+            return data.count
+       
+          
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+        
+        let date = data[row] as NSDate
     
-        return data[row]
+        return date.getDayName()
     
     }
     

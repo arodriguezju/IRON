@@ -78,6 +78,9 @@ class IRExerciseSelectionWireframe{
         newViewController.eventHandler = exerciseSelectionPresenter
          exerciseSelectionPresenter!.userInterface=newViewController
         //navigationController?.popViewControllerAnimated(false)
+        let backItem = UIBarButtonItem(title:"", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = backItem
+
         navigationController?.pushViewController(newViewController, animated: true)
         //navigationController?.viewControllers.removeAtIndex(navigationController!.viewControllers.count-2)
         

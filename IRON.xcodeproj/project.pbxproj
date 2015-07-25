@@ -13,6 +13,7 @@
 		6C14371A1B1B932100EB9212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1437191B1B932100EB9212 /* AppDelegate.swift */; };
 		6C14372C1B1B93F100EB9212 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C14372B1B1B93F100EB9212 /* Constants.swift */; };
 		6C1437311B1B948900EB9212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C14372F1B1B948900EB9212 /* Main.storyboard */; };
+		6C23A7671B63B634003100BF /* IRSpinAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C23A7661B63B634003100BF /* IRSpinAnimationLayer.swift */; };
 		6C2415961B2C62DE005AE31A /* addSerie.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2415951B2C62DE005AE31A /* addSerie.png */; };
 		6C2415B81B307CFA005AE31A /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2415B71B307CFA005AE31A /* backbtn.png */; };
 		6C2415ED1B31D325005AE31A /* IRRawExerciseSelectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */; };
@@ -92,6 +93,7 @@
 		6C1437191B1B932100EB9212 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C14372B1B1B93F100EB9212 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6C1437301B1B948900EB9212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C23A7661B63B634003100BF /* IRSpinAnimationLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSpinAnimationLayer.swift; sourceTree = "<group>"; };
 		6C2415951B2C62DE005AE31A /* addSerie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addSerie.png; sourceTree = "<group>"; };
 		6C2415B71B307CFA005AE31A /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
 		6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawExerciseSelectionData.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				6C2415D71B31D325005AE31A /* IRSeriesCollectionViewCell.swift */,
 				6C2415D81B31D325005AE31A /* IRSliderContainer.swift */,
 				6C2415D91B31D325005AE31A /* IRSliderView.swift */,
+				6C23A7661B63B634003100BF /* IRSpinAnimationLayer.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				6C2416021B31D325005AE31A /* IRExerciseSelectionDataManager.swift in Sources */,
 				6C24162A1B333B6E005AE31A /* IRShowWorkoutsWeekTableView.swift in Sources */,
 				6C2416011B31D325005AE31A /* IRAddSeriesWireframe.swift in Sources */,
+				6C23A7671B63B634003100BF /* IRSpinAnimationLayer.swift in Sources */,
 				6C2416171B31D71F005AE31A /* IRShowWorkoutsWireframe.swift in Sources */,
 				6C2416131B31D6BF005AE31A /* IRShowWorkoutsViewController.swift in Sources */,
 				6C2416191B31D73D005AE31A /* IRShowWorkoutsInteractor.swift in Sources */,

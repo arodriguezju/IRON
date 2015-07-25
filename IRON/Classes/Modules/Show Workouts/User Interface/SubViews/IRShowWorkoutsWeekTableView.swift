@@ -12,6 +12,8 @@ protocol IRShowWorkoutsWeekTableViewEventsDelegate{
     
     
     func exerciseDidClick(exercise:IRUIWeekOverviewExercise)
+    func serieDidClick(eserie:IRUIWeekOverviewSerie)
+
     func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int, completion:(error:NSError?)-> Void)
     func addWorkoutToWeekButtonDidClick()
     
@@ -37,7 +39,6 @@ class IRShowWorkoutsWeekTableView: UITableView{
     var indexAtCollectionView:Int?
         
     
-    @IBOutlet weak var addDayUIButton: UIButton!
     
     required init(coder aDecoder: NSCoder) {
         
@@ -50,15 +51,7 @@ class IRShowWorkoutsWeekTableView: UITableView{
              
     }
     
-    @IBAction func addWorkoutToWeekDidClick(sender: AnyObject) {
-        
-        if let delegate = eventsDelegate {
-        
-            delegate.addWorkoutToWeekButtonDidClick()
-        
-        }
-        
-    }
+   
 
     
     
@@ -74,50 +67,14 @@ class IRShowWorkoutsWeekTableView: UITableView{
             self.setEditing(true, animated: true)
         }
         
-        switchHeader(self.editing)
+       
     
     }
     
-    func switchHeader(active:Bool){
-        
-        if let container = addDayUIButton.superview {
-            
-            let newFrame : CGRect
-            
-            if (active) {
-                newFrame = CGRect(origin: container.frame.origin,size: CGSizeMake(container.frame.size.width, 40))
-                container.frame = newFrame
-
-            }
-            else{
-                newFrame = CGRect(origin: container.frame.origin,size: CGSizeMake(container.frame.size.width, container.frame.size.height*0))
-                container.frame = newFrame
-
-
-            }
-            
-            
-            UIView.animateWithDuration(0.1, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                
-                self.tableHeaderView = container
-                self.layoutIfNeeded()
-                
-                
-                }
-                , completion: nil)
-        }
-        
-        
-    
-    
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       addDayUIButton.layer.borderColor = Constants.Colors.mainActiveColor.CGColor
-      addDayUIButton.layer.cornerRadius = 5
-        addDayUIButton.layer.borderWidth = 1
-       
+             
     }
     
 }
@@ -204,7 +161,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         outputView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.05)
         
         var label = UILabel(frame: CGRectMake(15, 0, self.frame.width-50, 40))
-        label.font = UIFont(name:"HelveticaNeue-Light", size: 15.0)
+        label.font = Constants.Fonts.sectionWeekOverview!
         label.text = getSectionNames()![section].uppercaseString
         
         outputView.addSubview(label)
@@ -222,7 +179,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
    
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-
+       
         let sectionData = getSectionDataAtSection(indexPath.section)
 
         
@@ -235,7 +192,7 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
             
         case is IRUIWeekOverviewSerie:
             
-            return true
+            return self.editing
             
         default :
             
@@ -313,7 +270,15 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
             
             }
             
-           
+          
+         case is IRUIWeekOverviewSerie:
+            
+            if let delegate = self.eventsDelegate {
+                
+                delegate.serieDidClick(sectionData[indexPath.item] as! IRUIWeekOverviewSerie)
+                
+            }
+
         default :()
             
             

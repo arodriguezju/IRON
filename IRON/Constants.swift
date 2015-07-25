@@ -28,21 +28,31 @@ struct Constants {
     
     struct Colors {
         static let sliderContainerBackground :UIColor = UIColor(red: 65/255, green: 104/255, blue: 129/255, alpha: 1)
+        static let sliderColor = UIColor.whiteColor().colorWithAlphaComponent(0.8)
         static let serieCellBackground = UIColor.whiteColor()
         static let serieCellInactiveLabel = UIColor.blackColor().colorWithAlphaComponent(0.5)
         static let serieCellActiveLabel = UIColor.blackColor()
         static let mainActiveColor = UIColor(red: 225/255, green: 73/255, blue: 56/255, alpha: 1)
+        //static let mainActiveColor = UIColor(red: 52/255, green: 172/255, blue: 189/255, alpha: 1)
+        //static let mainActiveColor = UIColor(red: 34/255, green: 37/255, blue: 46/255, alpha: 1)
+
+        static let secondActiveColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
+
         static let flagRedColor = UIColor(red: 184/255, green: 49/255, blue: 47/255, alpha: 1)
         static let flagYellowColor = UIColor(red: 250/255, green: 197/255, blue: 28/255, alpha: 1)
         static let flagGreenColor = UIColor(red: 26/255, green: 188/255, blue: 156/255, alpha: 1)
-
+        
+        static let barItems = UIColor.whiteColor()
+        
+        
   
    }
     
     struct Fonts {
-        static let serieCellInactiveLabel = UIFont(name:"HelveticaNeue-Regular", size: 22.0)
-        static let serieCellActiveLabel = UIFont(name:"HelveticaNeue-Regular", size: 22.0)
-        
+        static let serieCellInactiveLabel = UIFont(name:"Avenir-Book", size: 18.0)
+        static let serieCellActiveLabel = UIFont(name:"Avenir-Book", size: 18.0)
+        static let barItems = UIFont(name:"Avenir-Medium", size: 18.0)
+        static let sectionWeekOverview = UIFont(name:"Avenir-Medium", size: 18.0)
     
     
     

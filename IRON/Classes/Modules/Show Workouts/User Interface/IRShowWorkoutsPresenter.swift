@@ -54,7 +54,7 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         var weeks : [String:IRUIWeekOverviewData] = [:]
         for workout in workouts {
             
-            let weekName = "\(workout.dateAdded.getWeekName()) - \(workout.dateAdded.getFirstDayOfWeekDateString())"
+            let weekName = "\(workout.dateAdded.getWeekName())  \(workout.dateAdded.getFirstDayOfWeekDateString())"
             let dayName = workout.dateAdded.getDayName()
             let firstDayOfWeek = workout.dateAdded.getFirstDayOfWeekDate()
             
@@ -103,7 +103,16 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     
     func exerciseDidClick(exercise:IRUIWeekOverviewExercise) {
     
-        showWorkoutsWireframe!.exerciseDidClick(exercise.exerciseAddedDate)
+        showWorkoutsWireframe!.workoutDidClick(exercise)
+    
+    }
+    
+    func serieDidClick(serie:IRUIWeekOverviewSerie)
+    {
+        
+        
+        showWorkoutsWireframe!.workoutDidClick(serie.exercise)
+
     
     }
     

@@ -56,6 +56,9 @@ class IRAddSeriesWireframe{
         newViewController.initializationData["exerciseName"] = exerciseName
         addSeriesPresenter!.userInterface=newViewController
         //navigationController?.popViewControllerAnimated(false)
+        let backItem = UIBarButtonItem(title:"", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = backItem
+
         navigationController?.pushViewController(newViewController, animated: true)
         //navigationController?.viewControllers.removeAtIndex(navigationController!.viewControllers.count-2)
        
@@ -63,7 +66,7 @@ class IRAddSeriesWireframe{
     }
     
     
-    func presentAddSeriesInterfaceFromViewController(viewController: UIViewController, withExerciseDate exerciseDate:NSDate) {
+    func presentAddSeriesInterfaceFromViewController(viewController: UIViewController, withWorkoutDate exerciseDate:NSDate, andExerciseName exerciseName:String) {
         
         let newViewController = addSeriesViewControllerFromStoryboard()
         var navigationController = viewController.navigationController
@@ -72,6 +75,9 @@ class IRAddSeriesWireframe{
         addSeriesPresenter!.userInterface=newViewController
         newViewController.initializationType = IRAddSeriesInitializationType.editWorkout
         newViewController.initializationData["exerciseDateAdded"] = exerciseDate
+        newViewController.navigationItem.title=exerciseName
+        let backItem = UIBarButtonItem(title:"", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        viewController.navigationItem.backBarButtonItem = backItem
 
         //navigationController?.popViewControllerAnimated(false)
         navigationController?.pushViewController(newViewController, animated: true)

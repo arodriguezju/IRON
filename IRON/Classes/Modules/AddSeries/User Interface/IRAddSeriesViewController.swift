@@ -55,11 +55,7 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let initType = initializationType {
-            
-            eventHandler!.UIDidLoad(initType)
-            
-        }
+        
         
        
     }
@@ -71,7 +67,11 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
         sliderContainer.sliderRightView.sliderDelegate = self
         seriesCollectionView.seriesCollectionViewDelegate = eventHandler
 
-        
+        if let initType = initializationType {
+            
+            eventHandler!.UIDidLoad(initType)
+            
+        }
 
        
     }
@@ -163,7 +163,7 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
     }
     func updateCurrentSerie(serie:IRUISerie) {
         
-        updateSerie(serie, atIndex: currentIndex!)
+        self.updateSerie(serie, atIndex: currentIndex!)
         currentSerie = serie
         self.setTopDisplayWithSerie(serie)
         

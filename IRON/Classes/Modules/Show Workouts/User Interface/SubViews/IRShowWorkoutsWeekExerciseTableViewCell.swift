@@ -40,6 +40,7 @@ class IRShowWorkoutsWeekExerciseTableViewCell: UITableViewCell {
     func prepareCellForItem(item:IRUIWeekOverviewExercise){
     
         self.titleUILabel.text = item.exerciseName
+        self.selectionStyle = UITableViewCellSelectionStyle.None
         
     }
 

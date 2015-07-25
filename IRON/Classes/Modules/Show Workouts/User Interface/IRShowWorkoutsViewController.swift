@@ -67,6 +67,9 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     
     func showDayPicker(){
     
+        var pickerWeekDate = mainCollectionView.getActiveWeek()
+        dayUIPicker.configureAndReloadData(pickerWeekDate)
+        dayUIPicker.reloadAllComponents()
         dayUIPicker.showPicker()
     
     }

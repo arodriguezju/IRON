@@ -69,7 +69,7 @@ class IRSliderView: UIView {
         shape2.lineWidth = 0
         shape2.strokeColor=UIColor.clearColor().CGColor
         
-        shape2.fillColor=UIColor.blackColor().colorWithAlphaComponent(0.01).CGColor
+        shape2.fillColor=UIColor.blackColor().colorWithAlphaComponent(0.15).CGColor
         shape2.masksToBounds = true
         
         
@@ -103,7 +103,7 @@ class IRSliderView: UIView {
        segmentsShape.path = outputPath.CGPath
         segmentsShape.lineWidth = lineWide
         
-        segmentsShape.strokeColor=UIColor.blackColor().colorWithAlphaComponent(0.5).CGColor
+        segmentsShape.strokeColor=Constants.Colors.sliderColor.CGColor
         segmentsShape.fillColor=UIColor.blueColor().CGColor
         segmentsShape.masksToBounds = true
         self.layer.addSublayer(segmentsShape)

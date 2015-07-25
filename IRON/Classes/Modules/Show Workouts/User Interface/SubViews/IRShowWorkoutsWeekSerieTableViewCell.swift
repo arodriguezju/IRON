@@ -31,6 +31,9 @@ class IRShowWorkoutsWeekSerieTableViewCell: UITableViewCell {
         
         self.titleUILabel.text = "\(item.reps) x \(item.weight) \(weightUnit) "
        flagUIView.setFlag(item.flag)
+        
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+
     }
     
         
