@@ -27,7 +27,7 @@ class IRShowWorkoutsWeekSerieTableViewCell: UITableViewCell {
     
     func prepareCellForItem(item:IRUIWeekOverviewSerie){
         
-        let weightUnit :String = NSUserDefaults.standardUserDefaults().stringForKey("weightUnit")!
+        let weightUnit :String = item.weightUnit.rawValue
         
         self.titleUILabel.text = "\(item.reps) x \(item.weight) \(weightUnit) "
        flagUIView.setFlag(item.flag)

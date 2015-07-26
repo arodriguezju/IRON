@@ -40,21 +40,25 @@ class IRAddSeriesInteractor:  IRAddSeriesInteractorInput {
     }
     
     func getWeightSteps(forWeightUnits:Constants.WeightUnits)->CGFloat{
-    
-        if(forWeightUnits == Constants.WeightUnits.Kilograms) { return 1 }
         
-        if(forWeightUnits == Constants.WeightUnits.Pounds) { return 2 }
-
-        return 0
-    }
+        
+        switch forWeightUnits {
+        
+            case .Kilograms: return Constants.WeightSteps.DefaultValue.rawValue
+            
+            case .Pounds: return Constants.WeightSteps.DefaultValue.rawValue
+            
+        
+        default: return 0
+        }
+    
+}
     
     
     
-    func getRepSteps()->Int{
+   func getRepSteps()->Int{
     
-    
-        return 1
-    
+        return 1    
     }
     
     func findNewSerie(){
@@ -65,9 +69,19 @@ class IRAddSeriesInteractor:  IRAddSeriesInteractorInput {
 
         
     }
+    func updateSerieForCurrentWorkout(weight:CGFloat,reps:Int, flag:Constants.FlagType, atIndex index:Int) {
+        
+        let rawWeight = IRRawWeight(weight: weight, weightUnit: IRRawWeight.preferredUnitForUser)
+        
+        let rawSerie = IRRawSerie(weight: rawWeight, reps: reps, flag: flag)
+        
+        updateSerie(rawSerie, atIndex: index)
     
     
-    func updateSerie(serie:IRRawSerie, atIndex index:Int){
+    }
+
+    
+    private func updateSerie(serie:IRRawSerie, atIndex index:Int){
         
         dataManager.updateSerie(serie, atIndex: index, completion: ({}))
         

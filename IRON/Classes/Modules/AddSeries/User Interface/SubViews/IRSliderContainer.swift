@@ -23,7 +23,7 @@ class IRSliderContainer: UIView {
     private var sliderSensitivity : CGFloat = 1
     private var weightSteps : CGFloat = 0.25
     private var repsSteps : CGFloat = 0.25
-    var currentSerie : IRSerie? {
+    var currentSerie : IRUISerie? {
     
         didSet {
          self.updateLabels()
@@ -63,93 +63,30 @@ class IRSliderContainer: UIView {
       
     }
     
-  
-    
-  /*  func sliderDidRotate(sender: IRSliderView , angle : CGFloat, direction : Constants.SliderDirection )
-    {
-        
-         NSLog("\(angle)")
-        
-        accumulatedDegrees += angle
-        
-        if(accumulatedDegrees > sliderSensitivity ) {
-            
-            accumulatedDegrees = 0
-            if ( direction == Constants.SliderDirection.Clockwise)
-                
-            {
-                if ( sender.tag == 1) //Left
-                {
-                    
-                    
-                    currentSerie!.weight = NSNumber(float: currentSerie!.weight.floatValue - Float(weightSteps) )
-                    
-                    IRPersistanceManager.sharedInstance.saveNewWeight(NSNumber(float: currentSerie!.weight.floatValue - Float(weightSteps) ), forSerie: currentSerie!)
-                    
 
-                
-                }
-                else if ( sender.tag == 2) //Right
-                {
-                    
-                      currentSerie!.reps = NSNumber(float: currentSerie!.reps.floatValue + Float(repsSteps) )
-                    
-                }
-            
-            }
-            else if ( direction == Constants.SliderDirection.CounterClockwise)
-            {
-                if ( sender.tag == 1) //Left
-                    
-                    
-                {
-                    currentSerie!.weight = NSNumber(float:  currentSerie!.weight.floatValue + Float(weightSteps) )
-                    
-                   
-
-                    
-                }
-                else if ( sender.tag == 2) //Right
-                {
-                    
-                    currentSerie!.reps = NSNumber(float: currentSerie!.reps.floatValue - Float(repsSteps))
-                   
-                }
-               
-            
-            
-            }
-            self.updateLabels()
-            
-        }
-    
-   // NSLog("Rotating with angle \(angle)")
-    
-    }*/
 
     
-    func updateWeightLabel () {
-    
-        //currentWeight += weightSteps
+    private func updateWeightLabel () {
         
+        weightAmountUILabel.text = "\(Int(currentSerie!.weight))"
         
-        weightAmountUILabel.text = "\(currentSerie!.weight.floatValue)"
-        
-        
-    
+      
     
     
     }
     
-    func updateRepsLabel () {
-        
-        //currentWeight += weightSteps
-        
-        //repsAmountUILabel.text = "\(currentSerie!.reps)"
+     private func updateRepsLabel () {
         
         
-        repsAmountUILabel.text = "\(currentSerie!.reps.floatValue)"
-
+            repsAmountUILabel.text = "\(Int(currentSerie!.reps))"
+        
+        
+    }
+    
+    private func updateWeightUnitLabel () {
+        
+        
+        weightUnitsUILabel.text = currentSerie!.weightUnit.rawValue
         
         
     }
@@ -161,15 +98,14 @@ class IRSliderContainer: UIView {
         if let serie = currentSerie {
             self.updateWeightLabel()
             self.updateRepsLabel()
+            self.updateWeightUnitLabel()
         }
        
     }
     
     
     func setActiveSerie(serie:IRUISerie){
-        
-             weightAmountUILabel.text = "\(Int(serie.weight))"
-             repsAmountUILabel.text = "\(Int(serie.reps))"
+            currentSerie = serie
 
     }
     

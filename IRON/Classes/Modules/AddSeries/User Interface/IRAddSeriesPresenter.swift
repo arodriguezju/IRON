@@ -30,7 +30,8 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
                     
                     var serie = currentWorkout.series[index]
                     serie.flag = getNextFlagForSerie(serie)
-                    addSeriesInteractor.updateSerie(self.prepareUIDataToRaw(serie), atIndex: index)
+                    //addSeriesInteractor.updateSerie(self.prepareUIDataToRaw(serie), atIndex: index)
+                    addSeriesInteractor.updateSerieForCurrentWorkout(serie.weight, reps: serie.reps,flag:serie.flag, atIndex: index)
                     userInterface.updateCurrentSerie(serie)
                     
                 
@@ -123,22 +124,11 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     
     func prepareRawDataForUI(serie:IRRawSerie) -> IRUISerie{
         
-        var serieOutput : IRUISerie = IRUISerie(weight: serie.weight, reps: serie.reps, flag: serie.flag)
-       
+        var serieOutput : IRUISerie = IRUISerie(weight: serie.weight.preferredWeightForUser, weightUnit:IRRawWeight.preferredUnitForUser, reps: serie.reps, flag: serie.flag)
         return serieOutput
-        
-        
+                
     }
     
-    func prepareUIDataToRaw(serie:IRUISerie) -> IRRawSerie{
-        
-        var serieOutput : IRRawSerie = IRRawSerie(weight: serie.weight, reps: serie.reps, flag: serie.flag)
-        
-        return serieOutput
-        
-        
-    }
-
     
     
     func sliderDidRotate(sender: IRSliderView , angle : CGFloat, direction : Constants.SliderDirection )
@@ -175,8 +165,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
                 }
                 else{
                     currentSerie!.reps -= repStep
-                }
-                
+                }       
 
                 
                 
@@ -191,7 +180,6 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
                 
             }
             
-            
         
         }
         
@@ -203,10 +191,8 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
         
         if let serie = userInterface.getCurrentSerie() {
             
-            let rawSerie = self.prepareUIDataToRaw(serie)
             let index = userInterface!.getCurrentIndex()!
-            
-            addSeriesInteractor!.updateSerie(rawSerie, atIndex: index)
+            addSeriesInteractor.updateSerieForCurrentWorkout(serie.weight, reps: serie.reps,flag:serie.flag, atIndex: index)
             
         }
     

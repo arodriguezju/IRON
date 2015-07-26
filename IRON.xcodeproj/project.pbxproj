@@ -69,6 +69,7 @@
 		6C5093C01B1FC41D00CAF207 /* bluredBG in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093BF1B1FC41D00CAF207 /* bluredBG */; };
 		6C5093C21B20584B00CAF207 /* mask2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5093C11B20584B00CAF207 /* mask2.png */; };
 		6C90F2A91B4C350A00A08AE3 /* IRWorkoutsCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C90F2A81B4C350A00A08AE3 /* IRWorkoutsCalendar.swift */; };
+		6CB5D3DA1B6429430068C59C /* IRRawWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB5D3D91B6429430068C59C /* IRRawWeight.swift */; };
 		6CE0287E1B52E91600DDCCD3 /* IRDayUIPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE0287D1B52E91600DDCCD3 /* IRDayUIPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		6C5093BF1B1FC41D00CAF207 /* bluredBG */ = {isa = PBXFileReference; lastKnownFileType = file; path = bluredBG; sourceTree = "<group>"; };
 		6C5093C11B20584B00CAF207 /* mask2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask2.png; sourceTree = "<group>"; };
 		6C90F2A81B4C350A00A08AE3 /* IRWorkoutsCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRWorkoutsCalendar.swift; sourceTree = "<group>"; };
+		6CB5D3D91B6429430068C59C /* IRRawWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRRawWeight.swift; sourceTree = "<group>"; };
 		6CE0287D1B52E91600DDCCD3 /* IRDayUIPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRDayUIPicker.swift; path = "Show Workouts/User Interface/SubViews/IRDayUIPicker.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +256,7 @@
 			children = (
 				6C2415BE1B31D325005AE31A /* IRRawExerciseSelectionData.swift */,
 				6C2415BF1B31D325005AE31A /* IRRawWorkoutData.swift */,
+				6CB5D3D91B6429430068C59C /* IRRawWeight.swift */,
 				6C90F2A81B4C350A00A08AE3 /* IRWorkoutsCalendar.swift */,
 			);
 			path = Model;
@@ -608,6 +611,7 @@
 				6C2416131B31D6BF005AE31A /* IRShowWorkoutsViewController.swift in Sources */,
 				6C2416191B31D73D005AE31A /* IRShowWorkoutsInteractor.swift in Sources */,
 				6C2415F31B31D325005AE31A /* IRSerie.swift in Sources */,
+				6CB5D3DA1B6429430068C59C /* IRRawWeight.swift in Sources */,
 				6C2416211B31DBB4005AE31A /* IRShowWorkoutsDataManager.swift in Sources */,
 				6C24160B1B31D325005AE31A /* IRExerciseSelectionTableViewCell.swift in Sources */,
 				6CE0287E1B52E91600DDCCD3 /* IRDayUIPicker.swift in Sources */,

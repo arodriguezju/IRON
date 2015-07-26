@@ -28,7 +28,7 @@ class AppDependencies {
         
         var userDefaults=NSUserDefaults.standardUserDefaults()
         
-        userDefaults.setObject(Constants.WeightUnits.Kilograms.rawValue as NSString, forKey: "weightUnit")
+        userDefaults.setObject(Constants.WeightUnits.Pounds.rawValue as NSString, forKey: Constants.UserDefaultsKeys.WeightUnits.rawValue)
         
         let rootWireframe = RootWireframe()
         

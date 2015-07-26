@@ -21,19 +21,34 @@ struct IRRawWorkout{
 }
 
 
+
+
+
 struct IRRawSerie{
     
-    var weight:CGFloat = 0
-    var reps:Int = 0
-     var flag:Constants.FlagType  = Constants.FlagType.Easy
+     var weight:IRRawWeight
+     var reps:Int
+     var flag:Constants.FlagType
     
-    init(weight:CGFloat, reps:Int ,flag:Constants.FlagType){
+    init(weight:IRRawWeight, reps:Int,flag:Constants.FlagType){
         self.weight = weight
         self.reps = reps
         self.flag = flag
         
         
     }
+    
+   /*init(weight:CGFloat, reps:Int,flag:Constants.FlagType){
+        
+        let userDefaults=NSUserDefaults.standardUserDefaults()
+        let weightUnits = userDefaults.stringForKey(Constants.UserDefaultsKeys.weightUnits.rawValue)!
+        
+        self.weight = weight
+        self.reps = reps
+        self.flag = flag
+        self.weightUnits = Constants.WeightUnits(
+        
+    }*/
 
 }
 

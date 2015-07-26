@@ -113,6 +113,7 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
                 currentSerie = workout.series[index]
                 self.setTopDisplayWithSerie(currentSerie as IRUISerie!)
                 self.seriesCollectionView.selectIndex(index)
+                self.seriesCollectionView.moveSpinAnimationToSelectedIndex()
             
             }
         }

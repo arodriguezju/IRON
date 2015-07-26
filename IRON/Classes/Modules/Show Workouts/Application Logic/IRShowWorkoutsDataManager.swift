@@ -67,7 +67,10 @@ class IRShowWorkoutsDataManager: NSObject {
         for cdSerie in series {
             
             let cdSerie = cdSerie as! IRSerie
-            output.append(IRRawSerie(weight: CGFloat(cdSerie.weight.floatValue), reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!))
+           
+            
+            let rawWeight = IRRawWeight(weight: CGFloat(cdSerie.weight.floatValue), weightUnit: Constants.WeightUnits(rawValue: cdSerie.weightUnits)!)
+            output.append(IRRawSerie(weight: rawWeight, reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!))
             
         
         }

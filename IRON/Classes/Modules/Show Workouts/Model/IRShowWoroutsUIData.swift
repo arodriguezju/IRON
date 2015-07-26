@@ -25,10 +25,10 @@ struct IRUIWeekOverviewData{
 
 struct IRUIWeekOverviewSerie{
     
-    var weight:CGFloat = 0
-    var reps:Int = 0
-    var flag:Constants.FlagType  = Constants.FlagType.Easy
-    
+    var weight:CGFloat
+    var weightUnit:Constants.WeightUnits
+    var reps:Int
+    var flag:Constants.FlagType 
     var index:Int
     var exercise:IRUIWeekOverviewExercise
     

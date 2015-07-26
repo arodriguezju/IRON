@@ -78,12 +78,12 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
             
             var i = 0
             for serie in workout.series {
-                
-                weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewSerie(weight:serie.weight, reps: serie.reps, flag: serie.flag, index:i,exercise:exercise))
+                var serieWeight = serie.weight
+                let weight = serieWeight.preferredWeightForUser
+                let units = IRRawWeight.preferredUnitForUser
+                weeks[weekName]!.sectionData[dayName]!.append(IRUIWeekOverviewSerie(weight:weight, weightUnit:units, reps: serie.reps, flag: serie.flag, index:i,exercise:exercise))
                 i++
             }
-            
-            
             
             
         }

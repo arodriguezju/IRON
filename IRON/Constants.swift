@@ -65,10 +65,14 @@ struct Constants {
     }
     
     enum WeightUnits : String {
+        
         case Kilograms = "Kg"
         case Pounds = "Lbs"
         
-   }
+        
+        
+        
+    }
     
     enum FlagType: Int {
         
@@ -83,6 +87,24 @@ struct Constants {
         case deleteExercise = 1
         case deleteDay = 2
 
+    }
+    
+    
+    enum UserDefaultsKeys : String {
+    
+        case WeightUnits = "weightUnits"
+    
+    
+    
+    }
+    
+    
+    enum WeightSteps : CGFloat {
+        
+        case DefaultValue = 0.25
+        /*case Kilograms = 0.25
+        case Pounds = 0.25*/
+    
     }
     
 

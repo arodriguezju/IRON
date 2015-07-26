@@ -26,7 +26,7 @@ protocol IRAddSeriesInteractorInput{
 
     
     //Events from UI
-    func updateSerie(serie:IRRawSerie, atIndex index:Int)
+    func updateSerieForCurrentWorkout(weight:CGFloat,reps:Int, flag:Constants.FlagType, atIndex index:Int)
 
 }
 

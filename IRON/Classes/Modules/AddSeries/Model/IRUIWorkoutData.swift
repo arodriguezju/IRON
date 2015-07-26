@@ -24,15 +24,15 @@ struct IRUIWorkout{
 struct IRUISerie{
     
     var weight:CGFloat = 0
+    var weightUnit:Constants.WeightUnits
     var reps:Int = 0
      var flag:Constants.FlagType  = Constants.FlagType.Easy
     
-    init(weight:CGFloat, reps:Int ,flag:Constants.FlagType){
+    init(weight:CGFloat,weightUnit:Constants.WeightUnits, reps:Int ,flag:Constants.FlagType){
         self.weight = weight
         self.reps = reps
         self.flag = flag
-    
-        
+        self.weightUnit = weightUnit
     }
     
 }

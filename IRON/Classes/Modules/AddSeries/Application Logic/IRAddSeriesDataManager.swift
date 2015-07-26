@@ -21,24 +21,17 @@ class IRAddSeriesDataManager: NSObject {
     func getNewWorkoutForExercise(exercise:String,completion:(IRRawWorkout)-> Void){
         
             
-        
-        
-        
             var cdWorkout = coreDataStore.getNewWorkoutForExercise(exercise)
-        
-            var newWorkout = coreDataToRawData(cdWorkout)
+            var rawWorkout = coreDataToRawData(workout: cdWorkout)
         
             
-            currentWorkout = newWorkout
+            currentWorkout = rawWorkout
             currentCDWorkout = cdWorkout
-           // currentCDSerie = cdWorkout.series.objectAtIndex(0) as? IRSerie
         
             coreDataStore.save()
-            completion(newWorkout)
-
+            completion(rawWorkout)
         
-        
-            coreDataStore.printAllSeries()
+          //  coreDataStore.printAllSeries()
         
         
     
@@ -50,15 +43,14 @@ class IRAddSeriesDataManager: NSObject {
         var cdWorkout = coreDataStore.getWorkoutAtDate(date)
         
         
-        
         if let cdWorkout = cdWorkout {
             
-                var newWorkout = coreDataToRawData(cdWorkout)
+            var rawWorkout = coreDataToRawData(workout: cdWorkout)
             
-                currentWorkout = newWorkout
+                currentWorkout = rawWorkout
                 currentCDWorkout = cdWorkout
             
-                completion(coreDataToRawData(cdWorkout))
+            completion(rawWorkout)
         
         }
         
@@ -68,19 +60,25 @@ class IRAddSeriesDataManager: NSObject {
 
     
     
-    func coreDataToRawData(cdSerie:IRSerie)->IRRawSerie{
-        var outputSerie = IRRawSerie(weight: CGFloat(cdSerie.weight.floatValue), reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!)
+    func coreDataToRawData(serie cdSerie:IRSerie)->IRRawSerie{
+        
+        
+        let weightUnitsEnum = Constants.WeightUnits(rawValue: cdSerie.weightUnits)!
+        let rawWeight = IRRawWeight(weight: CGFloat(cdSerie.weight.floatValue), weightUnit: weightUnitsEnum)
+        
+        
+        var outputSerie = IRRawSerie(weight: rawWeight, reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!)
         
         return outputSerie
     }
     
-    func coreDataToRawData(cdWorkout:IRWorkout)->IRRawWorkout{
+    func coreDataToRawData(workout cdWorkout:IRWorkout)->IRRawWorkout{
         
         var outputWorkout = IRRawWorkout(dateAdded: cdWorkout.dateAdded,series:[],exerciseName:cdWorkout.exercise.exerciseName)
         
         for cdSerie in cdWorkout.series {
         
-            var outputSerie = IRRawSerie(weight: CGFloat(cdSerie.weight.floatValue), reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!)
+            var outputSerie = coreDataToRawData(serie:cdSerie as! IRSerie)
             outputWorkout.series.append(outputSerie)
             
          }
@@ -92,7 +90,8 @@ class IRAddSeriesDataManager: NSObject {
     func rawDataToCoreData(rawSerie:IRRawSerie, inCDSerie cdSerie:IRSerie)->IRSerie{
         
         
-        cdSerie.weight = rawSerie.weight
+        cdSerie.weight = rawSerie.weight.weight
+        cdSerie.weightUnits=rawSerie.weight.weightUnit.rawValue
         cdSerie.reps = rawSerie.reps
         cdSerie.flag = rawSerie.flag.rawValue
         
@@ -105,13 +104,14 @@ class IRAddSeriesDataManager: NSObject {
         
         var cdSerie = coreDataStore.getNewSerie()
         cdSerie.workout = currentCDWorkout!
+        cdSerie.weightUnits = IRRawWeight.preferredUnitForUser.rawValue
         cdSerie.weight = 30
         cdSerie.reps = 5
         cdSerie.flag = Constants.FlagType.Easy.rawValue
         
         coreDataStore.save()
 
-        let serie = coreDataToRawData(cdSerie)
+        let serie = coreDataToRawData(serie: cdSerie)
         
         currentWorkout?.series.append(serie)
 
@@ -132,7 +132,8 @@ class IRAddSeriesDataManager: NSObject {
             var serieCD = currentCDWorkout?.series[index] as! IRSerie
             
             serieCD.reps = serie.reps
-            serieCD.weight = serie.weight
+            serieCD.weight = serie.weight.weight
+            serieCD.weightUnits = serie.weight.weightUnit.rawValue
             serieCD.flag = serie.flag.rawValue
             
             coreDataStore.save()

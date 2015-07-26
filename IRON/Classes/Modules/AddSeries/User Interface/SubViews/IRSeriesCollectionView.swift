@@ -49,27 +49,36 @@ class IRSeriesCollectionView: UICollectionView {
     func selectIndex(index:Int){
         
         
-       
-            
-            
-            selectedIndex = NSIndexPath(forItem: index, inSection: 0)
-            
-            if let layer = spinLayer {
-                
-                moveSpinAnimationToIndex(selectedIndex)
-            
-            }
-            else {
-                addSpinAnimation()
-                moveSpinAnimationToIndex(selectedIndex)
-
-            }
-            
-            //reloadData()
         
+       self.reloadItemsAtIndexPaths([selectedIndex])
+        
+       selectedIndex = NSIndexPath(forItem: index, inSection: 0)
+        
+       self.reloadItemsAtIndexPaths([selectedIndex])
+        
+       
     
     
     }
+    
+    
+    func moveSpinAnimationToSelectedIndex(){
+    
+        if let layer = spinLayer {
+            
+            moveSpinAnimationToIndex(selectedIndex)
+            
+        }
+        else {
+            addSpinAnimation()
+            moveSpinAnimationToIndex(selectedIndex)
+            
+        }
+
+    
+    
+    }
+    
     
     func moveSpinAnimationToIndex(index:NSIndexPath){
     

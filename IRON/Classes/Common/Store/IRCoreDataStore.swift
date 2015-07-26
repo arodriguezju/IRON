@@ -58,18 +58,18 @@ class IRCoreDataStore: NSObject {
                 exercise.exerciseName = "Bench Press"
                 exercise.groupName = "Chest"
         
-        exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
-        exercise.exerciseName = "Incline Bench Press"
-        exercise.groupName = "Chest"
+            exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+            exercise.exerciseName = "Incline Bench Press"
+            exercise.groupName = "Chest"
 
         
-        exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
-        exercise.exerciseName = "Squats"
-        exercise.groupName = "Legs"
+            exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+            exercise.exerciseName = "Squats"
+            exercise.groupName = "Legs"
         
-        exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
-        exercise.exerciseName = "Front Squats"
-        exercise.groupName = "Legs"
+            exercise = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRExercise
+            exercise.exerciseName = "Front Squats"
+            exercise.groupName = "Legs"
         
         
             
@@ -177,7 +177,6 @@ class IRCoreDataStore: NSObject {
         
         var error: NSError?
         if !managedContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
             
         }
         else{
@@ -230,6 +229,8 @@ class IRCoreDataStore: NSObject {
     
     
     func getNewWorkoutForExercise(exerciseName:String)->IRWorkout{
+        
+        
     
         var cdWorkout = getNewWorkout()
         var cdExercise = getExerciseWithName(exerciseName)
@@ -242,6 +243,7 @@ class IRCoreDataStore: NSObject {
         cdSerie.workout = cdWorkout
         cdSerie.weight = 30
         cdSerie.reps = 5
+        cdSerie.weightUnits = IRRawWeight.preferredUnitForUser.rawValue
         cdSerie.flag = Constants.FlagType.Easy.rawValue
         
         save()
