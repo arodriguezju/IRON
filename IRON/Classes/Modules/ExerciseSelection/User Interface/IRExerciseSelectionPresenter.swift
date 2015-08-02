@@ -14,13 +14,46 @@ class IRExerciseSelectionPresenter : IRExerciseSelectionInteractorOutput,IRExerc
     var userInterface:IRExerciseSelectionUIInterface?
     var exerciseSelectionInteractor: IRExerciseSelectionInteractorInput?
     var exerciseSelectionWireframe : IRExerciseSelectionWireframe?
+    
+    var initializationData : [String:AnyObject?]?
+
 
     private var displayingGroups = true
+    
 
     
     func UIDidLoad(){
     
         exerciseSelectionInteractor!.findAvailableExercises()
+        
+        
+        self.setTimePicker()
+        
+    }
+    
+    
+    func setTimePicker(){
+        
+        
+
+        
+        if let data = initializationData {
+            
+            if let pickerDate:AnyObject? = data["pickerDate"] {
+                
+                if let pickerDate = pickerDate as? NSDate {
+                    
+                    userInterface?.setTimePicker(date: pickerDate)
+                    
+                }
+                
+                
+            }
+            
+            
+        }
+
+    
     
     }
     
@@ -60,6 +93,8 @@ class IRExerciseSelectionPresenter : IRExerciseSelectionInteractorOutput,IRExerc
    
     
    func exerciseSelectionTableViewDidClick(index:Int, item:String){
+    
+    //TODO BETTER
         
         if (displayingGroups){
             userInterface!.displayExercisesFromGroup(index)
@@ -67,7 +102,13 @@ class IRExerciseSelectionPresenter : IRExerciseSelectionInteractorOutput,IRExerc
         }
         else{
             
-            exerciseSelectionWireframe!.exerciseSelected(item)
+            if let dateForPicker = userInterface?.getDateFromPicker() {
+                exerciseSelectionWireframe!.exerciseSelected(item,withDate:userInterface!.getDateFromPicker())
+            }
+            else{
+                exerciseSelectionWireframe!.exerciseSelected(item,withDate:nil)
+            }
+            
             userInterface!.displayCurrentGroupData()
             displayingGroups=true
         }

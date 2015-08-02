@@ -9,19 +9,13 @@
 import UIKit
 import CoreData
 
-enum IRAddSeriesInitializationType:Int {
-    
-        case newWorkout = 1
-        case editWorkout = 2
 
-}
 
 class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSliderDelegate {
   
     var eventHandler : IRAddSeriesEventHandlerInterface?
    // var currentExercise:String!
-    var initializationType: IRAddSeriesInitializationType?
-    var initializationData: [String:AnyObject]=[:]
+    var initializationData: [String:AnyObject?]=[:]
     
     @IBOutlet weak var sliderContainer: IRSliderContainer!
     
@@ -67,11 +61,9 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
         sliderContainer.sliderRightView.sliderDelegate = self
         seriesCollectionView.seriesCollectionViewDelegate = eventHandler
 
-        if let initType = initializationType {
+       eventHandler!.UIDidLoad()
             
-            eventHandler!.UIDidLoad(initType)
-            
-        }
+        
 
        
     }
@@ -125,7 +117,7 @@ class IRAddSeriesViewController: UIViewController,IRAddSeriesUIInterface ,IRSlid
         setCurrentSerie(atIndex: currentWorkout!.series.count-1)
     }
     
-    func getInitializationData() -> [String:AnyObject]{
+    func getInitializationData() -> [String:AnyObject?]{
     
         return initializationData
     

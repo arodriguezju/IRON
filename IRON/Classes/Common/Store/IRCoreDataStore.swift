@@ -82,6 +82,76 @@ class IRCoreDataStore: NSObject {
     
     }
     
+    func createDummyWorkouts() {
+        
+        deleteAllWorkouts()
+        
+        getAllExercises()
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        managedContext = appDelegate.managedObjectContext!
+        
+        
+        
+        var dates:[NSDate]=[NSDate(),
+            NSDate().dateByAddingTimeInterval(-2*24*60*60),
+            NSDate().dateByAddingTimeInterval(-3*24*60*60),
+            NSDate().dateByAddingTimeInterval(-4*24*60*60),
+            NSDate().dateByAddingTimeInterval(-5*24*60*60),
+            NSDate().dateByAddingTimeInterval(-6*24*60*60),
+            NSDate().dateByAddingTimeInterval(-7*24*60*60)
+        ]
+        
+        var exercises:[String] = ["Bench Press","Bench Press","Bench Press","Bench Press","Bench Press","Bench Press","Bench Press"]
+        
+        var i:Int=0
+        for date in dates {
+        
+            var workout = getNewWorkout(exerciseName: exercises[i], workoutDate: date)
+     
+            
+            var serie = getNewSerie()
+            serie.workout = workout
+            
+             managedContext!.save(nil)
+            
+            i++
+        }
+        
+        
+        
+               
+       
+        
+        
+        
+        
+        
+        
+    }
+    
+    func deleteAllWorkouts(){
+    
+        
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        managedContext = appDelegate.managedObjectContext!
+
+    
+        var workouts  = getAllWorkouts()
+        
+        for workout in workouts {
+        
+        
+                managedContext?.deleteObject(workout)
+        }
+        
+        managedContext?.save(nil)
+    
+    }
    
     
     func getAllExercises()->[IRExercise]{
@@ -199,8 +269,10 @@ class IRCoreDataStore: NSObject {
         var exerciseEntity = NSEntityDescription.entityForName("IRSerie",inManagedObjectContext:  managedContext!)
         let serie = NSManagedObject(entity: exerciseEntity!,insertIntoManagedObjectContext:managedContext!) as! IRSerie
         
+        serie.weightUnits = Constants.WeightUnits.Kilograms.rawValue
         serie.reps = 0
         serie.weight = 0
+        serie.flag = Constants.FlagType.Easy.rawValue
         
             
         return serie
@@ -220,7 +292,9 @@ class IRCoreDataStore: NSObject {
         var workoutEntity = NSEntityDescription.entityForName("IRWorkout",inManagedObjectContext:  managedContext!)
         var workout = NSManagedObject(entity: workoutEntity!,insertIntoManagedObjectContext:managedContext!) as! IRWorkout
         
-       workout.dateAdded = NSDate()
+        workout.dateAdded = NSDate()
+        workout.dateWorkout = NSDate()
+
         
        return workout
         
@@ -228,7 +302,7 @@ class IRCoreDataStore: NSObject {
     }
     
     
-    func getNewWorkoutForExercise(exerciseName:String)->IRWorkout{
+    func getNewWorkout(#exerciseName:String, workoutDate:NSDate)->IRWorkout{
         
         
     
@@ -236,7 +310,7 @@ class IRCoreDataStore: NSObject {
         var cdExercise = getExerciseWithName(exerciseName)
         
         cdWorkout.exercise = cdExercise!
-        
+        cdWorkout.dateWorkout = workoutDate
         var cdSerie = getNewSerie()
         
         //TODO Better
@@ -256,7 +330,7 @@ class IRCoreDataStore: NSObject {
         managedContext?.save(nil)
     }
     
-    func getWorkoutAtDate(date:NSDate)->IRWorkout?{
+    func getWorkoutAtAddedDate(date:NSDate)->IRWorkout?{
     
         
         var fetch = NSFetchRequest()
@@ -266,7 +340,7 @@ class IRCoreDataStore: NSObject {
         
         fetch.entity=workoutEntity
         
-        let predicate = NSPredicate(format: "dateAdded == %@", date)
+        let predicate = NSPredicate(format: "dateAdded== %@", date)
         fetch.predicate = predicate
         
         var error: NSError?
@@ -329,5 +403,6 @@ class IRCoreDataStore: NSObject {
         save()
         
     }
+    
     
 }

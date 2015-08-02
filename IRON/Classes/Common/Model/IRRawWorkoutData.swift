@@ -11,7 +11,7 @@ import UIKit
 struct IRRawWorkout{
    
     var dateAdded :NSDate = NSDate()
-    
+    var dateWorkout :NSDate = NSDate()
     var series : [IRRawSerie] = []
     var exerciseName: String
     

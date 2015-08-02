@@ -20,6 +20,7 @@ struct Constants {
         static let showWorkoutsCollectionView = "showWorkoutsCollectionCellIdentifier"
          static let weekOverviewExerciseTableView = "weekOverviewExerciseTableViewCell"
         static let weekOverviewSerieTableView = "weekOverviewSerieTableViewCell"
+       static let weekOverviewSectionTableView = "sectionWeekCell"
 
 
 
@@ -51,8 +52,8 @@ struct Constants {
     struct Fonts {
         static let serieCellInactiveLabel = UIFont(name:"Avenir-Book", size: 18.0)
         static let serieCellActiveLabel = UIFont(name:"Avenir-Book", size: 18.0)
-        static let barItems = UIFont(name:"Avenir-Medium", size: 18.0)
-        static let sectionWeekOverview = UIFont(name:"Avenir-Medium", size: 18.0)
+        static let barItems = UIFont(name:"Avenir-Black", size: 18.0)
+        static let sectionWeekOverview = UIFont(name:"Avenir-Medium", size: 15.0)
     
     
     

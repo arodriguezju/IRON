@@ -12,7 +12,6 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     
    
    
-    @IBOutlet weak var dayUIPicker: IRDayUIPicker!
     @IBOutlet weak var mainCollectionView: IRShowWorkoutsWeekCollectionView!
     
     var eventHandler:IRShowWorkoutsEventHandler?
@@ -65,22 +64,7 @@ class IRShowWorkoutsViewController: UIViewController, IRShowWorkoutsUIInterface 
     
     
     
-    func showDayPicker(){
-    
-        var pickerWeekDate = mainCollectionView.getActiveWeek()
-        dayUIPicker.configureAndReloadData(pickerWeekDate)
-        dayUIPicker.reloadAllComponents()
-        dayUIPicker.showPicker()
-    
-    }
-    
-    
-    func hideDayPicker(){
-    
-        dayUIPicker.hidePicker()
-    
-    }
-    
+        
     func scrollToFirstWeek(){
         
         let maxScroll = mainCollectionView.numberOfItemsInSection(0)-1

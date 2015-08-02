@@ -21,18 +21,8 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     }
     
     
-   /* func findWorkouts(){
-        
-        dataManager.getAllWorkouts({ rawItem in
-            self.printWorkouts(rawItem as [IRRawWorkout])
-            
-           // self.output!.foundWorkouts(rawItem as [IRRawWorkout])
-        
-        })
-
-        
     
-    }*/
+    
     
     func printWorkouts(workouts:[IRRawWorkout]){
     
@@ -58,11 +48,11 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     
         dataManager.deleteSerie(atIndex: index, forExerciseAtDate: date)
         
-        if let workout = dataManager.getWorkoutAtDate(date) {
+        if let workout = dataManager.getWorkoutAtAddedDate(date) {
             
             if workout.series.count == 0 {
             
-                dataManager.deleteWorkoutAtDate(date)
+                dataManager.deleteWorkoutAtAddedDate(date)
             
             }
         
@@ -78,7 +68,7 @@ class IRShowWorkoutsInteractor: NSObject, IRShowWorkoutsInteractorInput  {
     
         dataManager.getAllWorkouts({ rawItem in
             
-            self.printWorkouts(rawItem as [IRRawWorkout])
+           // self.printWorkouts(rawItem as [IRRawWorkout])
             
             completion(workouts: rawItem as [IRRawWorkout])
             

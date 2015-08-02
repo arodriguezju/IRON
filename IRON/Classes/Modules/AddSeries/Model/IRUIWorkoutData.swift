@@ -10,7 +10,7 @@ import UIKit
 
 struct IRUIWorkout{
     
-    var date :NSDate = NSDate()
+    var dateWorkout :NSDate = NSDate()
     
     var series : [IRUISerie] = []
     

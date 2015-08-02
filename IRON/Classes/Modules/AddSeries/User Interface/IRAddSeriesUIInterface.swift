@@ -22,7 +22,7 @@ protocol IRAddSeriesUIInterface {
     func getCurrentSerie()->IRUISerie?
     func getCurrentWorkout()->IRUIWorkout?
     func getCurrentIndex()->Int?
-    func getInitializationData()->[String:AnyObject]
+    func getInitializationData()->[String:AnyObject?]
    // func getCurrentExercise()->String!
 
     

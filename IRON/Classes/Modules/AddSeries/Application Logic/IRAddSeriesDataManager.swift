@@ -18,10 +18,10 @@ class IRAddSeriesDataManager: NSObject {
    // private var currentCDSerie:IRSerie?
     
     
-    func getNewWorkoutForExercise(exercise:String,completion:(IRRawWorkout)-> Void){
+    func getNewWorkout(#exerciseName:String,workoutDate:NSDate,completion:(IRRawWorkout)-> Void){
         
             
-            var cdWorkout = coreDataStore.getNewWorkoutForExercise(exercise)
+            var cdWorkout = coreDataStore.getNewWorkout(exerciseName:exerciseName,workoutDate:workoutDate)
             var rawWorkout = coreDataToRawData(workout: cdWorkout)
         
             
@@ -38,9 +38,9 @@ class IRAddSeriesDataManager: NSObject {
      }
     
     
-    func getWorkoutAtDate(date:NSDate,completion:(IRRawWorkout)-> Void){
+    func getWorkoutAtAddedDate(date:NSDate,completion:(IRRawWorkout?)-> Void){
         
-        var cdWorkout = coreDataStore.getWorkoutAtDate(date)
+        var cdWorkout = coreDataStore.getWorkoutAtAddedDate(date)
         
         
         if let cdWorkout = cdWorkout {
@@ -53,6 +53,10 @@ class IRAddSeriesDataManager: NSObject {
             completion(rawWorkout)
         
         }
+        else{
+            
+           completion(nil) 
+        }
         
         
         
@@ -64,17 +68,15 @@ class IRAddSeriesDataManager: NSObject {
         
         
         let weightUnitsEnum = Constants.WeightUnits(rawValue: cdSerie.weightUnits)!
-        let rawWeight = IRRawWeight(weight: CGFloat(cdSerie.weight.floatValue), weightUnit: weightUnitsEnum)
-        
+        let rawWeight = IRRawWeight(weight: CGFloat(cdSerie.weight.floatValue), weightUnit: weightUnitsEnum)     
         
         var outputSerie = IRRawSerie(weight: rawWeight, reps: cdSerie.reps.integerValue, flag: Constants.FlagType(rawValue: cdSerie.flag.integerValue)!)
-        
         return outputSerie
     }
     
     func coreDataToRawData(workout cdWorkout:IRWorkout)->IRRawWorkout{
         
-        var outputWorkout = IRRawWorkout(dateAdded: cdWorkout.dateAdded,series:[],exerciseName:cdWorkout.exercise.exerciseName)
+        var outputWorkout = IRRawWorkout(dateAdded: cdWorkout.dateAdded,dateWorkout:cdWorkout.dateWorkout, series:[],exerciseName:cdWorkout.exercise.exerciseName)
         
         for cdSerie in cdWorkout.series {
         

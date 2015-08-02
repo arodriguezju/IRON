@@ -15,6 +15,7 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     var showWorkoutsWireframe: IRShowWorkoutsWireframe?
     
     
+   
     
     func UIDidLoad(){
         
@@ -35,12 +36,7 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     }
     
     
-   /* func foundWorkouts(workouts:[IRRawWorkout]){
-        
-        userInterface!.displayNewWeeklyData(prepareRawDataForUI(workouts))
-        
-        
-    }*/
+ 
     
     
     func prepareRawDataForUI(workouts:[IRRawWorkout])->[IRUIWeekOverviewData] {
@@ -54,25 +50,25 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
         var weeks : [String:IRUIWeekOverviewData] = [:]
         for workout in workouts {
             
-            let weekName = "\(workout.dateAdded.getWeekName())  \(workout.dateAdded.getFirstDayOfWeekDateString())"
-            let dayName = workout.dateAdded.getDayName()
-            let firstDayOfWeek = workout.dateAdded.getFirstDayOfWeekDate()
+          
+            
+            let weekName = "\(workout.dateWorkout.getLocalWeekName())  \(workout.dateWorkout.getLocalFirstDayOfWeekDateString())"
+            let dayName = workout.dateWorkout.getLocalDayName()
+            let firstDayOfWeek = workout.dateWorkout.getLocalFirstDayOfWeekDate()
             
             if ( weeks[weekName] == nil ) {
                 
-                weeks[weekName] = IRUIWeekOverviewData(weekTitle:weekName,weekDate:firstDayOfWeek,sectionNames:[],sectionData:[:])
+                
+                var weekData = IRUIWeekOverviewData(weekTitle:weekName,weekUTCDate:firstDayOfWeek,sectionNames:[],sectionData:[:],sectionUTCDates:[:])
+                
+                weekData.addAllDaysOfTheWeek(untilToday: true)
+                weeks[weekName]=weekData
                 
             }
             
-            if ( weeks[weekName]!.sectionData[dayName] == nil ) {
-                
-                weeks[weekName]!.sectionData[dayName] = []
-                
-            }
             
-            weeks[weekName]!.sectionNames.addObject(dayName)
             
-            let exercise = IRUIWeekOverviewExercise(exerciseName:workout.exerciseName,exerciseAddedDate:workout.dateAdded)
+            let exercise = IRUIWeekOverviewExercise(exerciseName:workout.exerciseName,exerciseAddedDate:workout.dateAdded, exerciseDate:workout.dateWorkout)
             weeks[weekName]!.sectionData[dayName]!.append(exercise)
             
             
@@ -88,7 +84,16 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
             
         }
         
-        return weeks.values.array
+        var outputArray=weeks.values.array as [IRUIWeekOverviewData]
+        
+        
+         outputArray.sort({
+            
+            (s1 : IRUIWeekOverviewData, s2 : IRUIWeekOverviewData) -> Bool in
+            return s1.weekUTCDate.compare(s2.weekUTCDate) == NSComparisonResult.OrderedAscending
+        })
+        
+        return outputArray
         
     }
     
@@ -140,11 +145,7 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     
     }
     
-    func addWorkoutToWeekButtonDidClick() {
-    
-        userInterface!.showDayPicker()
-    
-    }
+   
     
     func serieDeleted(inWorkout workout:IRRawWorkout, atIndex index:Int) {
     
@@ -169,4 +170,16 @@ class IRShowWorkoutsPresenter: NSObject , IRShowWorkoutsEventHandler, IRShowWork
     })
     }
     
+    
+    
+    
+    func addButtonInSectionDidClick(#sectionName:String, sectionIndex:Int, sectionDate:NSDate) {
+        
+        
+        showWorkoutsWireframe?.addButtonInSectionDidClick(sectionDate)
+        
+        
+    }
+
+
 }

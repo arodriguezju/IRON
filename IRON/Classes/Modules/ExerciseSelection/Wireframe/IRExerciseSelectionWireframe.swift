@@ -11,6 +11,12 @@ import UIKit
 
 let exerciseSelectionViewControllerIdentifier = "exerciseSelectionIdentifier"
 
+protocol IRExerciseSelectionWireframeDismissDelegate : class {
+
+    func  exerciseSelectionDismissedWithExerciseName(name:String, workoutDate:NSDate?)
+
+
+}
 
 class IRExerciseSelectionWireframe{
 
@@ -21,24 +27,29 @@ class IRExerciseSelectionWireframe{
     var exerciseSelectionPresenter : IRExerciseSelectionPresenter?
     var exerciseSelectionInteractor: IRExerciseSelectionInteractor?
    
-
+    weak var dismissDelegate : IRExerciseSelectionWireframeDismissDelegate?
 
     
     func presentListInterfaceFromWindow(window: UIWindow) {
         
-        exerciseSelectionViewController = exerciseSelectionViewControllerFromStoryboard()
+      /*  exerciseSelectionViewController = exerciseSelectionViewControllerFromStoryboard()
         exerciseSelectionViewController!.eventHandler = exerciseSelectionPresenter
         exerciseSelectionPresenter!.userInterface = exerciseSelectionViewController
-        rootWireframe!.showRootViewController(exerciseSelectionViewController!, inWindow: window)
+        rootWireframe!.showRootViewController(exerciseSelectionViewController!, inWindow: window)*/
     }
     
     /*func presentAddInterface() {
     addWireframe?.presentAddInterfaceFromViewController(listViewController!)
     }*/
     
-    func exerciseSelectionViewControllerFromStoryboard() -> IRExerciseSelectionViewController {
+    func exerciseSelectionViewControllerFromStoryboard(#initializationData:[String:AnyObject?] ) -> IRExerciseSelectionViewController {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(exerciseSelectionViewControllerIdentifier) as! IRExerciseSelectionViewController
+        viewController.eventHandler = exerciseSelectionPresenter
+        exerciseSelectionPresenter!.userInterface = viewController
+        exerciseSelectionPresenter!.initializationData = initializationData
+
+
         return viewController
     }
     
@@ -49,15 +60,21 @@ class IRExerciseSelectionWireframe{
     
 
     
-    func exerciseSelected(exerciseName:String) {
+    func exerciseSelected(exerciseName:String, withDate date:NSDate?) {
         
        
-        
+        //TODO BETTER without double reference wireframes
     
-        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController! , withExerciseName:exerciseName)
+        //addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController! , withExerciseName:exerciseName)
         
+        if let delegate = dismissDelegate {
+        
+            delegate.exerciseSelectionDismissedWithExerciseName(exerciseName,workoutDate: date)
+        
+        }
         
         //Dismiss exercise selection
+        //TODO BEtter not sure if "-2" is currentVC
         if let navController = addSeriesWireframe!.addSeriesViewController!.navigationController {
         
             navController.viewControllers.removeAtIndex(navController.viewControllers.count-2)
@@ -69,20 +86,23 @@ class IRExerciseSelectionWireframe{
    
     }
     
-    func presentExerciseSelectionInterfaceFromViewController(viewController: UIViewController) {
+    
+    
+    func presentExerciseSelectionInterfaceFromViewController(viewController: UIViewController, withDate:NSDate?) {
         
-        let newViewController = exerciseSelectionViewControllerFromStoryboard()
-        exerciseSelectionViewController = newViewController
-        var navigationController = viewController.navigationController
+        var initializationData:[String:AnyObject?] = ["pickerDate":withDate]
         
-        newViewController.eventHandler = exerciseSelectionPresenter
-         exerciseSelectionPresenter!.userInterface=newViewController
-        //navigationController?.popViewControllerAnimated(false)
+
+        
+        exerciseSelectionViewController = exerciseSelectionViewControllerFromStoryboard(initializationData: initializationData)
+        
+        
         let backItem = UIBarButtonItem(title:"", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         viewController.navigationItem.backBarButtonItem = backItem
-
-        navigationController?.pushViewController(newViewController, animated: true)
-        //navigationController?.viewControllers.removeAtIndex(navigationController!.viewControllers.count-2)
+        exerciseSelectionViewController!.navigationItem.backBarButtonItem = backItem
+        
+        
+        viewController.navigationController?.pushViewController(exerciseSelectionViewController!, animated: true)
         
         
     }

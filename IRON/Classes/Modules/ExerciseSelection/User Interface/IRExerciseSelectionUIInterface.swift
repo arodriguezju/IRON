@@ -15,9 +15,8 @@ protocol IRExerciseSelectionUIInterface   {
     func updateAndDisplayGroupsData(data:Dictionary<String,Array<IRUIExercise>>)
     func displayExercisesFromGroup(index:Int)
     func displayCurrentGroupData()
+    func setTimePicker(#date:NSDate)
+    func getDateFromPicker()->NSDate?
     
-    
-
-
 
 }

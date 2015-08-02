@@ -15,7 +15,17 @@ class IRExerciseSelectionViewController: UIViewController,IRExerciseSelectionUII
     private var exercisesByGroup:Dictionary<String, Array<IRUIExercise>>?
 
     @IBOutlet weak var exerciseSelectionTableView: IRExerciseSelectionTableView!
-  
+    @IBOutlet weak var timeUIPicker: UIDatePicker!
+    @IBOutlet weak var timePickerViewContainer: UIView!{
+        didSet {
+            
+            timePickerViewContainer.alpha = 0
+            
+        }
+        
+    }
+
+    
     
      override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,29 +35,12 @@ class IRExerciseSelectionViewController: UIViewController,IRExerciseSelectionUII
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.configureViewController()
+        exerciseSelectionTableView.tableViewDelegate = eventHandler
     }
 
-    func configureViewController(){
+   
     
-    
-        
-        exerciseSelectionTableView.tableViewDelegate = eventHandler
-        
-                   //button.backgroundColor = Constants.Colors.mainActiveColor
-        
-        
-        var backItem =  UIBarButtonItem(customView: getBackButton())
-        navigationItem.leftBarButtonItem = backItem
-        navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.mainActiveColor
-       
-       /* let backItem = UIBarButtonItem(title: "Custom", style: .Bordered, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backItem
-        NSLog ("\(navigationItem.backBarButtonItem!.title)")*/
-    
-    }
-    
-    func getBackButton()->UIButton {
+   /* func getBackButton()->UIButton {
         
         var button = UIButton()
         button.setImage(UIImage(named: "backbtn.png"), forState: UIControlState.Normal)
@@ -55,7 +48,7 @@ class IRExerciseSelectionViewController: UIViewController,IRExerciseSelectionUII
         button.addTarget(self, action: "didBackItemClick", forControlEvents: UIControlEvents.TouchUpInside)
         return button
     
-    }
+    }*/
     
     func didBackItemClick(){
         
@@ -103,7 +96,36 @@ class IRExerciseSelectionViewController: UIViewController,IRExerciseSelectionUII
     
     }
     
-   
+    func setTimePicker(#enabled:Bool, withDate:NSDate){
+        
+                
+            timePickerViewContainer.alpha = CGFloat(enabled.hashValue)
+        
+    
+    }
+    
+    func setTimePicker(#date:NSDate) {
+        
+        timePickerViewContainer.alpha = 1
+        
+        
+        timeUIPicker.setDate(date, animated: true)
+        
+    
+    }
+
+    
+    
+    func getDateFromPicker()->NSDate?{
+               
+        if (timePickerViewContainer.alpha == 1) {
+        return timeUIPicker.date
+        }
+        else{
+            return nil
+        }
+    
+    }
     
 
 }

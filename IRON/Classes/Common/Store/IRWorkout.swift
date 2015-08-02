@@ -16,6 +16,8 @@ class IRWorkout: NSManagedObject {
     @NSManaged var idWorkout: String
     @NSManaged var series: NSOrderedSet
     @NSManaged var exercise: IRExercise
+    @NSManaged var dateWorkout: NSDate
+
 
 
     override func awakeFromInsert() {

@@ -13,9 +13,9 @@ protocol IRShowWorkoutsWeekTableViewEventsDelegate{
     
     func exerciseDidClick(exercise:IRUIWeekOverviewExercise)
     func serieDidClick(eserie:IRUIWeekOverviewSerie)
+    func addButtonInSectionDidClick(#sectionName:String, sectionIndex:Int, sectionDate:NSDate)
 
     func deleteSerieDidClick(exercise:IRUIWeekOverviewExercise, atIndex index:Int, completion:(error:NSError?)-> Void)
-    func addWorkoutToWeekButtonDidClick()
     
 
 }
@@ -39,7 +39,7 @@ class IRShowWorkoutsWeekTableView: UITableView{
     var indexAtCollectionView:Int?
         
     
-    
+        
     required init(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
@@ -77,6 +77,28 @@ class IRShowWorkoutsWeekTableView: UITableView{
              
     }
     
+}
+
+
+extension IRShowWorkoutsWeekTableView:IRShowWorkoutsWeekSectionViewDelegate {
+
+    func addButtonDidClick(sectionIndex index:Int){
+        
+        if let sectionDates = getSectionUTCDates() {
+            
+            if let sectionsName = getSectionNames() {
+               
+                let sectionName = sectionsName[index]
+                let sectionDate = sectionDates[sectionName]!
+            
+            eventsDelegate?.addButtonInSectionDidClick(sectionName: sectionName, sectionIndex: index,sectionDate:sectionDate)
+        
+            }
+        }
+    
+    }
+    
+
 }
 
 extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource {
@@ -155,19 +177,18 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
+      
+        
+        var nibsView = NSBundle.mainBundle().loadNibNamed("IRShowWorkoutsWeekSectionView", owner: self, options: nil)
+        
+        var nibView = nibsView![0] as! IRShowWorkoutsWeekSectionView
+        
+        nibView.configureSection(getSectionNames()![section].uppercaseString, sectionIndex: section)
+      
+        nibView.delegate = self
         
         
-        var outputView = UIView(frame:CGRectMake(0, 0, self.frame.width, 30))
-        outputView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.05)
-        
-        var label = UILabel(frame: CGRectMake(15, 0, self.frame.width-50, 40))
-        label.font = Constants.Fonts.sectionWeekOverview!
-        label.text = getSectionNames()![section].uppercaseString
-        
-        outputView.addSubview(label)
-        
-        
-        return outputView
+        return nibView
     
     
     }
@@ -305,6 +326,26 @@ extension IRShowWorkoutsWeekTableView:UITableViewDelegate,UITableViewDataSource 
         }
         return nil
     
+    }
+    
+    func getSectionUTCDates()->[String:NSDate]?
+    {
+        
+        
+        if let delegate = self.dataSourceDelegate {
+            
+            if let data = delegate.getData() {
+                
+                if let index = indexAtCollectionView {
+                    
+                    return data[index].sectionUTCDates
+                    
+                }
+                
+            }
+        }
+        return nil
+        
     }
     
     func getSectionNames()->[String]?

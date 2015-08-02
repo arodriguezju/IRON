@@ -24,7 +24,7 @@ class IRExerciseSelectionTableView: UITableView {
         didSet
         {
                 //self.reloadData()
-                self.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Right)
+                self.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Left)
         }
     
     }
@@ -75,6 +75,7 @@ extension IRExerciseSelectionTableView:UITableViewDataSource,UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        
         if let delegate = tableViewDelegate {
+            
             delegate.exerciseSelectionTableViewDidClick(indexPath.item, item: data[indexPath.item])
         
         

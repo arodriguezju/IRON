@@ -19,7 +19,7 @@ class IRAddSeriesInteractor:  IRAddSeriesInteractorInput {
     
     }
     
-    func findNewWorkoutWithExerciseName(name:String){
+   /* func findNewWorkoutWithExerciseName(name:String){
         
       
         dataManager.getNewWorkoutForExercise(name, completion: { rawItem in
@@ -27,13 +27,23 @@ class IRAddSeriesInteractor:  IRAddSeriesInteractorInput {
         })
         
         
+    }*/
+    
+    
+    func findNewWorkout(#exerciseName:String, workoutDate:NSDate) {
+    
+        dataManager.getNewWorkout(exerciseName:exerciseName, workoutDate:workoutDate, completion: { rawItem in
+            self.output!.foundWorkout(rawItem as IRRawWorkout)
+        })
+    
+    
+    
     }
     
+    func findWorkoutWithDate(date:NSDate) {
     
-    func findWorkoutWithDateAdded(date:NSDate) {
-    
-        dataManager.getWorkoutAtDate(date, completion: { rawItem in
-            self.output!.foundWorkout(rawItem as IRRawWorkout)
+        dataManager.getWorkoutAtAddedDate(date, completion: { rawItem in
+            self.output!.foundWorkout(rawItem as IRRawWorkout?)
         })
         
     

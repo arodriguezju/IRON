@@ -20,11 +20,13 @@ class IRShowWorkoutsDataManager: NSObject {
 
     func getAllWorkouts(completion:([IRRawWorkout])-> Void){
         
+       //coreDataStore.createDummyWorkouts()
+        
         var coreDataWorkouts = coreDataStore.getAllWorkouts()
         coreDataWorkouts.sort({
         
             (s1 : IRWorkout, s2 : IRWorkout) -> Bool in
-            return s1.dateAdded.compare(s2.dateAdded) == NSComparisonResult.OrderedAscending
+            return s1.dateWorkout.compare(s2.dateWorkout) == NSComparisonResult.OrderedAscending
         })
         
         completion(coreDataToRawData(coreDataWorkouts))
@@ -55,7 +57,7 @@ class IRShowWorkoutsDataManager: NSObject {
         let rawSeries = coreDataToRawData(cdSeries)
         
         
-        let rawWorkout = IRRawWorkout(dateAdded:cdWorkout.dateAdded,series:rawSeries,exerciseName:cdWorkout.exercise.exerciseName)
+        let rawWorkout = IRRawWorkout(dateAdded:cdWorkout.dateAdded,dateWorkout:cdWorkout.dateWorkout,series:rawSeries,exerciseName:cdWorkout.exercise.exerciseName)
     
         return rawWorkout
     }
@@ -82,7 +84,7 @@ class IRShowWorkoutsDataManager: NSObject {
     
     func deleteSerie(atIndex index:Int, forExerciseAtDate date:NSDate) {
     
-        var cdWorkout = coreDataStore.getWorkoutAtDate(date)
+        var cdWorkout = coreDataStore.getWorkoutAtAddedDate(date)
         
         
         if let cdWorkout = cdWorkout {
@@ -99,10 +101,10 @@ class IRShowWorkoutsDataManager: NSObject {
     
     }
     
-    func deleteWorkoutAtDate(date:NSDate){
+    func deleteWorkoutAtAddedDate(date:NSDate){
         
         
-        if let cdWorkout = coreDataStore.getWorkoutAtDate(date) {
+        if let cdWorkout = coreDataStore.getWorkoutAtAddedDate(date) {
             
             coreDataStore.deleteWorkout(cdWorkout)
         
@@ -110,9 +112,9 @@ class IRShowWorkoutsDataManager: NSObject {
     
     }
     
-    func getWorkoutAtDate(date:NSDate)->IRRawWorkout?{
+    func getWorkoutAtAddedDate(date:NSDate)->IRRawWorkout?{
     
-        if let cdWorkout = coreDataStore.getWorkoutAtDate(date) {
+        if let cdWorkout = coreDataStore.getWorkoutAtAddedDate(date) {
             
             return coreDataToRawData(cdWorkout)
         }

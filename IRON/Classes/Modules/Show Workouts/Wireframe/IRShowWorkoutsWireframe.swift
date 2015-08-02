@@ -27,45 +27,41 @@ class IRShowWorkoutsWireframe: NSObject {
     var addSeriesWireframe: IRAddSeriesWireframe?
     
     
+    
+    var completionBlock: ((exerciseName:String, workoutDate:NSDate?) -> Void)?
+    
     func presentListInterfaceFromWindow(window: UIWindow) {
         
         showWorkoutsViewController = showWorkoutsViewControllerFromStoryboard()
-       showWorkoutsViewController!.eventHandler = showWorkoutsPresenter
+        showWorkoutsViewController!.eventHandler = showWorkoutsPresenter
         showWorkoutsPresenter!.userInterface = showWorkoutsViewController
         rootWireframe!.showRootViewController(showWorkoutsViewController!, inWindow: window)
     }
     
-    /*func presentAddInterface() {
-    addWireframe?.presentAddInterfaceFromViewController(listViewController!)
-    }*/
+   
     
     
     
     func showWorkoutsViewControllerFromStoryboard() -> IRShowWorkoutsViewController {
+        
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(showWorkoutsViewControllerIdentifier) as! IRShowWorkoutsViewController
         
-        setUpViewControllerLabels(viewController)
-        
-       
-
+        setUpLabelFontsForNavigationItem(viewController.navigationItem)
         return viewController
     }
     
-    func setUpViewControllerLabels(viewController:UIViewController) {
+    func setUpLabelFontsForNavigationItem(item:UINavigationItem) {
         
-        if let leftItem =  viewController.navigationItem.leftBarButtonItem {
+        if let leftItem =  item.leftBarButtonItem {
         
             leftItem.setTitleTextAttributes([
                 NSFontAttributeName : Constants.Fonts.barItems!,
                 NSForegroundColorAttributeName : Constants.Colors.barItems],
                 forState: UIControlState.Normal)
-
-            
         
-        }
-    
-    
+        
+        }   
     
     }
     
@@ -76,26 +72,75 @@ class IRShowWorkoutsWireframe: NSObject {
     
     
     
-   /* func exerciseSelected(exerciseName:String) {
-        
-        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(exerciseSelectionViewController!)
-        
-        
-        
-    }*/
+  
     
+    //New workout, dateAdded = nil
     func addButtonItemDidClik() {
         
-        exerciseSelectionWireframe!.presentExerciseSelectionInterfaceFromViewController(showWorkoutsViewController!)
-        
+        exerciseSelectionWireframe!.dismissDelegate = self
+        exerciseSelectionWireframe!.presentExerciseSelectionInterfaceFromViewController(showWorkoutsViewController!,withDate:nil)
+    
+        completionBlock = {
+            
+            exerciseName, workoutDate in
+            self.addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(self.showWorkoutsViewController!, withWorkoutDate: NSDate(),andAddedDate:nil, andExerciseName: exerciseName)
+       
+        }
         
         
     }
     
-    func workoutDidClick(workout:IRUIWeekOverviewExercise) {
     
-        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(showWorkoutsViewController!, withWorkoutDate: workout.exerciseAddedDate, andExerciseName: workout.exerciseName)
+    func workoutDidClick(workout:IRUIWeekOverviewExercise) {
         
+        
+        addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(showWorkoutsViewController!, withWorkoutDate: workout.exerciseAddedDate,andAddedDate:workout.exerciseAddedDate, andExerciseName: workout.exerciseName)
+        
+        
+    
+    }
+    
+    
+    func addButtonInSectionDidClick(date:NSDate) {
+        
+        let dateWithNowTime = date.getDateWithNowTime()
+        
+        exerciseSelectionWireframe!.dismissDelegate = self
+        exerciseSelectionWireframe!.presentExerciseSelectionInterfaceFromViewController(showWorkoutsViewController!,withDate:dateWithNowTime)
+        
+        completionBlock = {
+            exerciseName , workoutDate in
+            
+            if let date = workoutDate {
+            
+                self.addSeriesWireframe!.presentAddSeriesInterfaceFromViewController(self.showWorkoutsViewController!, withWorkoutDate: date,andAddedDate:nil, andExerciseName: exerciseName)
+            
+            }
+            
+        }
+        
+        
+    
+    }
+
+
+
+}
+
+extension IRShowWorkoutsWireframe:IRExerciseSelectionWireframeDismissDelegate {
+
+
+    func  exerciseSelectionDismissedWithExerciseName(name:String,workoutDate date:NSDate?) {
+        
+    
+        if let block = completionBlock {
+        
+            block(exerciseName: name,workoutDate:date)
+            
+            completionBlock=nil
+        
+        }
+
     
     }
 

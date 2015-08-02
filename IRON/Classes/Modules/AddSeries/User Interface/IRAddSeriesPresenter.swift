@@ -66,13 +66,17 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     }
 
     
-    func foundWorkout(workout:IRRawWorkout){
+    func foundWorkout(workout:IRRawWorkout?){
         
-        let workoutUIReady = prepareRawDataForUI(workout)
-        userInterface.setCurrentWorkout(workoutUIReady)
-        userInterface.setCurrentSerie(atIndex: 0)
         
-       
+        if let workout = workout {
+        
+            let workoutUIReady = prepareRawDataForUI(workout)
+            userInterface.setCurrentWorkout(workoutUIReady)
+            userInterface.setCurrentSerie(atIndex: 0)
+        
+        }
+        
     }
     
     func foundNewSerie(serie: IRRawSerie) {
@@ -84,24 +88,20 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     }
     
     
-    func UIDidLoad(withInitType:IRAddSeriesInitializationType){
+    func UIDidLoad(){
         
         let data = userInterface.getInitializationData()
+        let workoutDate = data["workoutDate"] as! NSDate
+        let exerciseName = data["exerciseName"] as! String
+        if let workoutAddedDate:AnyObject = data["workoutAddedDate"]!  {
+        let date = workoutAddedDate as! NSDate
         
-        switch withInitType {
-            
-        case IRAddSeriesInitializationType.newWorkout :
-            
-            addSeriesInteractor.findNewWorkoutWithExerciseName(data["exerciseName"] as! String)
-            
-         case IRAddSeriesInitializationType.editWorkout:
-            
-            addSeriesInteractor.findWorkoutWithDateAdded(data["exerciseDateAdded"] as! NSDate)
-        
-        default:()
-        
+            addSeriesInteractor!.findWorkoutWithDate(date)
         }
-        
+        else{
+            addSeriesInteractor.findNewWorkout(exerciseName: exerciseName, workoutDate:workoutDate)
+        }
+
     
     }
     
@@ -109,7 +109,7 @@ class IRAddSeriesPresenter: NSObject, IRAddSeriesInteractorOutput,IRAddSeriesEve
     func prepareRawDataForUI(workout:IRRawWorkout)->IRUIWorkout{
     
         var workoutOutput : IRUIWorkout = IRUIWorkout()
-        workoutOutput.date = workout.dateAdded
+        workoutOutput.dateWorkout = workout.dateWorkout
         
         for serie in workout.series {
             

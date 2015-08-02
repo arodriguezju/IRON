@@ -7,11 +7,15 @@
 //
 
 import UIKit
+
+
 class IRShowWorkoutsWeekCollectionView: UICollectionView{
     
     var data :[IRUIWeekOverviewData]?
     var weekTableViewEventsDelegate:IRShowWorkoutsWeekTableViewEventsDelegate?
+
     
+   
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,25 +29,16 @@ class IRShowWorkoutsWeekCollectionView: UICollectionView{
         
     }
     
+   
+    
     func loadData(data:[IRUIWeekOverviewData]) {
     
-        self.data=data.reverse()
+        self.data=data
         
         
     }
     
     
-    func getActiveWeek()->NSDate {
-    
-        if let data = data {
-            
-            var visibleIndexPath = self.indexPathsForVisibleItems().first! as! NSIndexPath
-            var weekData = data[visibleIndexPath.item]
-            return weekData.weekDate
-        }
-        
-        return NSDate().getFirstDayOfWeekDate()
-    }
     
     
     

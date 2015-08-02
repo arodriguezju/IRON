@@ -12,7 +12,7 @@ protocol IRAddSeriesEventHandlerInterface : IRSliderDelegate , IRSeriesCollectio
     
    // func sliderDidChanged()
     
-    func UIDidLoad(withInitType: IRAddSeriesInitializationType)
+    func UIDidLoad()
     
    /* func sliderDidRotate(sender: IRSliderView, angle : CGFloat, direction : Constants.SliderDirection)*/
     

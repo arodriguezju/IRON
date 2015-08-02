@@ -21,7 +21,6 @@ protocol IRShowWorkoutsUIInterface {
     func loadNewDataInCollectionView(data:[IRUIWeekOverviewData])
     
     
-    func showDayPicker()
-    func hideDayPicker()
+    
 
 }
